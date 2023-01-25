@@ -23,10 +23,10 @@ const placeCharacter = () => {
    
    
    //Limits (gives the illusion of walls)
-   var leftLimit = -2;
-   var rightLimit = (16 * 11)+ 2;
-   var topLimit = -20;
-   var bottomLimit = (16 * 7)+10;
+   var leftLimit = 8;
+   var rightLimit = (16 * 11)+ 7;
+   var topLimit = -5 + 32;
+   var bottomLimit = (16.4 * 10);
    if (x < leftLimit) { x = leftLimit; }
    if (x > rightLimit) { x = rightLimit; }
    if (y < topLimit) { y = topLimit; }
