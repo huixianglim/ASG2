@@ -85,6 +85,22 @@ body {
    height: calc( var(--grid-cell)* 1.05);
    position: absolute;
    overflow:hidden;
+   left: 20%;
+   top:20%;
+}
+.you-container{
+   width: calc( var(--grid-cell)* 2.3 );
+   height: calc( var(--grid-cell)* 2 );
+   position: absolute;
+   overflow:hidden;
+   left: 20%;
+   bottom:25%;
+}
+.monster-container{
+   width: calc( var(--grid-cell)* 2.3 );
+   height: calc( var(--grid-cell)* 2 );
+   position: absolute;
+   overflow:hidden;
    left: 65%;
    top:10%;
 }
@@ -171,6 +187,7 @@ body {
 .entity-name{
    color: white;
    font-size: 1vw;
+   margin: 0 0 0 0;
 }
 
 @keyframes fadeInFromNone {

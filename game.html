@@ -14,27 +14,26 @@
 <div class="frame">
     
     <div class="battle" battle-activation = "false">
-        
-        <div class="you">
-            <div class="you_spritesheet pixel-art" idle = "true"></div>
+        <div class="you-container">
             <h1 class="entity-name">You</h1>
             <div style="position: relative">
-              <div class="grey-health">
+              <div class="grey-health"></div>
+                <div id="yourHealthBar"></div>
             </div>
-            <div id="yourHealthBar"></div>
-            </div>
+        <div class="you">
+            <div class="you_spritesheet pixel-art" idle = "true"></div>
         </div>
-        <div class="monster">
-           
-            
-            <div class="monster_spritesheet pixel-art" idle = "true"></div>
+        </div>
+        <div class="monster-container">
             <h1 class="entity-name">Karthic phone</h1>
             <div style="position: relative">
-              <div class="grey-health">
+              <div class="grey-health"></div>
+                <div id="enemyHealthBar"></div>
             </div>
-            <div id="enemyHealthBar"></div>
-            </div>
-       
+            <div class="monster">
+            <div class="monster_spritesheet pixel-art" idle = "true"></div>
+         
+       </div>
         </div>
         <div class="attack-text"></div>
         <div class="attack-bar">
