@@ -240,3 +240,12 @@ document.querySelector(".dpad-left").addEventListener("mouseover", (e) =>{ handl
 document.querySelector(".dpad-up").addEventListener("mouseover", (e) => handleDpadPress(directions.up));
 document.querySelector(".dpad-right").addEventListener("mouseover", (e) => handleDpadPress(directions.right));
 document.querySelector(".dpad-down").addEventListener("mouseover", (e) => handleDpadPress(directions.down));
+
+let clicked = false
+addEventListener('click', () => {
+   if (!clicked){
+      audio.Map.play()
+      clicked = true
+   }
+   
+})
