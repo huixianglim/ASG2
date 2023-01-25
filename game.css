@@ -3,14 +3,28 @@
    --grid-cell: calc( var(--pixel-size) * 16);
    --bg: #9fa7e4;
 }
-
+@media( min-width: 700px ) {
+   :root {
+      --pixel-size: 3px;
+   }
+}
+@media( min-width: 1000px ) {
+   :root {
+      --pixel-size: 4px;
+   }
+}
+/* @media( min-width: 1000px ) {
+   :root {
+      --pixel-size: 5px;
+   }
+} */
 
 html, body {
    height: 100%;
 }
 
 body {
-   background: url(https://64.media.tumblr.com/bfe90ef1addacef577bc2813d1cfd001/103c467264edbcfe-3b/s1280x1920/e20b89b76df42c3877f5753abf7c997611adc93b.gif);
+   background: url("https://cdn.wallpapersafari.com/83/72/vi9s3k.gif");
    display: flex;
    align-items: center;
    justify-content: center;
@@ -33,18 +47,19 @@ body {
    width: calc(var(--pixel-size) * 160);
    height: calc(var(--pixel-size) * 144);
    overflow: hidden;
-   background: url(https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/01073865290819.5d61d475f0072.jpg);
-   position:relative;
+   background: url("https://i.pinimg.com/originals/bc/24/b2/bc24b2dd54aeb8d2cb19593a6fef29f0.gif");
+   background-repeat: no-repeat;
+   background-size: cover;
 }
 
 .map {
    -ms-interpolation-mode: nearest-neighbor;
        image-rendering: -moz-crisp-edges;
        image-rendering: pixelated;
-   background-image: url("https://i.pinimg.com/736x/08/43/c1/0843c1e63b526ea0380968958eeda5e2.jpg");
+   background-image: url("./Images/mappp.png");
    background-size: 100%;
    width: calc(13 * var(--grid-cell));
-   height: calc(10 * var(--grid-cell));
+   height: calc(11.7 * var(--grid-cell));
    position: relative;
 }
 
@@ -66,16 +81,16 @@ body {
    pointer-events: none;
 }
 .monster {
-   width: calc( var(--grid-cell)* 2 );
-   height: calc( var(--grid-cell)* 2 );
+   width: calc( var(--grid-cell)* 1 );
+   height: calc( var(--grid-cell)* 1.05);
    position: absolute;
    overflow:hidden;
    left: 65%;
    top:10%;
 }
 .you {
-   width: calc( var(--grid-cell)* 2 );
-   height: calc( var(--grid-cell)* 2 );
+   width: calc( var(--grid-cell)* 1 );
+   height: calc( var(--grid-cell)* 1.05 );
    position: absolute;
    overflow:hidden;
    left: 20%;
@@ -83,18 +98,18 @@ body {
 }
 .you_spritesheet {
    position: absolute;
-   background: url("https://assets.codepen.io/21542/DemoRpgCharacter.png") no-repeat no-repeat;
+   background: url("./Images/knight.png") no-repeat no-repeat;
    background-size: 100%;
-   width: calc( var(--grid-cell)* 8 );
-   height: calc( var(--grid-cell)* 8 );
+   width: calc( var(--grid-cell)* 4 );
+   height: calc( var(--grid-cell)* 4 );
    
 }
 .monster_spritesheet {
    position: absolute;
-   background: url("https://assets.codepen.io/21542/DemoRpgCharacter.png") no-repeat no-repeat;
+   background: url("./Images/knight.png") no-repeat no-repeat;
    background-size: 100%;
-   width: calc( var(--grid-cell)* 8 );
-   height: calc( var(--grid-cell)* 8 );
+   width: calc( var(--grid-cell)* 4);
+   height: calc( var(--grid-cell)* 4 );
 }
 .you_spritesheet[idle = "true"],.monster_spritesheet[idle = "true"]{
    -webkit-animation: walkAnimation 0.6s steps(4) infinite;
@@ -154,23 +169,24 @@ body {
    margin-top: 0;
 }
 .entity-name{
+   color: white;
    font-size: 1vw;
 }
+
 @keyframes fadeInFromNone {
-   0%{
-      background-color: black;
-      display: none;
-      opacity: 0;
-   }
-   1% {
-      background-color: black;
-      display: block;
+   0% {
+       display: none;
        opacity: 0;
    }
-   100%{
-      background-color: black;
-      display: block;
-      opacity: 1;
+
+   1% {
+       display: block;
+       opacity: 0;
+   }
+
+   100% {
+       display: block;
+       opacity: 1;
    }
 }
 
@@ -183,26 +199,26 @@ body {
    position: absolute;
    left:-50%;
    top:-2%;
-   background: url("/Images/shadow.png") no-repeat no-repeat center;
+   background: url("./Images/shadow.png") no-repeat no-repeat center;
    background-size: 65%;
 }
 
 .character_spritesheet {
    position: absolute;
-   background: url("https://assets.codepen.io/21542/DemoRpgCharacter.png") no-repeat no-repeat;
+   background: url("./Images/knight.png") no-repeat no-repeat;
    background-size: 100%;
-   width: calc( var(--grid-cell)* 8 );
-   height: calc( var(--grid-cell)* 8 );
+   width: calc( var(--grid-cell)* 4 );
+   height: calc( var(--grid-cell)* 4 );
 }
 
 .character[facing="right"] .character_spritesheet {
-   background-position-y: calc( var(--pixel-size) * -32 );
+   background-position-x: calc( var(--pixel-size) * -48 );
 }
 .character[facing="up"] .character_spritesheet {
-   background-position-y: calc( var(--pixel-size) * -64 );
+   background-position-x: calc( var(--pixel-size) * -16 );
 }
 .character[facing="left"] .character_spritesheet {
-   background-position-y: calc( var(--pixel-size) * -96 );
+   background-position-x: calc( var(--pixel-size) * -32 );
 }
 .character[walking="true"] .character_spritesheet {
    -webkit-animation: walkAnimation 0.6s steps(4) infinite;
@@ -214,7 +230,7 @@ body {
     transform: translate3d(0%,0%,0);
   }
   to {
-    transform: translate3d(-100%,0%,0);
+    transform: translate3d(0%,-100%,0);
   }
 }
 
@@ -223,7 +239,7 @@ body {
     transform: translate3d(0%,0%,0);
   }
   to {
-    transform: translate3d(-100%,0%,0);
+    transform: translate3d(0%,-100%,0);
   }
 }
 
@@ -314,28 +330,4 @@ body {
    top:calc(var(--pixel-size) * 2);
    right:calc(var(--pixel-size) * 2);
    width: calc(var(--pixel-size) * 75)
-}
-@media (max-width: 400px) {
-   .entity-name{
-      font-size: 2.3vw;
-   }
-   #enemyHealthBar,#yourHealthBar{
-      height: 1.5vw;
-   }
-   :root{
-   --pixel-size :2px
-   }
-
-}
-@media( min-width: 700px ) {
-   :root {
-      --pixel-size: 3px;
-   }
-
-}
-@media( min-width: 1000px ) {
-   :root {
-      --pixel-size: 4px;
-   }
-   
 }
