@@ -67,7 +67,7 @@ body {
 .character {
    width: calc( var(--grid-cell)* 1 );
    height: calc( var(--grid-cell)* 1.05 );
-   position: absolute;
+   position: relative;
    overflow:hidden;
 }
 
@@ -95,10 +95,10 @@ body {
    width: calc( var(--grid-cell)* 2 );
    height: calc( var(--grid-cell)* 2 );
    position: absolute;
-   left:0;
-   top:0;
-   background: url("https://assets.codepen.io/21542/DemoRpgCharacterShadow.png") no-repeat no-repeat;
-   background-size: 100%;
+   left:-50%;
+   top:-2%;
+   background: url("/Images/shadow.png") no-repeat no-repeat center;
+   background-size: 65%;
 }
 
 .character_spritesheet {
