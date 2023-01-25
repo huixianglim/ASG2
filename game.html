@@ -10,15 +10,50 @@
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
+<!-- partial:index.partial.html -->
+<!-- 
+   see the video tutorial for how this kind of thing works:
+   https://youtu.be/H3Fn33lYuE0
+-->
+<div class="frame">
+    
+    <div class="battle" battle-activation = "false">
+        <div class="you">
+            <div class="you_spritesheet pixel-art" idle = "true"></div>
+            <h1 class="entity-name">You</h1>
+            <div style="position: relative">
+              <div class="grey-health">
+            </div>
+            <div id="yourHealthBar"></div>
+            </div>
+        </div>
 
-<div class="frame"> <!--frame-->
+        <div class="monster">
+           
+            
+            <div class="monster_spritesheet pixel-art" idle = "true"></div>
+            <h1 class="entity-name">Karthic phone</h1>
+            <div style="position: relative">
+              <div class="grey-health">
+            </div>
+            <div id="enemyHealthBar"></div>
+            </div>
+       
+        </div>
+        <div class="attack-text"></div>
+        <div class="attack-bar">
+            <button class="attacks" value="tackle">Tackle</button>
+            <button class="attacks" value="water punch">Water Punch</button>
+            <div class="health-bar">Health: 20/20</div>
+        </div>
+    </div>
    <div class="corner_topleft"></div>
    <div class="corner_topright"></div>
    <div class="corner_bottomleft"></div>
    <div class="corner_bottomright"></div>
    
    
-   <div class="camera"> <!--what you are viewing-->
+   <div class="camera">
       <div class="map pixel-art">
          <div class="character" facing="down" walking="true">
             <div class="shadow pixel-art"></div>
@@ -27,7 +62,7 @@
       </div>
 
 
-      <div class="dpad"> <!--the movement buttons for mobile-->
+      <div class="dpad">
          <div class="DemoDirectionUI flex-center">
                <button class="dpad-button dpad-left">
                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 13 13" shape-rendering="crispEdges">
@@ -82,6 +117,7 @@
       
    </div>
 </div>
+<!-- partial -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script  src="./game.js"></script>

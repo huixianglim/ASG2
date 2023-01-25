@@ -17,10 +17,113 @@ const placeCharacter = () => {
       if (held_direction === directions.left) {x -= speed;}
       if (held_direction === directions.down) {y += speed;} 
       if (held_direction === directions.up) {y -= speed;}
+      if (Math.random() < 0.005){
+         initialiseGame();
+         var end = false
+          var monster = {health:20, //creating of 2 classes, monster and you(aka the player)
+             attacks:[{
+                "name":"slash",
+                "damage":1.5
+             },
+             {
+                "name":"bite",
+                "damage":2
+             }
+          ]
+          }
+          var you = {health:20,
+             attacks:[{
+                "name":"tackle",
+                "damage":1.5
+             },
+             {
+                "name":"water punch",
+                "damage":2.5
+             }
+          ]
+          }
+          let yourattacks = ["tackle","water punch"] //array of ur attacks to help get the damage later on
+          $("#enemyHealthBar").css({"width":`${monster.health/20*100}%`}) //setting of the enemy healthbar 
+          $("#yourHealthBar").css({"width":`${you.health/20*100}%`})
+          $(".health-bar").html(`Healthbar: ${you.health}/20`)
+          $(".attacks").unbind().on("click", async (e)=>{ //unbind to only take note of one click
+             $("attack-text").hide() //hide the attack-text or dialogue
+             let random  = Math.floor(Math.random() * 2) //enemy random attacks
+             console.log(monster.attacks[random])
+             let monster_attack = monster.attacks[random].name
+             let monster_damage = monster.attacks[random].damage            
+             let attack = e.target.value
+             let index = yourattacks.indexOf(attack) 
+             let damage = you.attacks[index].damage
+             if (Math.random()<0.1){
+                damage+=1; //random crit chance for monsters
+             }
+             if (Math.random()<0.09){
+                monster_damage+=1; //random crit chance for monsters
+             }
+             you.health -= monster_damage
+             monster.health -= damage
+             $(".attack-text").html(`<p>The monster used ${monster_attack} and has done ${monster_damage} damage</p>`)
+             $("#yourHealthBar").css({"width":`${you.health /20*100}%`})
+             $(".attack-text").show()
+             $(".attack-bar").hide()
+             $(".attack-text").css({"pointer-events":"none"}) 
+             setTimeout(() => { //timeout to show ur damage done
+                $(".attack-text").html(`<p>You used ${attack} and has done ${damage} damage</p>`)
+                $("#enemyHealthBar").css({"width":`${monster.health /20*100}%`})
+                $(".attack-text").css({"pointer-events":"all", "cursor": "pointer"})
+              }, 1000)
+              $(".attack-text").click(()=>{
+                resume()
+              })
+  
+              $(".health-bar").html(`Healthbar: ${you.health}/20`) 
+ 
+              if (you.health<=0 || monster.health<=0 ){
+                end = true;
+                $(".attack-text").html("Game over"); //if health is lower than 0, display game over text
+                $(".attack-text").on("click",()=>{
+                   if (end){ //onclick to end game
+                      endGame();
+                   }
+                });
+ 
+                return
+              }
+             
+          })
+       }
       character.setAttribute("facing", held_direction);
    }
    character.setAttribute("walking", held_direction ? "true" : "false"); //if held direction is not null, walking set to true
-   
+   //game functions
+   function initialiseGame(){ //reset the game settings
+      $(".battle").attr("battle-activation","true")
+         speed = 0;
+         character.setAttribute("walking","false")
+         $(".battle").css({"opacity":1})
+         $(".dpad").css({"pointer-events":"none"})
+         $(".battle").css(({"pointer-events":"all"}))
+   }
+   function endGame(){
+      end = false //set the default of end back to false
+      $(".attack-bar").show() //show attack bar 
+      you.health = 20;
+      $(".attack-text").html("");
+      $(".attack-text").hide(); //hide the dialogue at the start
+      monster.health = 20; //set monster health back to max
+      $(".battle").attr("battle-activation","false")
+      speed = 1; //set back the speed to allow movement
+      $(".battle").css({"opacity":0})
+      $(".dpad").css({"pointer-events":"all"}) //allow movement in normal game
+      $(".battle").css(({"pointer-events":"none"})) //set the pointer events in the fighting mode to none
+   }
+
+   function resume(){ //resume the game 
+      $(".attack-text").hide();
+      $(".attack-bar").show()
+   }
+   // end of game functions
    
    //Limits (gives the illusion of walls)
    var leftLimit = 8;
@@ -73,13 +176,13 @@ document.addEventListener("keydown", (e) => { //if keydown is in the directions 
 })
 document.addEventListener("keydown",(e)=>{ //added running
    
-   if (e.key == "Shift"){
+   if (e.key == "Shift" && $(".battle").attr("battle-activation") == "false"){
       speed = 1.5
    }
 
 })
 document.addEventListener("keyup",(e)=>{ //change the speed back to default
-   if (e.key == "Shift"){
+   if (e.key == "Shift" && $(".battle").attr("battle-activation") == "false"){
       speed = 1
    }
 })
