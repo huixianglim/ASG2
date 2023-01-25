@@ -1,4 +1,3 @@
-/*game page*/
 :root {
    --pixel-size: 2px;
    --grid-cell: calc( var(--pixel-size) * 16);
@@ -57,7 +56,7 @@ body {
    -ms-interpolation-mode: nearest-neighbor;
        image-rendering: -moz-crisp-edges;
        image-rendering: pixelated;
-   background-image: url("/Images/mappp.png");
+   background-image: url("./Images/mappp.png");
    background-size: 100%;
    width: calc(13 * var(--grid-cell));
    height: calc(11.7 * var(--grid-cell));
@@ -69,6 +68,109 @@ body {
    height: calc( var(--grid-cell)* 1.05 );
    position: relative;
    overflow:hidden;
+}
+.battle{
+   position:absolute;
+   background: url("https://cdnblog.picsart.com/2021/10/mid_2-1-780x520.jpg?to=max&r=780&q=90") center;
+   right: 0;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   opacity: 0%;
+   z-index: 100;
+   pointer-events: none;
+}
+.monster {
+   width: calc( var(--grid-cell)* 1 );
+   height: calc( var(--grid-cell)* 1.05);
+   position: absolute;
+   overflow:hidden;
+   left: 65%;
+   top:10%;
+}
+.you {
+   width: calc( var(--grid-cell)* 1 );
+   height: calc( var(--grid-cell)* 1.05 );
+   position: absolute;
+   overflow:hidden;
+   left: 20%;
+   bottom:25%;
+}
+.you_spritesheet {
+   position: absolute;
+   background: url("./Images/knight.png") no-repeat no-repeat;
+   background-size: 100%;
+   width: calc( var(--grid-cell)* 4 );
+   height: calc( var(--grid-cell)* 4 );
+   
+}
+.monster_spritesheet {
+   position: absolute;
+   background: url("./Images/knight.png") no-repeat no-repeat;
+   background-size: 100%;
+   width: calc( var(--grid-cell)* 4);
+   height: calc( var(--grid-cell)* 4 );
+}
+.you_spritesheet[idle = "true"],.monster_spritesheet[idle = "true"]{
+   -webkit-animation: walkAnimation 0.6s steps(4) infinite;
+   animation: walkAnimation 0.6s steps(4) infinite;
+}
+.attack-bar{
+   position: absolute;
+   background-color: white;
+   font-size: calc(var(--pixel-size)*3);
+   bottom:0;
+   width:100%;
+   height:25%;
+   display: flex;
+}
+.attack-text{
+   font-family: 'Press Start 2P', cursive;
+   position: absolute;
+   background-color: white;
+   font-size: calc(var(--pixel-size)*3);
+   box-sizing: border-box;
+   padding-top: 2%;
+   padding-left: 2%;
+   bottom:0;
+   width:100%;
+   height:25%;
+}
+
+.attacks,.health-bar{
+   font-family: 'Press Start 2P', cursive;
+   font-size: calc(var(--pixel-size)*3);
+   
+   margin-left: 5%;
+}
+.attacks{
+   width:20%;
+   height:80%;
+   margin-top: 1%;
+}
+.health-bar{
+   margin-top: 10%;
+}
+.attacks:hover{
+   transform: scale(1.25);
+}
+
+#enemyHealthBar,#yourHealthBar{
+   height: 0.5vw;
+   background-color: green;
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+}
+.grey-health{
+   height: 0.5vw; 
+   background-color: #ccc; 
+   margin-top: 0;
+}
+.entity-name{
+   color: white;
+   font-size: 1vw;
 }
 
 @keyframes fadeInFromNone {
@@ -97,13 +199,13 @@ body {
    position: absolute;
    left:-50%;
    top:-2%;
-   background: url("/Images/shadow.png") no-repeat no-repeat center;
+   background: url("./Images/shadow.png") no-repeat no-repeat center;
    background-size: 65%;
 }
 
 .character_spritesheet {
    position: absolute;
-   background: url("/Images/knight.png") no-repeat no-repeat;
+   background: url("./Images/knight.png") no-repeat no-repeat;
    background-size: 100%;
    width: calc( var(--grid-cell)* 4 );
    height: calc( var(--grid-cell)* 4 );
@@ -229,4 +331,3 @@ body {
    right:calc(var(--pixel-size) * 2);
    width: calc(var(--pixel-size) * 75)
 }
-/*end of game page*/
