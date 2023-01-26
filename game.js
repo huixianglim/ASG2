@@ -63,12 +63,26 @@ const placeCharacter = () => {
              }
              you.health -= monster_damage
              monster.health -= damage
+             $(".monster_spritesheet").css({"transition": "all 0.3s", "filter": "brightness(1.75)", "background": "url('./Images/Beast.png')", "background-size": "100%", "width": "calc( var(--grid-cell)* 4)", "height": "calc( var(--grid-cell)* 4 )"})
+             $(".monster_spritesheet[idle = 'true']").css({"animation": "hitAnimation 0.6s steps(4) infinite"})
+                setTimeout(() =>{
+                  $(".monster_spritesheet").css({"transition": "all 0.3s", "filter": "brightness(1)", "background": "url('./Images/Beast.png')", "background-size": "100%", "width": "calc( var(--grid-cell)* 4)", "height": "calc( var(--grid-cell)* 4 )"})
+                  $(".monster_spritesheet[idle = 'true']").css({"animation": "walkAnimation 0.6s steps(4) infinite"})
+                }, 500)
+
              $(".attack-text").html(`<p>The monster used ${monster_attack} and has done ${monster_damage} damage</p>`)
              $("#yourHealthBar").css({"width":`${you.health /20*100}%`})
              $(".attack-text").show()
              $(".attack-bar").hide()
              $(".attack-text").css({"pointer-events":"none"}) 
+
              setTimeout(() => { //timeout to show ur damage done
+               
+               $(".you_spritesheet[idle = 'true']").css({"transition": "all 0.3s", "filter": "brightness(1.75)", "animation": "hitAnimation 0.6s steps(4) infinite"})
+                setTimeout(() =>{
+                  $(".you_spritesheet[idle = 'true']").css({"transition": "all 0.3s", "filter": "brightness(1)", "animation": "walkAnimation 0.6s steps(4) infinite"})
+                }, 500)
+
                 $(".attack-text").html(`<p>You used ${attack} and has done ${damage} damage</p>`)
                 $("#enemyHealthBar").css({"width":`${monster.health /20*100}%`})
                 $(".attack-text").css({"pointer-events":"all", "cursor": "pointer"})

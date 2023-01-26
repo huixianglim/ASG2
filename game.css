@@ -135,6 +135,7 @@ body {
    -webkit-animation: walkAnimation 0.6s steps(4) infinite;
    animation: walkAnimation 0.6s steps(4) infinite;
 }
+
 .attack-bar{
    position: absolute;
    background-color: white;
@@ -263,6 +264,15 @@ body {
     transform: translate3d(0%,-100%,0);
   }
 }
+
+@keyframes hitAnimation {
+   from {
+     transform: translate3d(0%,0%,0);
+   }
+   to {
+     transform: translate3d(-100%,0%,0);
+   }
+ }
 
 .dpad {
    position:absolute;
