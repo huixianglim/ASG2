@@ -24,7 +24,7 @@ html, body {
 }
 
 body {
-   background: url("https://cdn.wallpapersafari.com/83/72/vi9s3k.gif");
+   background: url("./Images/starsky.gif");
    display: flex;
    align-items: center;
    justify-content: center;
@@ -47,15 +47,17 @@ body {
    width: calc(var(--pixel-size) * 160);
    height: calc(var(--pixel-size) * 144);
    overflow: hidden;
-   background: url("https://i.pinimg.com/originals/bc/24/b2/bc24b2dd54aeb8d2cb19593a6fef29f0.gif");
+   background: url("./Images/skydragon.gif");
    background-repeat: no-repeat;
    background-size: cover;
+   image-rendering: pixelated;
+   
 }
 
 .map {
    -ms-interpolation-mode: nearest-neighbor;
-       image-rendering: -moz-crisp-edges;
-       image-rendering: pixelated;
+   image-rendering: -moz-crisp-edges;
+   image-rendering: pixelated;
    background-image: url("./Images/mappp.png");
    background-size: 100%;
    width: calc(13 * var(--grid-cell));
@@ -71,7 +73,8 @@ body {
 }
 .battle{
    position:absolute;
-   background: url("https://cdnblog.picsart.com/2021/10/mid_2-1-780x520.jpg?to=max&r=780&q=90") center;
+   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("./Images/galaxy.jpg") center no-repeat;
+   background-size: cover;
    right: 0;
    top: 0;
    left: 0;
@@ -79,14 +82,15 @@ body {
    opacity: 0%;
    z-index: 100;
    pointer-events: none;
+   image-rendering: pixelated;
 }
 .monster {
    width: calc( var(--grid-cell)* 1 );
-   height: calc( var(--grid-cell)* 1.05);
+   height: calc( var(--grid-cell)* 1);
    position: absolute;
    overflow:hidden;
    left: 20%;
-   top:20%;
+   top:30%;
 }
 .you-container{
    width: calc( var(--grid-cell)* 2.3 );
@@ -122,7 +126,7 @@ body {
 }
 .monster_spritesheet {
    position: absolute;
-   background: url("./Images/knight.png") no-repeat no-repeat;
+   background: url("./Images/Beast.png") no-repeat no-repeat;
    background-size: 100%;
    width: calc( var(--grid-cell)* 4);
    height: calc( var(--grid-cell)* 4 );
@@ -173,7 +177,7 @@ body {
 
 #enemyHealthBar,#yourHealthBar{
    height: 0.5vw;
-   background-color: green;
+   background-color: rgb(0, 198, 0);
    position: absolute;
    top: 0;
    left: 0;
