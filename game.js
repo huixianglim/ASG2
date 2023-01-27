@@ -49,7 +49,6 @@ const placeCharacter = () => {
           $(".attacks").unbind().on("click", async (e)=>{ //unbind to only take note of one click
              $("attack-text").hide() //hide the attack-text or dialogue
              let random  = Math.floor(Math.random() * 2) //enemy random attacks
-             console.log(monster.attacks[random])
              let monster_attack = monster.attacks[random].name
              let monster_damage = monster.attacks[random].damage            
              let attack = e.target.value
