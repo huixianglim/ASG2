@@ -11,8 +11,32 @@ $(document).ready(()=>{
         menuLinks.classList.toggle('active');
     });
     var email = false;
+    var name = false
     var password = false
     const APIKEY = "63ca7160969f06502871b054";
+
+    $("#nameInput").on("input",()=>{
+      
+        let value = $("#nameInput").val()
+        
+        if (value.length>5){
+            name = true;
+            $(".name").html(`Name is valid`)
+           
+        }
+        else{
+            $(".name").html(`Name is too short!`)
+            name = false;
+
+        }
+        if (email&&password&&name){
+            $("#Submit").css({"pointer-events": "all"})
+        }
+        else{
+            $("#Submit").css({"pointer-events": "none"})
+        }
+
+    })
     $("#emailInput").on("input",(e)=>{
         let value = $("#emailInput").val()
         if (value.match(
@@ -25,7 +49,7 @@ $(document).ready(()=>{
             $(".email").html(`Email is not valid`)
             email= false
         }
-        if (email&&password){
+        if (email&&password&&name){
             $("#Submit").css({"pointer-events": "all"})
         }
         else{
@@ -34,9 +58,7 @@ $(document).ready(()=>{
 
     })
     $("#passwordInput").on("input",()=>{
-        console.log("email:",email)
-        console.log("password:",password)
-        console.log("check:",email&&password)
+
         let value = $("#passwordInput").val()
         
         if (value.length>5){
@@ -49,7 +71,7 @@ $(document).ready(()=>{
             password = false;
 
         }
-        if (email&&password){
+        if (email&&password&&name){
             $("#Submit").css({"pointer-events": "all"})
         }
         else{
@@ -60,11 +82,12 @@ $(document).ready(()=>{
     })
   
     $("#Submit").on("click",()=>{
-        let emailValue = $("#emailInput").val();
-        let passwordValue = $("#passwordInput").val();
+   
        var jsondata ={
-        "email":emailValue,
-        "password":passwordValue
+        "name":$("#nameInput").val(),
+        "email":$("#emailInput").val(),
+        "password":$("#passwordInput").val(),
+        "admin":false
        }
         
         let post = {
@@ -78,7 +101,29 @@ $(document).ready(()=>{
               "cache-control": "no-cache"
             },
             "processData": false,
-            "data": JSON.stringify(jsondata)
+            "data": JSON.stringify(jsondata),
+            "error" : function(){
+                let exists = false
+                let settings = {
+                    "async": true,
+                    "crossDomain": true,
+                    "url": "https://idweek14-d843.restdb.io/rest/login",
+                    "method": "GET", //[cher] we will use GET to retrieve info
+                    "headers": {
+                      "content-type": "application/json",
+                      "x-apikey": APIKEY,
+                      "cache-control": "no-cache"
+                    },
+                    
+                  }
+                  $.ajax(settings).done(function (response) {
+                    for (var i = 0; i < response.length; i++) {
+                        if (response[i].email == $("#emailInput").val()){
+                            $(".email").html("Email already taken!")
+                        }
+                    }
+                  })
+            }
             }
     $.ajax(post).done((response)=>{
         localStorage.setItem("email",$("#emailInput").val())
