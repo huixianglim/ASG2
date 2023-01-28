@@ -53,7 +53,39 @@ a{
 
 
 /* Main page */
+body.home{
+  background: url("Images/starsky.gif") ;
+}
+.parallax{
+  width: 100%;
+  height:100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.parallax > h1{
+  position: absolute;
+  color: white;
+  font-size: 5vw;
+  top:50%;
+}
+.parallax > img{
+  position: absolute;
+  font-size: 5vw;
+  top: 20%;
+  z-index: 10;
+}
+#sword{
+  top:100%;
+}
+.parallax > h2{
+  position: absolute;
+  font-size: 4vw;
+  color: white;
+  top:30%;
+}
 .homepage-main-banner {
   height: 90vh;
   width: 100%;
