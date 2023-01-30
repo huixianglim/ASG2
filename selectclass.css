@@ -3,6 +3,9 @@
     --grid-cell: calc( var(--pixel-size) * 16);
     --bg: #9fa7e4;
   }
+  body{
+    margin: 0;
+  }
 
   /* NAVBAR global */
   .navbar{
