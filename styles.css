@@ -72,8 +72,27 @@ section{
   justify-content: center;
   align-items: center;
   width: 100vw;
+  position: relative;
 
 }
+.gameShow{
+  position: absolute;
+  z-index: 5;
+  background:rgba(255, 255, 255, 0.2) ;
+  box-shadow: 0 4px 14px  rgba(0,0, 0, 0.5) ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20vw;
+  height: 20vw;
+  pointer-events: none;
+}
+
+.gameShow img{
+  width: 80%;
+  height: 80%;
+}
+
 section.title{
   flex-direction: column;
 }
@@ -146,7 +165,33 @@ section:nth-child(6){
 }
 section h1{
   font-size: 60px;
+  color: #0e3742;
+  width: 100%;
+  text-align: center;
+  line-height: 0.7em;
+  outline: none;
+  animation: animate 5s linear infinite;
+  
 }
+
+@keyframes animate{
+  0%,18%,20%,50.1%,60%,65.1%,80%,90.1%,92%{
+    color: #0e3742;
+    text-shadow: none;
+  }
+  18.1%,20.1%,50%,60.1%,65%,80.1%,90%,92.1%,100%{
+    color:#fff;
+    text-shadow: 0 0 10px #03bcf4,
+    0 0 20px #03bcf4,
+    0 0 40px #03bcf4,
+    0 0 80px #03bcf4,
+    0 0 160px #03bcf4,
+    0 0 20px #03bcf4;
+
+  
+  }
+}
+
 section h2{
   font-size: 40px;
   text-align: center;
