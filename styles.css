@@ -109,48 +109,6 @@ body.home{
   border-radius: 20px;
 }
 
-.selectclass-main-banner{
-  height: 90vh;
-  width: 100%;
-  background: url("https://i.pinmg.com/originals/97/e9/79/97e979731beadb50be38e6e273ebfeef.gif");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-}
-
-.selectclass-main-banner h1{
-  color: white;
-}
-
-.campfire{
-  /* border: 1px solid red; */
-  width: 30%;
-  height: 60vh;
-  background: url("./Images/fire.gif");
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: absolute;
-  background-position: center;
-  top: 35%;
-  z-index: 9999;
-}
-
-.campfire-knight{
-  /* border: 1px solid red; */
-  width: 15%;
-  height: 25vh;
-  background: url("./Images/knightsingle.png");
-  image-rendering: pixelated;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: absolute;
-  background-position: center;
-  top: 57%;
-  left: 18%;
-}
 
 
 /* Login page */

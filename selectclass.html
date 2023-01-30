@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="selectclass.css">
 </head>
 <body>
     <nav class="navbar">
@@ -38,12 +39,93 @@
             </div>
         </nav>
 
-        <div class="selectclass-main-banner">
-            <h1>Choose your class</h1>
-            <div class="campfire"></div>
-            <div class="campfire-knight"></div>
+        <div class="selectclass-container">
+            <h1>Select your class</h1>
+
+            <div class="character" amimation="false">
+                <div class="character_spritesheet" idle="true"></div>
+                <div class="shadow"></div>
+            </div>
+            <div class="smoke-wrap" amimation="false">
+                <img class="smoke" src="./Images/smoke.png" alt="smoke">
+            </div>
+            <div class="smoke-wrap" amimation="false">
+                <img class="smoke2" src="./Images/smoke.png" alt="smoke">
+            </div>
+            <div class="smoke-wrap" amimation="false">
+                <img class="smoke3" src="./Images/smoke.png" alt="smoke">
+            </div>
+            
+            <div class="character-list">
+                <div class="character-button-k">
+                    <a href="#">
+                        
+                    </a>
+                </div>
+
+                <div class="character-button-n">
+                    <a href="#">
+                        
+                    </a>
+                </div>
+
+                <div class="character-button-t">
+                    <a href="#">
+                        
+                    </a>
+                </div>
+
+            </div>
+
+            
         </div>
 
+        
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      
+        <script>
+            const chars = ["./Images/knight.png", "./Images/darkninja.png", "./Images/tank.png"];
+            
+            $(".character-button-k a").on("click", function(){
+            let char = chars[0]
+            $(".character_spritesheet").css({"background":`url(${char}) no-repeat no-repeat`, "position":"absolute", "background-size":"100%", "width":"calc( var(--grid-cell)* 4 )", "height":"calc( var(--grid-cell)* 4 )", "image-rendering":"pixelated"})
+            $(".character, .smoke-wrap").attr("animation","true")
+            if ($(".character").attr("animation") ==  "true"){
+                setTimeout(()=>{
+                $(".character").attr("animation","false")
+                console.log("hi")},200)
+            }
+            });
+
+            $(".character-button-n a").on("click", function(){
+            let char = chars[1]
+            $(".character_spritesheet").css({"background":`url(${char}) no-repeat no-repeat`, "position":"absolute", "background-size":"100%", "width":"calc( var(--grid-cell)* 4 )", "height":"calc( var(--grid-cell)* 4 )", "image-rendering":"pixelated"})
+            $(".character").attr("animation","true")
+            if ($(".character").attr("animation") ==  "true"){
+                setTimeout(()=>{
+                $(".character").attr("animation","false")
+                console.log("hi")},200)
+            }
+            });
+
+            $(".character-button-t a").on("click", function(){
+            let char = chars[2]
+            $(".character_spritesheet").css({"background":`url(${char}) no-repeat no-repeat`, "position":"absolute", "background-size":"100%", "width":"calc( var(--grid-cell)* 4 )", "height":"calc( var(--grid-cell)* 4 )", "image-rendering":"pixelated"})
+            $(".character, .smoke-wrap").attr("animation","true")
+            if ($(".character").attr("animation") ==  "true"){
+                setTimeout(()=>{
+                $(".character").attr("animation","false")
+                console.log("hi")},200)
+            }
+            });
+
+
+
+
+        </script>
+      
         <script src='script.js'></script>
 </body>
 </html>
