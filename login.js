@@ -19,7 +19,8 @@ $(document).ready(()=>{
               return false;
             });
 
-    $("#Submit").css({"pointer-events": "none"})
+    $("#signSubmit").css({"pointer-events": "none"})
+    $("#logSubmit").css({"pointer-events": "none"})
 
     //nav bar 
     const menu = document.querySelector('#mobile-menu');
@@ -32,80 +33,82 @@ $(document).ready(()=>{
     var email = false;
     var name = false
     var password = false
+    var logemail = false;
+    var logpassword = false
     const APIKEY = "63ca7160969f06502871b054";
 
-    $("#nameInput").on("input",()=>{
+    $("#signName").on("input",()=>{
       
-        let value = $("#nameInput").val()
+        let value = $("#signName").val()
         
         if (value.length>5){
             name = true;
-            $(".name").html(`Name is valid`)
+            $(".signN").html(`Name is valid`)
            
         }
         else{
-            $(".name").html(`Name is too short!`)
+            $(".signN").html(`Name is too short!`)
             name = false;
 
         }
         if (email&&password&&name){
-            $("#Submit").css({"pointer-events": "all"})
+            $("#signSubmit").css({"pointer-events": "all"})
         }
         else{
-            $("#Submit").css({"pointer-events": "none"})
+            $("#signSubmit").css({"pointer-events": "none"})
         }
 
     })
-    $("#emailInput").on("input",(e)=>{
-        let value = $("#emailInput").val()
+    $("#signEmail").on("input",(e)=>{
+        let value = $("#signEmail").val()
         if (value.match(
             /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
           )){
-            $(".email").html(`Email is valid`)
+            $(".signE").html(`Email is valid`)
             email = true;
         }
         else{
-            $(".email").html(`Email is not valid`)
+            $(".signE").html(`Email is not valid`)
             email= false
         }
         if (email&&password&&name){
-            $("#Submit").css({"pointer-events": "all"})
+            $("#signE").css({"pointer-events": "all"})
         }
         else{
-            $("#Submit").css({"pointer-events": "none"})
+            $("#signE").css({"pointer-events": "none"})
         }
 
     })
-    $("#passwordInput").on("input",()=>{
+    $("#signPass").on("input",()=>{
 
-        let value = $("#passwordInput").val()
+        let value = $("#signPass").val()
         
         if (value.length>5){
             password = true;
-            $(".password").html(`Password is valid`)
+            $(".signP").html(`Password is valid`)
            
         }
         else{
-            $(".password").html(`Password is too short!`)
+            $(".signP").html(`Password is too short!`)
             password = false;
 
         }
         if (email&&password&&name){
-            $("#Submit").css({"pointer-events": "all"})
+            $("#signSubmit").css({"pointer-events": "all"})
         }
         else{
-            $("#Submit").css({"pointer-events": "none"})
+            $("#signSubmit").css({"pointer-events": "none"})
         }
-     console.log($("#passwordInput").val())
+     console.log($("#signPass").val())
 
     })
   
-    $("#Submit").on("click",()=>{
+    $("#signSubmit").on("click",()=>{
    
        var jsondata ={
-        "name":$("#nameInput").val(),
-        "email":$("#emailInput").val(),
-        "password":$("#passwordInput").val(),
+        "name":$("#signName").val(),
+        "email":$("#signEmail").val(),
+        "password":$("#signPass").val(),
         "admin":false
        }
         
@@ -137,7 +140,7 @@ $(document).ready(()=>{
                   }
                   $.ajax(settings).done(function (response) {
                     for (var i = 0; i < response.length; i++) {
-                        if (response[i].email == $("#emailInput").val()){
+                        if (response[i].email == $("#signEmail").val()){
                             $(".email").html("Email already taken!")
                         }
                     }
@@ -145,10 +148,102 @@ $(document).ready(()=>{
             }
             }
     $.ajax(post).done((response)=>{
-        localStorage.setItem("email",$("#emailInput").val())
+        localStorage.setItem("email",$("#signEmail").val())
+        localStorage.setItem("admin",false)
         window.location.href = "game.html";
+    })
+
+    })
+    
+    $("#logEmail").on("input",(e)=>{
+        let value = $("#logEmail").val()
+        if (value.match(
+            /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+          )){
+            $(".logE").html(`Email is valid`)
+            logemail = true;
+        }
+        else{
+            $(".logE").html(`Email is not valid`)
+            logemail= false
+        }
+        if (logemail&&logpassword){
+            $("#logSubmit").css({"pointer-events": "all"})
+        }
+        else{
+            $("#logSubmit").css({"pointer-events": "none"})
+        }
+
+    })
+    $("#logPass").on("input",()=>{
+
+        let value = $("#logPass").val()
+        
+        if (value.length>5){
+            logpassword = true;
+            $(".logP").html(`Password is valid`)
+           
+        }
+        else{
+            $(".logP").html(`Password is too short!`)
+            logpassword = false;
+
+        }
+        if (logemail&&logpassword){
+            $("#logSubmit").css({"pointer-events": "all"})
+        }
+        else{
+            $("#logSubmit").css({"pointer-events": "none"})
+        }
+     console.log($("#logPass").val())
+
+    })
+  
+    $("#logSubmit").on("click",()=>{
+   
+    
+        
+        let get = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://idweek14-d843.restdb.io/rest/login",
+            "method": "GET", //[cher] we will use post to send info
+            "headers": {
+              "content-type": "application/json",
+              "x-apikey": APIKEY,
+              "cache-control": "no-cache"
+            },
+            "processData": false,
+            }
+    $.ajax(get).done((response)=>{
+        console.log('hi')
+        let check = false;
+        let adin = false
+        for (let i =0; response[i];i++){
+            console.log(response[i].email)
+            if(response[i].password == $("#logPass").val() && response[i].email == $("#logEmail").val()){
+                    check = true;
+                    if(response[i].admin == "true"){
+                        admin = true
+                    }
+                    
+            }
+
+        }
+    
+        if (check){
+            localStorage.setItem("email",$("#logEmail").val());
+            localStorage.setItem("admin",admin);
+
+            window.location.href = "game.html"
+        }
+        else{
+            $(".validation").css({"display":"block"})
+        }
     })
 
     })
   
 })
+
+

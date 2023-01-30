@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="login">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="login.css">
 </head>
-<body>
+<body class="login">
     <nav class="navbar">
             <div class="navbar-container">
     
@@ -48,23 +48,21 @@
                       <div class="slider-tab"></div>
                    </div>
                    <div class="form-inner">
-                      <form action="#" class="login">
+                      <form class="login">
+                     
                         <div class="user-box">
-                            <input id = "nameInput"  type="text" name="" required="">
-                            <label class="name">Name</label>
+                            <input id = "logEmail"  type="text" name="" required="">
+                            <label class="logE">Email</label>
                         </div>
                         <div class="user-box">
-                            <input id = "emailInput"  type="text" name="" required="">
-                            <label class="email">Email</label>
+                            <input  id = "logPass" type="password" name="" required="" >
+                            <label class="logP">Password</label>
                         </div>
-                        <div class="user-box">
-                            <input  id = "passwordInput" type="password" name="" required="">
-                            <label class="password">Password</label>
-                        </div>
-                         
+                        <p class="validation">Either Email or Password is incorrect</p>
+
         
-                         <div class="submit-btn">
-                            <a id="Submit" href="#">
+                         <div class="submit-btn"  id="logSubmit">
+                            <a href="#">
                                 <span></span>
                                 <span></span>
                                 <span></span>
@@ -72,7 +70,6 @@
                                 Submit
                             </a>
                          </div>
-                         
         
                          <div class="signup-link">
                             Not a member? <a href="">Signup now</a>
@@ -80,19 +77,19 @@
                       </form>
                       <form action="#" class="signup">
                         <div class="user-box">
-                            <input id = "nameInput"  type="text" name="" required="">
-                            <label class="name">Name</label>
+                            <input id = "signName"  type="text" name="" required="">
+                            <label class="signN">Name</label>
                         </div>
                         <div class="user-box">
-                            <input id = "emailInput"  type="text" name="" required="">
-                            <label class="email">Email</label>
+                            <input id = "signEmail"  type="text" name="" required="">
+                            <label class="signE">Email</label>
                         </div>
                         <div class="user-box">
-                            <input  id = "passwordInput" type="password" name="" required="">
-                            <label class="password">Password</label>
+                            <input  id = "signPass" type="password" name="" required="">
+                            <label class="signP">Password</label>
                         </div>
-                         <div class="submit-btn">
-                            <a id="Submit" href="#">
+                         <div class="submit-btn" id="signSubmit" >
+                            <a href="#">
                                 <span></span>
                                 <span></span>
                                 <span></span>
