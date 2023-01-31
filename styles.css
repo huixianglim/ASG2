@@ -104,23 +104,27 @@ section:nth-child(1){
   background-image: url("Images/starsky.gif");
   
 }
-
 section:nth-child(2)[background = "true"]{
+  background: url("https://neocha-content.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/sites/2/2016/11/1041uuu-10.gif") center no-repeat;
+  background-size: cover ;
   color: white;
-  background:url("https://i.pinimg.com/originals/40/1a/4f/401a4fc4d65f0822a340d79d256fe449.gif") ;
+}
+section:nth-child(3)[background = "true"]{
+  color: white;
+  background:url("https://64.media.tumblr.com/39a0a9fc1e888b1ead027dab82d6d9e7/2763211f3a7351dc-67/s640x960/9ffa2c25fe67a3aecaf6bdf02142ba52846c4e31.gif") ;
   background-repeat: no-repeat;
   background-size:cover ;
   
 }
 
 
-section:nth-child(3)[background = "true"]{
+section:nth-child(4)[background = "true"]{
   background: center url("https://i.pinimg.com/originals/43/0e/9a/430e9abb2039e992275efb898c5948c1.gif");
   color: #fff;
   background-repeat: no-repeat;
   background-size: cover;
 }
-section:nth-child(4)[background = "true"]{
+section:nth-child(5)[background = "true"]{
   background: center url("https://i.pinimg.com/originals/ce/b5/74/ceb574258cb71c79ba07a841b38d50a8.gif");
   color: white;
   background-repeat: no-repeat;
@@ -179,6 +183,7 @@ section .cards {
   padding: 20px;
 }
 
+
 .reveal{
   position: relative;
   transform: translateX(150px);
@@ -188,6 +193,17 @@ section .cards {
 }
 .reveal.active{
   transform: translateX(0px);
+  opacity: 1;
+}
+#start.reveal{
+  position: relative;
+  transform: translateY(-150px);
+  opacity: 0;
+  transition: all 1s ease;
+
+}
+#start.reveal.active{
+  transform: translateY(0px);
   opacity: 1;
 }
 
@@ -217,4 +233,16 @@ section .cards {
 
 
 
+.aboutUs{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.aboutUs > div{
+  display: flex; 
+  flex-direction: row; 
+  justify-content: space-around; 
+  width: 20vw;
+  justify-content: center;
+}
 

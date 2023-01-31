@@ -122,7 +122,20 @@ body {
    background-size: 100%;
    width: calc( var(--grid-cell)* 4 );
    height: calc( var(--grid-cell)* 4 );
-   
+}
+.you_spritesheet[character = "ninja"] {
+   position: absolute;
+   background: url("./Images/darkninja.png") no-repeat no-repeat;
+   background-size: 100%;
+   width: calc( var(--grid-cell)* 4 );
+   height: calc( var(--grid-cell)* 4 );
+}
+.you_spritesheet[character = "tank"] {
+   position: absolute;
+   background: url("./Images/tank.png") no-repeat no-repeat;
+   background-size: 100%;
+   width: calc( var(--grid-cell)* 4 );
+   height: calc( var(--grid-cell)* 4 );
 }
 .monster_spritesheet {
    position: absolute;
@@ -232,6 +245,21 @@ body {
    width: calc( var(--grid-cell)* 4 );
    height: calc( var(--grid-cell)* 4 );
 }
+.character_spritesheet[character = "ninja"] {
+   position: absolute;
+   background: url("./Images/darkninja.png") no-repeat no-repeat;
+   background-size: 100%;
+   width: calc( var(--grid-cell)* 4 );
+   height: calc( var(--grid-cell)* 4 );
+}
+.character_spritesheet[character = "tank"] {
+   position: absolute;
+   background: url("./Images/tank.png") no-repeat no-repeat;
+   background-size: 100%;
+   width: calc( var(--grid-cell)* 4 );
+   height: calc( var(--grid-cell)* 4 );
+}
+
 
 .character[facing="right"] .character_spritesheet {
    background-position-x: calc( var(--pixel-size) * -48 );
