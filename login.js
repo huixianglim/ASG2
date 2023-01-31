@@ -220,7 +220,7 @@ $(document).ready(()=>{
     $.ajax(get).done((response)=>{
         console.log('hi')
         let check = false;
-        let adin = false
+        let admin = false
         for (let i =0; response[i];i++){
             console.log(response[i].email)
             if(response[i].password == $("#logPass").val() && response[i].email == $("#logEmail").val()){

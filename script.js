@@ -7,6 +7,7 @@ $(document).ready(()=>{
         menu.classList.toggle('is-active');
         menuLinks.classList.toggle('active');
     });
+
     window.addEventListener("scroll",reveal);
     function reveal(){
         var reveals = document.querySelectorAll('.reveal')

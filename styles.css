@@ -56,41 +56,44 @@ a{
 
 /* Main page */
 *{
-  margin: 0;
-  padding:0;
   box-sizing: border-box;
   font-family: "Poppins",sans-serif;
 
 }
 body{
   background-color: #1D212B;
-  overflow-x: hidden;
 }
 section{
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   position: relative;
+  overflow-x: hidden;
+
 
 }
-.gameShow{
-  position: absolute;
-  z-index: 5;
-  background:rgba(255, 255, 255, 0.2) ;
-  box-shadow: 0 4px 14px  rgba(0,0, 0, 0.5) ;
+.scroll{
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  width: 20vw;
-  height: 20vw;
-  pointer-events: none;
 }
-
+.scroll > a{
+  font-size: 5vw;
+  transition: all 0.3s ease-out;
+  
+}
+.scroll > a:hover{
+  transform: scale(1.25);
+}
 .gameShow img{
   width: 80%;
   height: 80%;
+}
+.scroll{
+  position: absolute;
+  bottom: 10%;
 }
 
 section.title{
@@ -102,50 +105,22 @@ section:nth-child(1){
   
 }
 
-section:nth-child(3)[background = "true"]{
+section:nth-child(2)[background = "true"]{
   color: white;
   background:url("https://i.pinimg.com/originals/40/1a/4f/401a4fc4d65f0822a340d79d256fe449.gif") ;
   background-repeat: no-repeat;
   background-size:cover ;
   
 }
-.testing{
-  display: flex;
-  min-height: 50vh;
-  align-items: center;
-  justify-content: center;
-  background-color:  white;
-}
-.testing >h1{
-  color:rgb(207,207,207);
-  text-shadow:   0px 0px 1px rgb(167,167,167),
-  0px 1px 1px rgb(167,167,167),
-  0px 2px 1px rgb(167,167,167),
-
-  1px 1px 1px rgb(167,167,167),
-  1px 2px 1px rgb(167,167,167),
-  1px 3px 1px rgb(167,167,167),
-
-  2px 2px 1px rgb(167,167,167),
-  2px 3px 1px rgb(167,167,167),
-  2px 4px 1px rgb(167,167,167);
 
 
-}
-@keyframes cycle {
-  0% { text-shadow: 0px 0px 100px rgba(11,124,199,0.5);}
-  20% { text-shadow: 0px 0px 100px rgba(168,11,199,0.5);}
-  40% { text-shadow: 0px 0px 100px rgba(11,199,96,0.5);}
-  60% { text-shadow: 0px 0px 100px rgba(199,11,11,0.5);}
-  80% { text-shadow: 0px 0px 100px rgba(199,96,11,0.5);}
-}
-section:nth-child(4)[background = "true"]{
+section:nth-child(3)[background = "true"]{
   background: center url("https://i.pinimg.com/originals/43/0e/9a/430e9abb2039e992275efb898c5948c1.gif");
   color: #fff;
   background-repeat: no-repeat;
   background-size: cover;
 }
-section:nth-child(5)[background = "true"]{
+section:nth-child(4)[background = "true"]{
   background: center url("https://i.pinimg.com/originals/ce/b5/74/ceb574258cb71c79ba07a841b38d50a8.gif");
   color: white;
   background-repeat: no-repeat;
@@ -182,11 +157,11 @@ section h1{
   18.1%,20.1%,50%,60.1%,65%,80.1%,90%,92.1%,100%{
     color:#fff;
     text-shadow: 0 0 10px #03bcf4,
-    0 0 20px #03bcf4,
-    0 0 40px #03bcf4,
-    0 0 80px #03bcf4,
-    0 0 160px #03bcf4,
-    0 0 20px #03bcf4;
+    0 0 2vw #03bcf4,
+    0 0 4vw #03bcf4,
+    0 0 8vw #03bcf4,
+    0 0 16vw #03bcf4,
+    0 0 20vw #03bcf4;
 
   
   }
