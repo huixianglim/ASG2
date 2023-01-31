@@ -125,7 +125,6 @@ $(document).ready(()=>{
             "processData": false,
             "data": JSON.stringify(jsondata),
             "error" : function(){
-                let exists = false
                 let settings = {
                     "async": true,
                     "crossDomain": true,
@@ -136,15 +135,18 @@ $(document).ready(()=>{
                       "x-apikey": APIKEY,
                       "cache-control": "no-cache"
                     },
+           
                     
                   }
                   $.ajax(settings).done(function (response) {
                     for (var i = 0; i < response.length; i++) {
                         if (response[i].email == $("#signEmail").val()){
-                            $(".email").html("Email already taken!")
+                            console.log("hi");
+                            $(".signE").html("Email already taken!")
                         }
                     }
                   })
+              
             }
             }
     $.ajax(post).done((response)=>{
