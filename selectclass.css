@@ -369,3 +369,17 @@
       opacity: 0;
     }
   }
+
+  .select-btn{
+    text-decoration: none;
+    background-color: white;
+    width: 15%;
+    height: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-family: 'Press Start 2P', cursive;
+    border-radius: 20px;
+    margin: 2%;
+  }
