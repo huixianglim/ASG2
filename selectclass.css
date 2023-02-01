@@ -108,11 +108,13 @@
 
   .character-button-k a:hover, .character-button-n a:hover, .character-button-t a:hover{
     color: #fff;
-    border-radius: 5px;
     box-shadow: 0 0 5px #7724ff,
-                0 0 25px #7724ff,
-                0 0 50px #7724ff,
+                0 0 20px #7724ff,
+                0 0 30px #7724ff,
                 0 0 100px #7724ff;
+    transition: all 0.2s;
+    width: 9.5vh;
+    height: 9.5vh;
                 
   }
 
@@ -165,17 +167,14 @@
 
   @keyframes fadeInFromNone {
     0% {
-        display: none;
         opacity: 0;
     }
 
     1% {
-        display: block;
         opacity: 0;
     }
 
     100% {
-        display: block;
         opacity: 1;
     }
 }
@@ -193,9 +192,6 @@
     animation: slideInLeft 0.2s ease-in, fadeInFromNone 0.2s ease-in;
   }
 
-  .smoke-wrap[animation = "true"]{
-    opacity: 1;
-  }
 
   .shadow {
     width: calc( var(--grid-cell)* 2 );
@@ -245,17 +241,63 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom:34%;
-    /* transition: all 0.5s; */
+    bottom:35%;
     transition: opacity 4s ease-out;
-    opacity: 0;
+    opacity: 1;
   }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  
+  .smoke-wrap [smokeshow = "true"] {
+    animation: fadeIn ease 3s;
+    -webkit-animation: fadeIn ease 3s;
+    -moz-animation: fadeIn ease 3s;
+    -o-animation: fadeIn ease 3s;
+    -ms-animation: fadeIn ease 3s;
+  }
+  
   
   .smoke,
   .smoke2,
   .smoke3 {
     filter: blur(5px);
     transform-origin: 50% 50%;
+    transition: opacity 4s ease-out;
   }
   
   .smoke {
@@ -382,4 +424,12 @@
     font-family: 'Press Start 2P', cursive;
     border-radius: 20px;
     margin: 2%;
+  }
+
+  .select-btn:hover{
+    box-shadow: 0 0 5px #7724ff,
+                0 0 20px #7724ff,
+                0 0 30px #7724ff,
+                0 0 100px #7724ff;
+    transition: all 0.2s;
   }
