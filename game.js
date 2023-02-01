@@ -4,7 +4,6 @@ spriteSheet = [];
 spriteSheet["knight"] = "./Images/knight.png";
 spriteSheet["ninja"] ="./Images/darkninja.png"
 spriteSheet["tank"] ="./Images/tank.png"
-
 if (character!="knight"){
    $(".you_spritesheet").attr("character",character)
    $(".character_spritesheet").attr("character",character)
