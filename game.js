@@ -1,3 +1,15 @@
+character = "knight"
+character = sessionStorage.getItem("character");
+spriteSheet = [];
+spriteSheet["knight"] = "./Images/knight.png";
+spriteSheet["ninja"] ="./Images/darkninja.png"
+spriteSheet["tank"] ="./Images/tank.png"
+if (character!="knight"){
+   $(".you_spritesheet").attr("character",character)
+   $(".character_spritesheet").attr("character",character)
+
+}
+
 var character = document.querySelector(".character");
 var map = document.querySelector(".map");
 //start in the middle of the map

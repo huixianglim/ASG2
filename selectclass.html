@@ -85,42 +85,7 @@
 
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-        <script>
-            const chars = ["./Images/knight.png", "./Images/darkninja.png", "./Images/tank.png"];
-            const btns = ["k","n","t"];
-            const smk = ["./Images/whitesmoke.png", "./Images/redsmoke.png", "./Images/yellowsmoke.png"]
-
-
-            for(let i=0; i<chars.length; i++){
-                $(".character-button-" + btns[i] + " a").on("click", function(){
-                let char = chars[i];
-                let smoke = smk[i];
-                
-
-                $(".smoke-wrap").attr("smokeshow","false");
-                $(".character_spritesheet").css({"background":`url(${char}) no-repeat no-repeat`, "position":"absolute", "background-size":"100%", "width":"calc( var(--grid-cell)* 4 )", "height":"calc( var(--grid-cell)* 4 )", "image-rendering":"pixelated"});
-                $(".smoke,.smoke2,.smoke3").attr("src", `${smoke}`);
-                $(".smoke,.smoke2,.smoke3").css({"filter": "blur(5px)", "transform-origin":"50% 50%"});
-                $(".character").attr("animation","true");
-                if ($(".character").attr("animation") ==  "true"){
-                    setTimeout(()=>{
-                    $(".character").attr("animation","false");
-                    $(".smoke-wrap").attr("smokeshow","true");
-                    },200)
-                }
-                });
-
-
-            }
- 
-            
-
-
-
-        </script>
       
-        <script src='script.js'></script>
+        <script src='class.js'></script>
 </body>
 </html>
