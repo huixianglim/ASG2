@@ -122,6 +122,16 @@ $(document).ready(()=>{
               "x-apikey": APIKEY,
               "cache-control": "no-cache"
             },
+            "beforeSend":function(){
+                $("#signSubmit").css({"pointer-events":"none"})     
+                $("#signSubmit").html(`<a href = "#"><span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_usmfx6bp.json"  background="transparent"  speed="1"  style="width: 7vw; height: 3vw;"  loop  autoplay></lottie-player>
+                        </a>`)       
+            
+            },
             "processData": false,
             "data": JSON.stringify(jsondata),
             "error" : function(){
@@ -134,15 +144,23 @@ $(document).ready(()=>{
                       "content-type": "application/json",
                       "x-apikey": APIKEY,
                       "cache-control": "no-cache"
-                    },
-           
-                    
+                    }
                   }
                   $.ajax(settings).done(function (response) {
                     for (var i = 0; i < response.length; i++) {
                         if (response[i].email == $("#signEmail").val()){
-                            console.log("hi");
                             $(".signE").html("Email already taken!")
+                            $("#signSubmit").css({
+                                "pointer-events":"all"
+                            })
+                            $("#signSubmit").html(`  
+                            <a href = "#">  
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                Submit
+                            </a>`)
                         }
                     }
                   })
@@ -150,6 +168,9 @@ $(document).ready(()=>{
             }
             }
     $.ajax(post).done((response)=>{
+        $("#logSubmit").css({
+            "pointer-events":"all"
+        })
         localStorage.setItem("email",$("#signEmail").val())
         localStorage.setItem("admin",false)
         window.location.href = "game.html";
@@ -216,9 +237,28 @@ $(document).ready(()=>{
               "cache-control": "no-cache"
             },
             "processData": false,
+            "beforeSend":function(){
+                $("#logSubmit").css({
+                    "pointer-events":"none"
+                })
+                $("#logSubmit").html(`<a href = "#"><span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_usmfx6bp.json"  background="transparent"  speed="1"  style="width: 7vw; height: 3vw;"  loop  autoplay></lottie-player>
+                </a>`)      
+            }
             }
     $.ajax(get).done((response)=>{
-        console.log('hi')
+        $("#logSubmit").css({
+            "pointer-events":"all"
+        })
+        $("#logSubmit").html(`<a href = "#"><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Submit
+        </a>`)    
         let check = false;
         let admin = false
         for (let i =0; response[i];i++){
