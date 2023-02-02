@@ -28,6 +28,7 @@ $(document).ready(()=>{
 
 
     }
+    
     $(".select-btn").on("click",()=>{
         sessionStorage.setItem("character",character)
     })
