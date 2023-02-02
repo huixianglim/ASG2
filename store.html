@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" class="login">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slayers Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="store.css">
+</head>
+<body class="login">
+    <nav class="navbar">
+        <div class="navbar-container">
+
+            <a href="./index.html" id="navbar-logo">
+                <p>Slayers</p>
+            </a>
+
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <ul class="navbar-menu">
+                <li class="navbar-button">
+                    
+                    <a href="./login.html" class="navbar-links">
+                    <div class="signin-img"></div>  
+                    <p>LOG IN</p>
+                    </a>
+                </li>
+
+                
+
+            </ul>
+
+        </div>
+    </nav>
+        
+
+        <div class="store-container">
+            <div class="container">
+                <input type="text" placeholder="Search...">
+                <div class="search"></div>
+            </div>
+            
+            <div class="product_wrap">
+                <div class="product">
+                    <div class="product-dropshadow"></div>
+                    <div class="product-backdrop product-backdrop_purple"></div>
+                    <div class="product-img">
+                    
+                    </div>
+                    <div class="product-buy">
+                        <h5>ADD TO CART</h5>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-content-title">
+                            <h4>tee</h4>
+                        </div>
+                        <div class="product-content-cost">
+                            <h5>$39.00</h5>
+                        </div>
+                    </div>
+
+                    <div class="admmin-controls">
+                        <a href="./login.html" class="">UPDATE</a>
+                        <a href="./login.html" class="">DELETE</a>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <div class="product-dropshadow"></div>
+                    <div class="product-backdrop product-backdrop_purple"></div>
+                    <div class="product-img">
+                    
+                    </div>
+                    <div class="product-buy">
+                        <h5>ADD TO CART</h5>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-content-title">
+                            <h4>tee</h4>
+                        </div>
+                        <div class="product-content-cost">
+                            <h5>$39.00</h5>
+                        </div>
+                    </div>
+
+                    <div class="admmin-controls">
+                        <a href="./login.html" class="">UPDATE</a>
+                        <a href="./login.html" class="">DELETE</a>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <div class="product-dropshadow"></div>
+                    <div class="product-backdrop product-backdrop_purple"></div>
+                    <div class="product-img">
+                    
+                    </div>
+                    <div class="product-buy">
+                        <h5>ADD TO CART</h5>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-content-title">
+                            <h4>tee</h4>
+                        </div>
+                        <div class="product-content-cost">
+                            <h5>$39.00</h5>
+                        </div>
+                    </div>
+
+                    <div class="admmin-controls">
+                        <a href="./login.html" class="">UPDATE</a>
+                        <a href="./login.html" class="">DELETE</a>
+                    </div>
+
+                    
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container mt-5" id="update-contact-container">
+            <input type="hidden" id="update-contact-id" />
+            <div id="add-update-msg">
+              <div class="alert alert-success" role="alert">
+                Contact record updated sucessfully
+              </div>
+            </div>
+            <h4>Update Contact</h4>
+            <div class="form" id="update-contact">
+              <form id="update-contact-form">
+                
+                <div class="form-group">
+                  <label for="update-contact-name">Name</label>
+                  <input type="text" id="update-contact-name" class="form-control" required>
+                </div>
+        
+                <div class="form-group">
+                  <label for="update-contact-studid">Student ID</label>
+                  <input type="text" id="update-contact-studid" class="form-control" required>
+                </div>
+        
+                <div class="form-group">
+                  <label for="update-contact-mentor">Student Mentor</label>
+                  <input type="text" id="update-contact-mentor" class="form-control" required>
+                </div>
+        
+                <div class="form-group">
+                  <label for="update-contact-class">Class</label>
+                  <input type="text" id="update-contact-class" class="form-control" required>
+                </div>
+        
+                <div class="form-group">
+                  <label for="update-contact-number">Mobile Number</label>
+                  <input type="text" id="update-contact-number" class="form-control" required>
+                </div>
+        
+                <div class="form-group">
+                  <label for="update-contact-email">Email</label>
+                  <input type="email" id="update-contact-email" class="form-control" required>
+                  <small id="update-contact-email-help" class="form-text text-muted">We'll never share your email with anyone
+                    else.</small>
+                </div>
+        
+                
+                <input type="submit" value="Update Contact Details" class="btn btn-warning" id="update-contact-submit">
+              </form>
+            </div>
+          </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="/js/popper.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src='store.js'></script>
+</body>
+</html>
