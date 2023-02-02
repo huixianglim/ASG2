@@ -1,14 +1,12 @@
 $(document).ready(()=>{
    $("#topLeads thead").hide()
-   var APIKEY ="63b55d75969f06502871a922"
+   const APIKEY = "63ca7160969f06502871b054";
    var id =""
-   var email ="123@gmail.com"
    var Currentkills = 0
    var kills = 0
    getLeaderBoard()
-   console.log(id)
-
-   // var email = localStorage.getItem("email")
+   var person = JSON.parse(localStorage.getItem("person"))
+   var email = person.email
    chosen = sessionStorage.getItem("character");
    if(chosen==null ||chosen== undefined){
       chosen = "knight" //setting of the character image to knight as default
@@ -378,7 +376,7 @@ $(document).ready(()=>{
       let get = {
          "async": true,
          "crossDomain": true,
-         "url": "https://idweek12prac-7da9.restdb.io/rest/leaderboard",
+         "url": "https://idweek14-d843.restdb.io/rest/login",
          "method": "GET", 
          "headers": {
            "content-type": "application/json",
@@ -403,9 +401,9 @@ $(document).ready(()=>{
             return a.kills - b.kills 
          })
          var content =""
-         for(let i =0; i<4; i++){
+         for(let i =0; i<5; i++){
             let numberIndex = response.length -1
-            content = `${content}<tr><td>${response[numberIndex - i].email}</td><td>${response[numberIndex- i].kills}</td></tr>`
+            content = `${content}<tr><td>${response[numberIndex - i].name}</td><td>${response[numberIndex- i].kills}</td></tr>`
             $("#topLeads tbody").html(content)
          }         
          for(let i = 0; i<response.length; i++){
@@ -420,13 +418,17 @@ $(document).ready(()=>{
    }
    function updateLeaderBoard(){
       let jsondata = {
-         "email": email,
+         "name":person.name,
+         "email": person.email,
+         "password":person.password,
+         "admin":person.admin,
          "kills":(Currentkills+kills)
+         
       }
       let update = {
          "async": true,
          "crossDomain": true,
-         "url": `https://idweek12prac-7da9.restdb.io/rest/leaderboard/${id}`,
+         "url": `https://idweek14-d843.restdb.io/rest/login/${id}`,
          "method": "PUT", 
          "headers": {
            "content-type": "application/json",
