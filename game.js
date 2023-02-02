@@ -4,7 +4,7 @@ $(document).ready(()=>{
    var id =""
    var Currentkills = 0
    var kills = 0
-   getLeaderBoard()
+  // getLeaderBoard()
    var person = JSON.parse(localStorage.getItem("person"))
    var email = person.email
    chosen = sessionStorage.getItem("character");
@@ -109,8 +109,8 @@ $(document).ready(()=>{
             initialiseGame();
             var end = false
             var monsterUrl =""
-             var monster = randomMonster()
-             setMonsterImage()
+            var monster = randomMonster()
+            setMonsterImage()
              console.log(monster)
              var you = characters[chosen]
              let yourattacks = []
@@ -159,9 +159,9 @@ $(document).ready(()=>{
                       $(".attack-text").html(`<p>You used ${attack} and has done ${damage} damage</p>`)
                       $("#enemyHealthBar").css({"width":`${monster.health /monster.Maxhealth*100}%`})
                       if (monster.health<=0){
-                      
                         $(".attack-text").css({"pointer-events":"all"}) 
                         Currentkills+=1
+                        $(".killCount").html(`Kill Count:${Currentkills+kills}`)
                          end = true;
                          $(".attack-text").html("Game over! You win!"); //if health is lower than 0, display game over text
                          $(".attack-text").on("click",()=>{
@@ -170,7 +170,6 @@ $(document).ready(()=>{
                                console.log(Currentkills)
                             }
                          });
-                         updateLeaderBoard();
                          return
                        }
                       $(".attack-text").css({"pointer-events":"all", "cursor": "pointer"})
@@ -185,7 +184,8 @@ $(document).ready(()=>{
     
                if (you.health<=0){
                   $(".attack-text").css({"pointer-events":"all"}) 
-                  Currentkills-=1
+                  Currentkills-=1;
+                  $(".killCount").html(`Kill Count:${Currentkills+kills}`);
                    end = true;
                    $(".attack-text").html("Game over! You Lose!"); //if health is lower than 0, display game over text
                    $(".attack-text").on("click",()=>{
@@ -410,6 +410,7 @@ $(document).ready(()=>{
             if(email == response[i].email){
                id = response[i]._id;
                kills = response[i].kills
+               $(".killCount p").html(`Kill Count: ${kills}`)
 
             }
          }

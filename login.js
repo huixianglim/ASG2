@@ -292,11 +292,9 @@ $(document).ready(()=>{
     
         if (check){
             localStorage.setItem("person",JSON.stringify(json))
-            console.log(json)
-            setTimeout(()=>{
                 window.location.href = "selectclass.html"
 
-            },10000)
+        
         }
         else{
             $(".validation").css({"display":"block"})
