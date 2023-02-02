@@ -276,7 +276,6 @@ $(document).ready(()=>{
         if (check){
             localStorage.setItem("email",$("#logEmail").val());
             localStorage.setItem("admin",admin);
-
             window.location.href = "game.html"
         }
         else{
