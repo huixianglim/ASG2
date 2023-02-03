@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slayers Store</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="store.css">
 </head>
 <body class="login">
@@ -39,143 +40,46 @@
     </nav>
         
 
-        <div class="store-container">
-            <div class="container">
-                <input type="text" placeholder="Search...">
-                <div class="search"></div>
-            </div>
-            
-            <div class="product_wrap">
-                <div class="product">
-                    <div class="product-dropshadow"></div>
-                    <div class="product-backdrop product-backdrop_purple"></div>
-                    <div class="product-img">
-                    
-                    </div>
-                    <div class="product-buy">
-                        <h5>ADD TO CART</h5>
-                    </div>
-                    <div class="product-content">
-                        <div class="product-content-title">
-                            <h4>tee</h4>
-                        </div>
-                        <div class="product-content-cost">
-                            <h5>$39.00</h5>
-                        </div>
-                    </div>
+    <div class="store-container">
 
-                    <div class="admmin-controls">
-                        <a href="./login.html" class="">UPDATE</a>
-                        <a href="./login.html" class="">DELETE</a>
-                    </div>
-                </div>
+      <div class="product_wrap" id="product-list"></div>
 
-                <div class="product">
-                    <div class="product-dropshadow"></div>
-                    <div class="product-backdrop product-backdrop_purple"></div>
-                    <div class="product-img">
-                    
-                    </div>
-                    <div class="product-buy">
-                        <h5>ADD TO CART</h5>
-                    </div>
-                    <div class="product-content">
-                        <div class="product-content-title">
-                            <h4>tee</h4>
-                        </div>
-                        <div class="product-content-cost">
-                            <h5>$39.00</h5>
-                        </div>
-                    </div>
-
-                    <div class="admmin-controls">
-                        <a href="./login.html" class="">UPDATE</a>
-                        <a href="./login.html" class="">DELETE</a>
-                    </div>
-                </div>
-
-                <div class="product">
-                    <div class="product-dropshadow"></div>
-                    <div class="product-backdrop product-backdrop_purple"></div>
-                    <div class="product-img">
-                    
-                    </div>
-                    <div class="product-buy">
-                        <h5>ADD TO CART</h5>
-                    </div>
-                    <div class="product-content">
-                        <div class="product-content-title">
-                            <h4>tee</h4>
-                        </div>
-                        <div class="product-content-cost">
-                            <h5>$39.00</h5>
-                        </div>
-                    </div>
-
-                    <div class="admmin-controls">
-                        <a href="./login.html" class="">UPDATE</a>
-                        <a href="./login.html" class="">DELETE</a>
-                    </div>
-
-                    
-                </div>
-
-            </div>
-        </div>
-
-        <div class="container mt-5" id="update-contact-container">
-            <input type="hidden" id="update-contact-id" />
+        <div class="container mt-5" id="update-product-container">
+            <input type="hidden" id="update-product-id" />
             <div id="add-update-msg">
               <div class="alert alert-success" role="alert">
-                Contact record updated sucessfully
+                Product record updated sucessfully
               </div>
             </div>
-            <h4>Update Contact</h4>
-            <div class="form" id="update-contact">
-              <form id="update-contact-form">
+            <h4>Update Product</h4>
+            <div class="form" id="update-product">
+              <form id="update-product-form">
                 
                 <div class="form-group">
-                  <label for="update-contact-name">Name</label>
-                  <input type="text" id="update-contact-name" class="form-control" required>
+                  <label for="update-product-name">Name</label>
+                  <input type="text" id="update-product-name" class="form-control" required />
                 </div>
         
                 <div class="form-group">
-                  <label for="update-contact-studid">Student ID</label>
-                  <input type="text" id="update-contact-studid" class="form-control" required>
+                  <label for="update-product-price">Price</label>
+                  <input type="text" id="update-product-price" class="form-control" required />
                 </div>
         
                 <div class="form-group">
-                  <label for="update-contact-mentor">Student Mentor</label>
-                  <input type="text" id="update-contact-mentor" class="form-control" required>
+                  <label for="update-product-image">Image</label>
+                  <input type="text" id="update-product-image" class="form-control" required />
                 </div>
-        
-                <div class="form-group">
-                  <label for="update-contact-class">Class</label>
-                  <input type="text" id="update-contact-class" class="form-control" required>
-                </div>
-        
-                <div class="form-group">
-                  <label for="update-contact-number">Mobile Number</label>
-                  <input type="text" id="update-contact-number" class="form-control" required>
-                </div>
-        
-                <div class="form-group">
-                  <label for="update-contact-email">Email</label>
-                  <input type="email" id="update-contact-email" class="form-control" required>
-                  <small id="update-contact-email-help" class="form-text text-muted">We'll never share your email with anyone
-                    else.</small>
-                </div>
-        
-                
-                <input type="submit" value="Update Contact Details" class="btn btn-warning" id="update-contact-submit">
+ 
+                <input type="submit" value="Update Product Details" class="btn btn-warning" id="update-product-submit" />
               </form>
-            </div>
-          </div>
+            </div>    
+            
+        
+        </div>
+
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="/js/popper.min.js"></script>
-        <script src="/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src='store.js'></script>
 </body>
 </html>
