@@ -137,13 +137,6 @@ body {
    width: calc( var(--grid-cell)* 4 );
    height: calc( var(--grid-cell)* 4 );
 }
-.monster_spritesheet {
-   position: absolute;
-   background: url("./Images/Beast.png") no-repeat no-repeat;
-   background-size: 100%;
-   width: calc( var(--grid-cell)* 4);
-   height: calc( var(--grid-cell)* 4 );
-}
 .you_spritesheet[idle = "true"],.monster_spritesheet[idle = "true"]{
    -webkit-animation: walkAnimation 0.6s steps(4) infinite;
    animation: walkAnimation 0.6s steps(4) infinite;
@@ -389,4 +382,45 @@ body {
    top:calc(var(--pixel-size) * 2);
    right:calc(var(--pixel-size) * 2);
    width: calc(var(--pixel-size) * 75)
+}
+
+
+/*LeaderBoard*/
+.leaderBoard{
+   width: 12vw;
+   height:22vw;
+   position: absolute;
+   right: 5%;
+   color: white;
+   border: 1px solid white;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+}
+.leaderBoard ol{
+   width: 80%;
+   padding-right: 0%;
+   padding-left: 10%;
+}
+.leaderBoard h1{
+   font-size: 1vw;
+}
+#topLeads{
+   margin-left:auto;
+   margin-right:auto;
+   table-layout: auto ;
+   width: 100%;
+}
+#topLeads td{
+   text-align: center;
+   vertical-align: top;
+   word-break: break-word;
+   font-size: 1vw;
+   margin-top: 10%;
+}
+.killCount{
+   position: absolute;
+   left: 5%;
+   color: white;
+   font-family:'Press Start 2P', cursive ;
 }
