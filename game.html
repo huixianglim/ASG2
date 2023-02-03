@@ -10,7 +10,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
-
+<div class="killCount">
+    <p>Kill Count: </p>
+</div>
+<div class="leaderBoard">
+    <h1>LeaderBoard</h1>
+    <table id="topLeads">
+        <thead>
+        <th>Name</th>
+        <th>Kills</th>
+        </thead>
+        <tbody>
+            <div class="animation"> <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_usmfx6bp.json"  background="transparent"  speed="1"  style="width: 5vw; height: 5vw;"  loop  autoplay></lottie-player></div>
+        </tbody>
+    </table>
+</div>
 <div class="frame">
     
     <div class="battle" battle-activation = "false">
@@ -114,6 +128,7 @@
       
    </div>
 </div>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js" integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script  src="./audio.js"></script>

@@ -1,6 +1,6 @@
 // HAMBURGER MENU
 $(document).ready(()=>{
-    
+    var json = {}
     const loginText = document.querySelector(".title-text .login");
             const loginForm = document.querySelector("form.login");
             const loginBtn = document.querySelector("label.login");
@@ -41,13 +41,18 @@ $(document).ready(()=>{
       
         let value = $("#signName").val()
         
-        if (value.length>5){
+        if (value.length>0 && value.length<=10){
             name = true;
             $(".signN").html(`Name is valid`)
            
         }
-        else{
-            $(".signN").html(`Name is too short!`)
+        else if (value.length == 0){
+            $(".signN").html(`Name length is too short!`)
+            name = false;
+
+        }
+        else if (value.length>10){
+            $(".signN").html(`Name length is too long!`)
             name = false;
 
         }
@@ -109,7 +114,8 @@ $(document).ready(()=>{
         "name":$("#signName").val(),
         "email":$("#signEmail").val(),
         "password":$("#signPass").val(),
-        "admin":false
+        "admin":false,
+        "kills":0
        }
         
         let post = {
@@ -147,33 +153,40 @@ $(document).ready(()=>{
                     }
                   }
                   $.ajax(settings).done(function (response) {
+                    
                     for (var i = 0; i < response.length; i++) {
                         if (response[i].email == $("#signEmail").val()){
                             $(".signE").html("Email already taken!")
-                            $("#signSubmit").css({
-                                "pointer-events":"all"
-                            })
-                            $("#signSubmit").html(`  
-                            <a href = "#">  
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                Submit
-                            </a>`)
+                    
+                        }
+                        if (response[i].email ==  $("#signName").val()){
+                            $(".signN").html("Name already taken!")
+
                         }
                     }
+                    $("#signSubmit").css({
+                        "pointer-events":"all"
+                    })
+                    $("#signSubmit").html(`  
+                    <a href = "#">  
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Submit
+                    </a>`)
                   })
               
             }
             }
     $.ajax(post).done((response)=>{
-        $("#logSubmit").css({
+        $("#signSubmit").css({
             "pointer-events":"all"
         })
-        localStorage.setItem("email",$("#signEmail").val())
-        localStorage.setItem("admin",false)
-        window.location.href = "game.html";
+        json = jsondata
+        
+        localStorage.setItem("person",JSON.stringify(json))
+        window.location.href = "selectclass.html";
     })
 
     })
@@ -260,24 +273,28 @@ $(document).ready(()=>{
         Submit
         </a>`)    
         let check = false;
-        let admin = false
         for (let i =0; response[i];i++){
             console.log(response[i].email)
             if(response[i].password == $("#logPass").val() && response[i].email == $("#logEmail").val()){
                     check = true;
-                    if(response[i].admin == "true"){
-                        admin = true
+                    json = {
+                        "name":response[i].name,
+                        "email":response[i].email,
+                        "password":response[i].password,
+                        "admin":response[i].admin,
+                        "kills":response[i].kills
                     }
+            
                     
             }
 
         }
     
         if (check){
-            localStorage.setItem("email",$("#logEmail").val());
-            localStorage.setItem("admin",admin);
+            localStorage.setItem("person",JSON.stringify(json))
+                window.location.href = "selectclass.html"
 
-            window.location.href = "game.html"
+        
         }
         else{
             $(".validation").css({"display":"block"})

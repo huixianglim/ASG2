@@ -148,10 +148,7 @@ section{
 .scroll > a:hover{
   transform: scale(1.25);
 }
-.gameShow img{
-  width: 80%;
-  height: 80%;
-}
+
 .scroll{
   position: absolute;
   bottom: 10%;
@@ -194,17 +191,18 @@ section:nth-child(5)[background = "true"]{
 section:nth-child(6){
   color: #fff;
 }
-.cards > img{
-  width: 30vw;
-  height: 20vw;
+.cards  img{
+  width: 100%;
+  height: 100%;
+
 }
 .container{
   display: flex;
-  margin: 100px;
+  margin: 5vw;
   flex-direction: row;
 }
 section h1{
-  font-size: 60px;
+  font-size: 6vw;
   color: #0e3742;
   width: 100%;
   text-align: center;
@@ -233,15 +231,17 @@ section h1{
 }
 
 section h2{
-  font-size: 40px;
+  font-size: 3vw;
   text-align: center;
   text-transform: uppercase;
 }
 section .cards {
   background:rgba(255, 255, 255, 0.2) ;
   box-shadow: 0 4px 14px  rgba(0,0, 0, 0.5) ;
-  margin: 20px;
-  padding: 20px;
+  margin: 2vw;
+  padding: 2.2vw;
+  width: 35vw;
+
 }
 
 
@@ -298,13 +298,84 @@ section .cards {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  width: 30vw;
 }
 .aboutUs > div{
-  display: flex; 
+  display: flex;
+  width: inherit; 
   flex-direction: row; 
   justify-content: space-around; 
-  width: 20vw;
   justify-content: center;
+}
+.aboutUs h2{
+  font-size: 5vw;
+}
+.lottie{
+  padding: 0;
+  width: 15vw; 
+  height: 15vw;
+}
+@media only screen and (width<=1000px){
+  .aboutUs h2{
+    font-size: 7vw;
+  }
+  .lottie{
+    width: 25vw; 
+    height: 25vw;
+  }
+  .container{
+    flex-direction: column;
+  }
+  section .cards{
+    width: 45vw;
+  }
+}
+@media only screen and (width<=750px){
+  .aboutUs h2{
+    font-size: 7vw;
+  }
+  .lottie{
+    width: 25vw; 
+    height: 25vw;
+
+  }
+  section .cards{
+    width: 60vw;
+  }
+  .container{
+    flex-direction: column;
+  }
+  section h1{
+    font-size: 8vw;
+  }
+  section h2{
+    font-size: 5vw;
+  }
+  .scroll > a{
+    font-size: 10vw;    
+  }
+
+}
+
+  @media only screen and (width<=420px){
+    section h1{
+      font-size: 8vw;
+    }
+    .aboutUs h2{
+      font-size: 7vw;
+    }
+    .lottie{
+      width: 30vw; 
+      height: 30vw;
+  
+    }
+    section .cards{
+      width: 70vw;
+    }
+    section h2{
+      font-size: 5vw;
+    }
+
 }
 
 @media (max-width: 1024px){
