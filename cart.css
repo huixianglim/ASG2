@@ -1,13 +1,70 @@
-a{
+a,p{
     text-decoration: none;
     color: grey; 
 }
 p{
     pointer-events: none;
-  
+    margin: 0;
 }
+button{
+    text-decoration: none !important;
+    align-items: center;
+}
+#checkOut{
+    position: fixed;
+    top: 4%;
+    height: 100%;
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    margin-left: auto;
+    justify-content: center;
+}
+#checkOut .card{
+    padding: 3%;
+    width: 80%;
+    height: 85%;
+    box-shadow: 0 0.2vw 1vw  rgba(0,0, 0, 0.5) ;
+    border: 0.1vw solid black;
+    background-color: white;
+}
+form{
+    border-radius: 5%;
+}
+div.col{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.paymentCards{
+    margin-left: 1%;
+    width: 30px;
+    height: 40px;
+}
+.cancel{
+    position: absolute;
+    top:1%;
+    right: 5%;
+    cursor: pointer;
+}   
 
+#nets{
+    background: url("./Images/nets.jpeg") no-repeat;
+    background-size: contain ;
+}
+#mastercard{
 
+    background: url("./Images/mastercard.png") no-repeat;
+    background-size: contain ;
+}
+#visa{
+
+    background: url("./Images/visa.png") no-repeat;
+    background-size: contain ;
+}
+.price{
+    margin: 0;
+}
 @media (min-width: 1025px) {
     .h-custom {
     height: 100vh !important;

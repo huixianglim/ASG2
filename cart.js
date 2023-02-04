@@ -1,22 +1,31 @@
 $(document).ready(()=>{
+    $("#checkOut").hide();
     getCart();
+    $("#startCheck").on("click",()=>{
+        $("#checkOut").show()
+        let price = checkTotal()
+        $(".totalProduct").html(price)
+        $(".checkTotal") .html("$" + String(price+4));
+    })
+
+    $(".cancel").on("click",()=>{
+        $("#checkOut").hide()
+    })
     $(".remove").on("click",(e)=>{
-        console.log("hi")
         $(".remove").attr("disabled",false)
         e.preventDefault();
         let id = e.target.dataset.id
         localStorage.removeItem(id)
-        e.target.parentNode.parentNode.remove()
+        e.target.parentNode.parentNode.parentNode.remove()
         getTotal();
         setQuantity();
-    
     })
     $(".productQuantity").on("input",(e)=>{
         let id = e.target.dataset.id
         let product = JSON.parse(localStorage.getItem(id))
         let amount =  e.target.value
         console.log(amount)
-        if (amount ==''){
+        if (amount =='' || amount <0){
             product.quantity = 0;
             e.target.value = 0;
         }
@@ -49,20 +58,24 @@ $(document).ready(()=>{
          getTotal();
     })
     $(".minus").on("click",(e)=>{
+        
         let id = e.target.dataset.id
         let product = JSON.parse(localStorage.getItem(id))
         let amount = parseInt(e.target.parentNode.querySelector('input[type=number]').value)
-        amount-=1
-        e.target.parentNode.querySelector('input[type=number]').value = amount
-        product.quantity = amount 
-        localStorage.setItem(id,JSON.stringify(product))
-        let price = document.getElementsByClassName("price")
-        for(let i = 0;i<price.length;i++){
-            if(e.target == $(".minus")[i]){
-                price[i].innerHTML = `$ ${parseFloat(product.price)* product.quantity}`
+        if (amount != 0 ){
+            amount-=1
+            e.target.parentNode.querySelector('input[type=number]').value = amount
+            product.quantity = amount 
+            localStorage.setItem(id,JSON.stringify(product))
+            let price = document.getElementsByClassName("price")
+            for(let i = 0;i<price.length;i++){
+                if(e.target == $(".minus")[i]){
+                    price[i].innerHTML = `$ ${parseFloat(product.price)* product.quantity}`
+                }
             }
+            getTotal()
         }
-        getTotal()
+        
     })
 })
 
@@ -76,6 +89,7 @@ for (var i = 0; i < localStorage.length; i++){
        let product = JSON.parse(localStorage.getItem(key))
        console.log(product.url)
        content = `${content}
+       <div class = "product">
        <hr class="my-4">
        <div class="row mb-4 d-flex justify-content-between align-items-center" data-id = '${key}' data-quantity = "${product.quantity}">
        <div class="col-md-2 col-lg-2 col-xl-2">
@@ -104,7 +118,8 @@ for (var i = 0; i < localStorage.length; i++){
        <div class="col-md-1 col-lg-1 col-xl-1 text-end">
          <a href="#" data-id = "${key}" class="remove">x</a>
        </div>
-     </div>`
+     </div>
+    <div> `
     }
     $("#cartWrap").html(content)
     setQuantity();
@@ -117,7 +132,7 @@ function getTotal(){
     var total = 0
     for (var i = 0; i < localStorage.length; i++){
         key = localStorage.key(i)
-        if (key!="person"){
+        if (key!="person" && key !="top"){
            let product = JSON.parse(localStorage.getItem(key))
            quantity = product
             total += product.quantity *product.price
@@ -134,6 +149,18 @@ function setQuantity(){
             number+=1
         }
     }
-    $("#numItems").html(number +" items")
+    $("#numItems").html(number +" Cart Items")
 
+}
+function checkTotal(){
+    var total = 0
+    for (var i = 0; i < localStorage.length; i++){
+        key = localStorage.key(i)
+        if (key!="person" && key !="top"){
+           let product = JSON.parse(localStorage.getItem(key))
+           quantity = product
+            total += product.quantity *product.price
+        }
+    }
+    return total
 }
