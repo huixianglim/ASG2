@@ -1,4 +1,13 @@
 $(document).ready(()=>{
+
+   const menu = document.querySelector('#mobile-menu');
+    const menuLinks = document.querySelector('.navbar-menu');
+    
+    menu.addEventListener('click', function(){
+        menu.classList.toggle('is-active');
+        menuLinks.classList.toggle('active');
+    });
+
    $("#topLeads thead").hide()
    const APIKEY = "63ca7160969f06502871b054";
    var id =""
@@ -161,7 +170,7 @@ $(document).ready(()=>{
                       if (monster.health<=0){
                         $(".attack-text").css({"pointer-events":"all"}) 
                         Currentkills+=1
-                        $(".killCount").html(`Kill Count:${Currentkills+kills}`)
+                        $(".killCount").html(`Kill Count:<br>${Currentkills+kills}`)
                          end = true;
                          $(".attack-text").html("Game over! You win!"); //if health is lower than 0, display game over text
                          $(".attack-text").on("click",()=>{
