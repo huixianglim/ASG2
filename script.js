@@ -32,4 +32,32 @@ $(document).ready(()=>{
         }
     }
 
+
+    //STICKY NAV
+    window.addEventListener("scroll", function(){
+        var nav = document.querySelector("nav");
+        nav.classList.toggle("sticky", window.scrollY > 0);
+    })
+
+
+    //MOUSEMOVE
+    var image = document.querySelector(".title .back-img");
+
+        var windowWidth = window.innerWidth;
+        var windowHeight = window.innerHeight;
+
+        function moveBackground(event){
+            var mouseXposition = event.clientX;
+            var mouseYposition = event.clientY;
+
+            var calculatedX = mouseXposition / (windowWidth / 6);
+            var calculatedY = mouseYposition / (windowHeight / 6);
+
+            image.style.transform="translate(-"+calculatedX.toString()+"%,-"+calculatedY.toString()+"%)";
+        }
+
+        document.addEventListener("mousemove", moveBackground);
+
+    
+
 })

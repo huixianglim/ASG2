@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 /* NAVBAR global */
 .navbar{
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(26,0,50,1);
   font-size: 15px;
   height: 70px;
   position: sticky;
@@ -428,7 +428,7 @@ input[type="radio"]{
         }
       
         .navbar-menu.active{
-            background: rgba(0,0,0,0.8);;
+            background: rgba(26,0,50,1);
             top: 100%;
             opacity: 1;
             transition: all 0.3s ease;
@@ -484,12 +484,16 @@ input[type="radio"]{
         #mobile-menu.is-active .bar:nth-child(3){
             transform: translateY(-8px) rotate(-45deg);
         }
+
       
       }
       
       
       
       
-      @media (max-width: 640px){
-      
+      @media (max-width: 400px){
+        .wrapper{
+          border-radius: 0;
+          
+        }
       }

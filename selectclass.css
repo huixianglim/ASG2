@@ -14,6 +14,10 @@
 
 body{
   background-color: black;
+  background: url("./Images/starsky.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 /* NAVBAR global */
@@ -134,18 +138,15 @@ image-rendering: pixelated;
 /* SELECTCLASS PAGE */
   
 .selectclass-container{
-  height: 90vh;
+  overflow: hidden;
+  height: 91vh;
   width: 100%;
-  background: url("");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: url("./Images/starsky.gif");
+  
 }
 
 .selectclass-container h1{

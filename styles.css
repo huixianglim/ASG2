@@ -1,14 +1,35 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap');
+
+*{
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins",sans-serif;
+
+}
+
+body{
+  background-color: #000;
+}
+
+
 
 /* NAVBAR global */
+
 .navbar{
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0);
     font-size: 15px;
     height: 70px;
     position: sticky;
     z-index: 1000;
     display: flex;
     justify-content: center;
+    position: fixed;
+    width: 100%;
+    transition: ease-in-out 0.3s;
+}
+
+.navbar.sticky{
+  background: #131313;
 }
 
 .navbar-container{
@@ -18,12 +39,14 @@
     width: 100%;
     max-width: 1200px;
     z-index: 1;
+    transition: ease-in-out 0.3s;
 }
 
 .navbar-menu{
      list-style: none;
      display: flex;
      align-items: center;
+     transition: ease-in-out 0.3s;
 }
 
 .navbar-menu li{
@@ -51,6 +74,7 @@ a{
 
 #navbar-logo p{
   font-family: 'Press Start 2P', cursive;
+  
 }
 
  /* .navbar-links{
@@ -87,7 +111,7 @@ a{
 
 .navbar-links:after {    
   background: none repeat scroll 0 0 transparent;
-  bottom: 0;
+  bottom: 3%;
   content: "";
   display: block;
   height: 2px;
@@ -113,17 +137,21 @@ a{
 
 }
 
+.store-img{
+  background: url("./Images/shoppingbag.png");
+  width: 25px;
+  height: 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  image-rendering: pixelated;
+
+}
+
 
 /* Main page */
-*{
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Poppins",sans-serif;
 
-}
-body{
-  background-color: #1D212B;
-}
+
 section{
   min-height: 100vh;
   display: flex;
@@ -140,50 +168,107 @@ section{
   flex-direction: column;
   align-items: center;
 }
-.scroll > a{
+
+.scroll a{
+  width: 100px;
+  height: 100px;
   font-size: 5vw;
   transition: all 0.3s ease-out;
-  
+  background: url("https://www.stmedia.co.uk/stmedia/wp-content/themes/stmedia-2017/img/arrow_down_black.gif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+   
 }
-.scroll > a:hover{
+.scroll a:hover{
   transform: scale(1.25);
 }
 
 .scroll{
   position: absolute;
-  bottom: 10%;
+  bottom: 8%;
 }
 
 section.title{
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow:hidden;
 }
+
+/* .title .back-img{
+  position: absolute;
+  width: 120%;
+  height:115vh;
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.75), 
+    rgba(0, 0, 0, 0.75)
+  ),url("./Images/ninjavid.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  image-rendering: crisp-edges;
+  z-index: -1;
+} */
+
+.title .back-img{
+  position: absolute;
+  width: 120%;
+  height:115vh;
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.85), 
+    rgba(30, 0, 30, 0.65)
+  ),url("./Images/ninjavid.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  image-rendering: crisp-edges;
+  background-blend-mode:multiply;
+  z-index: -1;
+}
+
 section:nth-child(1){
   color: #fff;
-  background-image: url("Images/starsky.gif");
   
 }
+
 section:nth-child(2)[background = "true"]{
-  background: url("https://neocha-content.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/sites/2/2016/11/1041uuu-10.gif") center no-repeat;
+
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.7), 
+    rgba(0, 0, 0, 0.7)),url("https://64.media.tumblr.com/066d13748eb3a791cd9774d9561d7e57/tumblr_p240ppQIW21rnbw6mo1_540.gif") center no-repeat;
   background-size: cover ;
   color: white;
 }
+
 section:nth-child(3)[background = "true"]{
   color: white;
-  background:url("https://64.media.tumblr.com/39a0a9fc1e888b1ead027dab82d6d9e7/2763211f3a7351dc-67/s640x960/9ffa2c25fe67a3aecaf6bdf02142ba52846c4e31.gif") ;
+  background:linear-gradient(
+    rgba(0, 0, 0, 0.8), 
+    rgba(0, 0, 0, 0.8)
+  ),url("https://64.media.tumblr.com/39a0a9fc1e888b1ead027dab82d6d9e7/2763211f3a7351dc-67/s640x960/9ffa2c25fe67a3aecaf6bdf02142ba52846c4e31.gif") ;
   background-repeat: no-repeat;
   background-size:cover ;
+  
   
 }
 
 
 section:nth-child(4)[background = "true"]{
-  background: center url("https://i.pinimg.com/originals/43/0e/9a/430e9abb2039e992275efb898c5948c1.gif");
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.7), 
+    rgba(0, 0, 0, 0.7)
+  ),center url("https://64.media.tumblr.com/d6f52afff65dce9fc7cdeffa930c2c2f/tumblr_p4u4vqgE7H1rnbw6mo1_r1_1280.gif");
   color: #fff;
   background-repeat: no-repeat;
   background-size: cover;
 }
 section:nth-child(5)[background = "true"]{
-  background: center url("https://i.pinimg.com/originals/ce/b5/74/ceb574258cb71c79ba07a841b38d50a8.gif");
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.7), 
+    rgba(0, 0, 0, 0.7)
+  ),center url("https://media.tenor.com/1TIG65lnwT0AAAAd/waneella-pixel-art.gif");
   color: white;
   background-repeat: no-repeat;
   background-size:cover ;
@@ -200,21 +285,155 @@ section:nth-child(6){
   display: flex;
   margin: 5vw;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
 }
 section h1{
-  font-size: 6vw;
-  color: #0e3742;
+  /* font-size: 5vw; */
+  font-size: 80px;
+  color: #fff;
   width: 100%;
   text-align: center;
-  line-height: 0.7em;
   outline: none;
-  animation: animate 5s linear infinite;
-  
+  /* animation: animate 5s linear infinite; */
+  pointer-events: none;
+  line-height: 120px;
+
 }
+
+section h2{
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.title  h3{
+  font-size: 23px;
+  font-weight: 300;
+  text-align: center;
+  color: #ccc;
+}
+
+section h3{
+  font-size: 33px;
+  font-weight: 700;
+  text-align: center;
+  color: #ccc;
+}
+
+.createacc-btn {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 30px;
+  letter-spacing: 4px;
+}
+
+.createacc-btn a{
+  text-decoration: none;
+  color: white;
+}
+
+.createacc-btn:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 100px #03e9f4;
+              
+}
+
+.createacc-btn span {
+  position: absolute;
+  display: block;
+}
+
+.createacc-btn span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #fff);
+  animation: btn-anim1 1s linear infinite;
+}
+  @keyframes btn-anim1 {
+      0% {
+        left: -100%;
+      }
+      50%,100% {
+        left: 100%;
+      }
+    }
+
+    .createacc-btn span:nth-child(2) {
+      top: -100%;
+      right: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, transparent, #fff);
+      animation: btn-anim2 1s linear infinite;
+      animation-delay: .25s;
+    }
+
+    @keyframes btn-anim2 {
+      0% {
+        top: -100%;
+      }
+      50%,100% {
+        top: 100%;
+      }
+    }
+
+    .createacc-btn span:nth-child(3) {
+      bottom: 0;
+      right: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(270deg, transparent, #fff);
+      animation: btn-anim3 1s linear infinite;
+      animation-delay: .5s;
+    }
+
+    @keyframes btn-anim3 {
+      0% {
+        right: -100%;
+      }
+      50%,100% {
+        right: 100%;
+      }
+    }
+
+    .createacc-btn span:nth-child(4) {
+      bottom: -100%;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(360deg, transparent, #fff);
+      animation: btn-anim4 1s linear infinite;
+      animation-delay: .75s;
+    }
+
+    @keyframes btn-anim4 {
+      0% {
+        bottom: -100%;
+      }
+      50%,100% {
+        bottom: 100%;
+      }
+    }
 
 @keyframes animate{
   0%,18%,20%,50.1%,60%,65.1%,80%,90.1%,92%{
-    color: #0e3742;
+    color: #fff;
     text-shadow: none;
   }
   18.1%,20.1%,50%,60.1%,65%,80.1%,90%,92.1%,100%{
@@ -230,18 +449,25 @@ section h1{
   }
 }
 
-section h2{
-  font-size: 3vw;
-  text-align: center;
-  text-transform: uppercase;
-}
-section .cards {
-  background:rgba(255, 255, 255, 0.2) ;
-  box-shadow: 0 4px 14px  rgba(0,0, 0, 0.5) ;
-  margin: 2vw;
-  padding: 2.2vw;
-  width: 35vw;
 
+section .cards {
+  /* background:rgba(255, 255, 255, 0.2) ; */
+  /* box-shadow: 0 4px 14px  rgba(0,0, 0, 0.5) ; */
+  margin: 2vw;
+  /* padding: 2.2vw; */
+  width: 35vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+.cards p{
+  line-height: 35px;
+}
+.cards h3{
+  line-height: 75px;
 }
 
 
@@ -315,7 +541,21 @@ section .cards {
   width: 15vw; 
   height: 15vw;
 }
-@media only screen and (width<=1000px){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1024px){
   .aboutUs h2{
     font-size: 7vw;
   }
@@ -329,56 +569,21 @@ section .cards {
   section .cards{
     width: 45vw;
   }
-}
-@media only screen and (width<=750px){
-  .aboutUs h2{
-    font-size: 7vw;
-  }
-  .lottie{
-    width: 25vw; 
-    height: 25vw;
 
-  }
-  section .cards{
-    width: 60vw;
-  }
-  .container{
-    flex-direction: column;
-  }
   section h1{
-    font-size: 8vw;
-  }
-  section h2{
-    font-size: 5vw;
-  }
-  .scroll > a{
-    font-size: 10vw;    
+    line-height: 100px;
+    max-width: 700px;
   }
 
-}
+  .title h3{
+    font-size: 23px;
+    max-width: 500px;
+  }
 
-  @media only screen and (width<=420px){
-    section h1{
-      font-size: 8vw;
-    }
-    .aboutUs h2{
-      font-size: 7vw;
-    }
-    .lottie{
-      width: 30vw; 
-      height: 30vw;
-  
-    }
-    section .cards{
-      width: 70vw;
-    }
-    section h2{
-      font-size: 5vw;
-    }
+  /* section h3{
+    font-size: 10px;
+  } */
 
-}
-
-@media (max-width: 1024px){
 }
 
 
@@ -395,20 +600,23 @@ section .cards {
       top: -1000px;
       opacity: 0;
       transition: all 0.3s ease;
-      height: 150px;
+      height: 200px;
       z-index: -1;
       width: 100%;
       position: absolute;
   }
 
   .navbar-menu.active{
-      background: rgba(0,0,0,0.6);;
+      background: #131313;
       top: 100%;
       opacity: 1;
       transition: all 0.3s ease;
       z-index: 999;
-      height: 150px;
+      height: 200px;
       font-size: 12px;
+      /* display: flex;
+      justify-content: center;
+      flex-direction: column; */
   }
 
   .navbar-toggle .bar{
@@ -429,11 +637,10 @@ section .cards {
       width: 100%;
   }
 
-  /* .navbar-links{
-      text-align: center;
-      display: table;
-      width: 100%;  
-  } */
+  .navbar-links{
+      padding: 0;
+      margin-left: -8%; 
+  }
 
   #navbar-logo{
       padding-left: 25px;
@@ -459,11 +666,79 @@ section .cards {
       transform: translateY(-8px) rotate(-45deg);
   }
 
+
+  /* MAIN CONTENT 768 */
+  .aboutUs h2{
+    font-size: 7vw;
+  }
+  .lottie{
+    width: 25vw; 
+    height: 25vw;
+
+  }
+  section .cards{
+    width: 60vw;
+  }
+  .container{
+    flex-direction: column;
+  }
+  /* section h1{
+    font-size: 8vw;
+  } */
+  section h2{
+    /* font-size: 90px; */
+  }
+  .scroll > a{
+    font-size: 10vw;    
+  }
+
 }
 
 
 
 
 @media (max-width: 640px){
+  section h1{
+    line-height: 75px;
+    max-width: 700px;
+    font-size: 60px;
+  }
 
+  .title h3{
+    font-size: 18px;
+    max-width: 400px;
+  }
+  /* .aboutUs h2{
+    font-size: 7vw;
+  } */
+  .lottie{
+    width: 30vw; 
+    height: 30vw;
+
+  }
+  section .cards{
+    width: 70vw;
+  }
+  /* section h2{
+    font-size: 5vw;
+  } */
 }
+
+@media (max-width: 500px){
+  section h1{
+    line-height: 55px;
+    max-width: 400px;
+    font-size: 48px;
+  }
+
+  .title h3{
+    font-size: 15px;
+    max-width: 300px;
+  }
+
+  .cards h3{
+    line-height: 50px;
+    margin-bottom: 10px;
+  }
+}
+
