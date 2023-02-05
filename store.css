@@ -1,16 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap');
 
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&family=Press+Start+2P&display=swap');
 /* NAVBAR global */
 .navbar{
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0,0,0,0.5);
   font-size: 15px;
-  width: 100%;
   height: 70px;
   position: sticky;
   z-index: 1000;
   display: flex;
   justify-content: center;
+  position: fixed;
+  width: 100%;
+  transition: ease-in-out 0.3s;
+}
+
+.navbar.sticky{
+background: #131313;
 }
 
 .navbar-container{
@@ -20,13 +26,14 @@
   width: 100%;
   max-width: 1200px;
   z-index: 1;
+  transition: ease-in-out 0.3s;
 }
 
 .navbar-menu{
    list-style: none;
    display: flex;
    align-items: center;
-
+   transition: ease-in-out 0.3s;
 }
 
 .navbar-menu li{
@@ -90,7 +97,7 @@ padding: 10px;
 
 .navbar-links:after {    
 background: none repeat scroll 0 0 transparent;
-bottom: 0;
+bottom: 3%;
 content: "";
 display: block;
 height: 2px;
@@ -117,14 +124,12 @@ image-rendering: pixelated;
 }
 
 
-
-
 /* MAIN PAGE */
 
 
 * {
     margin: 0;
-    /* box-sizing: border-box; */
+   /*  box-sizing: border-box; */
     font-family: "Poppins",sans-serif;
 }
 
@@ -132,7 +137,6 @@ image-rendering: pixelated;
 .heading, h5, h4, h3, h2, h1 {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
-  color: #222;
 }
 
 h1 {
@@ -162,19 +166,25 @@ p {
   font-family: "Poppins", sans-serif;
   color: #fafdf0;
   line-height: 1.5em;
+  margin: 0;
 }
 
 
 body {
   background: white;
+  overflow-x: hidden;
 }
 
 .product_wrap {
-  width: 60%;
-  margin: 50px auto;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: center;
+}
+.store-container{
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .product {
@@ -184,11 +194,19 @@ body {
   transform: translateY(0) translateX(0);
   transition: all 200ms ease-in-out 200ms;
   z-index: 1;
+  box-shadow: 0 0.2vw 1vw  rgba(0,0, 0, 0.5) ;
+  margin: 4%;
+}
+#cart{
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+#cart:hover{
+  transform: scale(1.25);
+  color: greenyellow;
 }
 
-.product:hover {
-  transform: translateY(-10px) translateX(0px);
-}
 .product-backdrop {
   position: absolute;
   width: 100%;
@@ -200,22 +218,24 @@ body {
   z-index: -1;
 }
 .product:hover .product-backdrop {
-  background: rgb(81, 96, 142);
+  background: rgb(204, 202, 202);
   height: 100%;
   opacity: 1;
   border-radius: 5px;
   transform: scale(1) translateY(0px);
 }
 
-.product-img {
+.product-img{
   width: 90%;
   height: 15vw;
   margin: 15px auto;
   border-radius: 5px;
   background: #ccc;
-  background-size: cover;
   z-index: 10;
   overflow: hidden;
+  background: url("https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg") center no-repeat;
+  background-size: contain;
+
 }
 
 
@@ -223,27 +243,34 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 40px 0 20px 0;
+  margin: 0 0 0 0;
+  padding: 0;
   z-index: 10;
 }
 .product-content-title h4 {
+  font-family: 'Poppins', sans-serif;
   font-size: 1.1em;
+  font-weight: bold;
   color: #000;
   transition: all 200ms ease-in-out 150ms;
 }
 .product-content-cost h5 {
+  font-family: 'Poppins', sans-serif;
   line-height: 2em;
   font-size: 1em;
   color: #000;
   transition: all 200ms ease-in-out 150ms;
 }
-.product:hover .product-content-cost h5 {
-  color: #fafdf0;
+
+
+.product-buy .fa-shopping-cart{
+  font-size: 2vw;
+  pointer-events: none;
 }
-.product:hover .product-content-title h4 {
-  color: #fafdf0;
-}
+
 .product .product-buy {
+  display: flex;
+  justify-content: center;
   position: absolute;
   width: 40%;
   right: 5%;
@@ -254,7 +281,7 @@ body {
   font-size: 0.8em;
   line-height: 0.8em;
   opacity: 0;
-  transform: translateY(-200px);
+  transform: translateX(200px);
   transition: all 200ms ease-in-out 150ms;
 }
 .product .product-buy:hover {
@@ -267,7 +294,7 @@ body {
 }
 .product:hover .product-buy {
   opacity: 1;
-  transform: translateY(-30px);
+  transform: translateX(0px);
 }
 
 
@@ -278,27 +305,129 @@ body {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    flex-direction: column;
-    width: 100%;
-    height: 30%;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 5%;
+}
+.banner{
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.swiper-slide{
+  text-align: center;
+}
+.swiper-slide img{
+  width: 100vw;
+  height: 80vh;
+}
+.image{
+  background: url("https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg");
+  background-size: cover;
+}
+.swiper-title{
+  width: 100%;
+  position: absolute;
+  bottom: 10%;
+  left:0;
+  z-index: 5;
+  color: white;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2vw;
+}
+
+#update-product-container{
+  position: absolute;
+  background: white;
+  z-index: 5;
+  border: 0.5 vw solid black;
+  box-shadow: 0 0.2vw 1vw  rgba(0,0, 0, 0.5) ;
+  padding: 5%;
+}
+.cancel{
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  color: black;
+  cursor: pointer;
+}
+.welcome{
+
+  text-align: center;
+}
+.searchBar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  margin-right: auto;
+}
+
+#searchQueryInput {
+  width: 60%;
+  height: 6vh;
+  background: #f5f5f5;
+  outline: none;
+  border: none;
+  border-radius: 1.625rem;
+  padding: 0 3.5rem 0 1.5rem;
+  font-size: 2rem;
+}
+
+#searchQuerySubmit {
+  width: 3.5rem;
+  height: 2.8rem;
+  margin-left: -3.5rem;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+#searchQuerySubmit:hover {
+  cursor: pointer;
 }
 
 
 
 
 
-
-@media (max-width: 1024px){
+@media (  width >= 1024px){
+ .product{
+  width: 25%;
+ }
 }
+@media (  width <= 920px){
+  .product{
+   width: 35%;
+  }
+  .swiper-slide img{
+    height: 60vh;
+  }
+ }
 
 
 @media (max-width: 768px){
+  .product{
+    width: 40%;
+   }
+   #searchQueryInput{
+    font-size: 2rem;
+    height: 8vh;
+   }
   
   /* NAVBAR */
   .navbar-container{
       padding: 0;
   }
-  
+  .swiper-slide img{
+    height: 55vh;
+  }
   .navbar-menu{
       display:grid;
       grid-template-columns: auto;
@@ -352,7 +481,6 @@ body {
 
   #mobile-menu{
       position: absolute;
-      top: 20%;
       right: 5%;
       transform: translate(5%, 20%);
   }
@@ -373,7 +501,32 @@ body {
 
 
 
-
-@media (max-width: 640px){
-
+@media (width<= 640px){
+  .product .product-buy{
+    top: 50%;
+  }
+  .swiper-title{
+    font-size: 2vw;
+  }
+  .product_wrap{
+    width: 70%;
+  }
+  .product-img{
+    height: 50vw;
+  }
+  .product{
+    width: 100%;
+   }
+   .product .product-buy {
+    width: 50%;
+    right: 5%;
+    padding: 12px 14px;
+    margin: 15%;
+  }
+  .product-buy .fa-shopping-cart{
+    font-size: 4vw;
+  }
+  .swiper-slide img{
+    height: 40vh;
+  }
 }

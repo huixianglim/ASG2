@@ -13,12 +13,19 @@ $(document).ready(()=>{
    var id =""
    var Currentkills = 0
    var kills = 0
+   var person = ''
   // getLeaderBoard()
-   var person = JSON.parse(localStorage.getItem("person"))
+   if (localStorage.getItem("person") == null || localStorage.getItem("person") == undefined){
+      window.location.href = "login.html"
+   }
+   else{
+      person = JSON.parse(localStorage.getItem("person"))
+   }
    var email = person.email
    chosen = sessionStorage.getItem("character");
    if(chosen==null ||chosen== undefined){
-      chosen = "knight" //setting of the character image to knight as default
+      chosen = "knight"
+      window.location.href = "selectclass.html" //directing users to the selectclass page if they have not signed up
    }
    if (chosen!="knight"){
       $(".you_spritesheet").attr("character",chosen)

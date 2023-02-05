@@ -1,12 +1,56 @@
-// const APIKEY = "63dbf5963bc6b255ed0c459e";
+ const APIKEY = "63dbf5963bc6b255ed0c459e";
 
 $(document).ready(function(){
- 
+  const menu = document.querySelector('#mobile-menu');
+    const menuLinks = document.querySelector('.navbar-menu');
+    
+    menu.addEventListener('click', function(){
+        menu.classList.toggle('is-active');
+        menuLinks.classList.toggle('active');
+    });
     $("#update-product-container").hide();
     $("#add-update-msg").hide();
-    GetStoreItems();
-    
+  GetStoreItems();
+    $("#searchQueryInput").on("input",(e)=>{
+      var productList = document.getElementsByClassName("product")
+      for(let i = 0; i<productList.length;i++){
+        let name = ($(".update")[i].dataset.name).toLowerCase()
+          if(!name.includes(e.target.value.toLowerCase())){
+            productList[i].style.display = "none"
+          }
+          else{
+            productList[i].style.display = "block"
+          }
+      }
+    })
 
+
+
+
+
+   $(".cancel").on("click",()=>{
+    $("#update-product-container").hide();
+  })
+
+  $("#product-list").on("click",".product-buy",(e)=>{
+    let buttons =  $(".product-buy")
+    for (let i = 0;i<buttons.length;i++){
+      if(buttons[i] == e.target){
+        if (localStorage.getItem($(".update")[i].dataset.name) === null){
+          let json = {
+            "quantity": 1,
+            "price": parseFloat($(".update")[i].dataset.price),
+            "url": $(".update")[i].dataset.image
+          }
+          localStorage.setItem($(".update")[i].dataset.name, JSON.stringify(json))
+        }
+        else{
+          alert("Item has already been added to the cart")
+        }
+
+        
+      }
+    }})
     $("#product-list").on("click", ".update", function(e) {
         e.preventDefault();
         //update our update form values
@@ -74,36 +118,44 @@ function GetStoreItems(){
         console.log(response)
         for (var i = 0; i < response.length; i++){
           
-
+        
         content = `${content}<div class="product">
         <div class="product-dropshadow"></div>
         <div class="product-backdrop product-backdrop_purple"></div>
-        <div class="product-img">
-        <img src="${response[i].image}">
+        <div class="product-img" style = "width: 90%;
+        margin: 15px auto;
+        border-radius: 5px;
+        background: #ccc;
+        z-index: 10;
+        overflow: hidden;
+        background: url(${response[i].image}) center no-repeat;
+        background-size: contain;">
         </div>
         <div class="product-buy">
-            <h5>ADD TO CART</h5>
+          <i class="fa fa-shopping-cart"></i>
         </div>
         <div class="product-content">
             <div class="product-content-title">
                 <h4>${response[i].name}</h4>
             </div>
             <div class="product-content-cost">
-                <h5>${response[i].price}</h5>
+                <h5>$${response[i].price}</h5>
             </div>
         </div>
 
-        <div class="admmin-controls">
-            <a href="#" class='update' data-id='${response[i]._id}' data-name='${response[i].name}' data-price='${response[i].price}' data-image='${response[i].image}'>UPDATE</a>
-            <a href="#" class="delete">DELETE</a>
+        <div class="admin-controls">
+        <a href="#" class='update' data-id='${response[i]._id}' data-name='${response[i].name}' data-price='${response[i].price}' data-image='${response[i].image}'>UPDATE</a>
+        <a href="#" class="delete">DELETE</a>
         </div>
         </div>`
+        
         }
+        
 
         $("#product-list").html(content);
 
        })
-
+       
 
 }
 
@@ -158,4 +210,7 @@ function deleteContact(id) {
 
         GetStoreItems();
     });
+
+
+    
   }

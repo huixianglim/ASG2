@@ -5,44 +5,207 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slayers Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="store.css">
 </head>
-<body class="login">
+<body>
+  <header>
     <nav class="navbar">
-        <div class="navbar-container">
+      <div class="navbar-container">
 
-            <a href="./index.html" id="navbar-logo">
-                <p>Slayers</p>
-            </a>
+          <a href="./index.html" id="navbar-logo">
+              <p>Slayers</p>
+          </a>
 
-            <div class="navbar-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+          <div class="navbar-toggle" id="mobile-menu">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+          </div>
+
+          <ul class="navbar-menu">
+              
+              
+              <li class="navbar-button">
+                  
+                  <a href="./login.html" class="navbar-links">
+                  <div class="signin-img"></div>  
+                  <p>LOG IN</p>
+                  </a>
+              </li>
+              <li class="navbar-button">            
+                <a href="cart.html"><i id="cart" class="fa fa-shopping-cart"></i></a>  
+              </li>
+
+          </ul>
+
+      </div>
+  </nav>
+  </header>
+  <main>
+        <div class="banner">
+          <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <div class="swiper-title">
+                  <h1>Top 5 people in the leaderboard gets 30% off for all items!</h1>
+                </div>
+                <img src="https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg" alt=""></div>
+              <div class="swiper-slide">
+                <div class="swiper-title">
+                  <h1>Top 5 people in the leaderboard gets 30% off for all items!</h1>
+                </div>
+                <img src="https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg" alt=""></div>
+              <div class="swiper-slide">
+                <div class="swiper-title">
+                  <h1>Top 5 people in the leaderboard gets 30% off for all items!</h1>
+                </div>
+                <img src="https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg" alt=""></div>
+              ...
             </div>
-
-            <ul class="navbar-menu">
-                <li class="navbar-button">
-                    
-                    <a href="./login.html" class="navbar-links">
-                    <div class="signin-img"></div>  
-                    <p>LOG IN</p>
-                    </a>
-                </li>
-
-                
-
-            </ul>
+         
+      
+          </div>
 
         </div>
-    </nav>
-        
 
+        <div class="welcome">
+          <h2>WELCOME TO OUR SHOP</h2>
+        </div>
+        <div class="searchBar">
+          <input id="searchQueryInput" type="text" name="searchQueryInput" placeholder="Search" value="" />
+          <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit">
+            <svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#666666" d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
+            </svg>
+          </button>
+        </div>
     <div class="store-container">
-
-      <div class="product_wrap" id="product-list"></div>
+   
+      <div class="product_wrap" id="product-list">
+        <div class="product">
+          <div class="product-dropshadow"></div>
+          <div class="product-backdrop product-backdrop_purple"></div>
+          <div class="product-img">
+          </div>
+          <div class="product-buy">
+            <i class="fa fa-shopping-cart"></i>
+          </div>
+          <div class="product-content">
+              <div class="product-content-title">
+                  <h4>hi</h4>
+              </div>
+              <div class="product-content-cost">
+                  <h5>wesley</h5>
+              </div>
+          </div>
+  
+          <div class="admin-controls">
+              <a href="#" class='update' data-id='${response[i]._id}' data-name='${response[i].name}' data-price='${response[i].price}' data-image='${response[i].image}'>UPDATE</a>
+              <a href="#" class="delete">DELETE</a>
+          </div>
+          </div>
+          <div class="product">
+            <div class="product-dropshadow"></div>
+            <div class="product-backdrop product-backdrop_purple"></div>
+            <div class="product-img" style="background: url(https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg);">
+            
+            </div>
+            <div class="product-buy">
+                <h5>ADD TO CART</h5>
+            </div>
+            <div class="product-content">
+                <div class="product-content-title">
+                    <h4>hi</h4>
+                </div>
+                <div class="product-content-cost">
+                    <h5>wesley</h5>
+                </div>
+            </div>
+    
+            <div class="admin-controls">
+                <a href="#" class='update' data-id='${response[i]._id}' data-name='${response[i].name}' data-price='${response[i].price}' data-image='${response[i].image}'>UPDATE</a>
+                <a href="#" class="delete">DELETE</a>
+            </div>
+            </div>
+            <div class="product">
+              <div class="product-dropshadow"></div>
+              <div class="product-backdrop product-backdrop_purple"></div>
+              <div class="product-img" style="background: url(https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg);">
+              
+              </div>
+              <div class="product-buy">
+                  <h5>ADD TO CART</h5>
+              </div>
+              <div class="product-content">
+                  <div class="product-content-title">
+                      <h4>hi</h4>
+                  </div>
+                  <div class="product-content-cost">
+                      <h5>wesley</h5>
+                  </div>
+              </div>
+      
+              <div class="admin-controls">
+                  <a href="#" class='update' data-id='${response[i]._id}' data-name='${response[i].name}' data-price='${response[i].price}' data-image='${response[i].image}'>UPDATE</a>
+                  <a href="#" class="delete">DELETE</a>
+              </div>
+              </div>
+              <div class="product">
+                <div class="product-dropshadow"></div>
+                <div class="product-backdrop product-backdrop_purple"></div>
+                <div class="product-img" style="background: url(https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg);">
+                
+                </div>
+                <div class="product-buy">
+                    <h5>ADD TO CART</h5>
+                </div>
+                <div class="product-content">
+                    <div class="product-content-title">
+                        <h4>hi</h4>
+                    </div>
+                    <div class="product-content-cost">
+                        <h5>wesley</h5>
+                    </div>
+                </div>
+        
+                <div class="admin-controls">
+                    <a href="#" class='update' data-id='${response[i]._id}' data-name='${response[i].name}' data-price='${response[i].price}' data-image='${response[i].image}'>UPDATE</a>
+                    <a href="#" class="delete">DELETE</a>
+                </div>
+                </div>
+                <div class="product">
+                  <div class="product-dropshadow"></div>
+                  <div class="product-backdrop product-backdrop_purple"></div>
+                  <div class="product-img" style="background: url(https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg);">
+                  
+                  </div>
+                  <div class="product-buy">
+                      <h5>ADD TO CART</h5>
+                  </div>
+                  <div class="product-content">
+                      <div class="product-content-title">
+                          <h4>hi</h4>
+                      </div>
+                      <div class="product-content-cost">
+                          <h5>wesley</h5>
+                      </div>
+                  </div>
+          
+                  <div class="admin-controls">
+                      <a href="#" class='update' data-id='${response[i]._id}' data-name='${response[i].name}' data-price='${response[i].price}' data-image='${response[i].image}'>UPDATE</a>
+                      <a href="#" class="delete">DELETE</a>
+                  </div>
+                  </div>
+              
+      </div>
+      
 
         <div class="container mt-5" id="update-product-container">
             <input type="hidden" id="update-product-id" />
@@ -51,7 +214,8 @@
                 Product record updated sucessfully
               </div>
             </div>
-            <h4>Update Product</h4>
+            <h1>Update Product</h1>
+            <div class="cancel"><h1>&#x2716;</h1></div>
             <div class="form" id="update-product">
               <form id="update-product-form">
                 
@@ -73,13 +237,35 @@
                 <input type="submit" value="Update Product Details" class="btn btn-warning" id="update-product-submit" />
               </form>
             </div>    
-            
-        
         </div>
-
+      </main>  
+      <footer>
+        
+      </footer>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script>
+          const swiper = new Swiper('.swiper', {
+            autoplay: {
+                    delay: 2000,
+                  },
+
+                    // Optional parameters
+                    direction: 'horizontal',
+                    loop: true,
+                    freeMode:false,
+                    slidesPerView: 1,
+                    centeredSlides: true,
+                    // If we need pagination
+                    pagination: {
+                      el: '.swiper-pagination',
+                    },
+
+                    // Navigation arrows
+                  
+                  });
+        </script>
         <script src='store.js'></script>
 </body>
 </html>
