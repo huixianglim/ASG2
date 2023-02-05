@@ -685,9 +685,9 @@ section .cards {
   /* section h1{
     font-size: 8vw;
   } */
-  section h2{
-    /* font-size: 90px; */
-  }
+  /* section h2{
+     font-size: 90px; 
+  } */
   .scroll > a{
     font-size: 10vw;    
   }

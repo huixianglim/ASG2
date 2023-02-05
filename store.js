@@ -1,6 +1,7 @@
  const APIKEY = "63dbf5963bc6b255ed0c459e";
 
 $(document).ready(function(){
+  adminCheck();
   const menu = document.querySelector('#mobile-menu');
     const menuLinks = document.querySelector('.navbar-menu');
     
@@ -9,14 +10,29 @@ $(document).ready(function(){
         menuLinks.classList.toggle('active');
     });
     $("#update-product-container").hide();
-    $("#add-update-msg").hide();
-  GetStoreItems();
-    $("#searchQueryInput").on("input",(e)=>{
+    $("#post-product-container").hide();
+    //GetStoreItems();
+
+    $(".postCancel").on("click",()=>{
+      $("#post-product-container").hide();
+    })
+    
+    $("#add").on("click",()=>{
+      $("#add-post-msg").hide();
+      $("#post-product-container").show();
+    })
+
+    $("#post-product-submit").on("click",(e)=>{
+      e.preventDefault();
+      postForm();
+    })
+
+   $("#searchQueryInput").on("input",(e)=>{ //search function
       var productList = document.getElementsByClassName("product")
       for(let i = 0; i<productList.length;i++){
         let name = ($(".update")[i].dataset.name).toLowerCase()
           if(!name.includes(e.target.value.toLowerCase())){
-            productList[i].style.display = "none"
+            productList[i].style.display = "none";
           }
           else{
             productList[i].style.display = "block"
@@ -24,7 +40,10 @@ $(document).ready(function(){
       }
     })
 
-
+    window.addEventListener("scroll", function(){
+      var nav = document.querySelector("nav");
+      nav.classList.toggle("sticky", window.scrollY > 0);
+  })
 
 
 
@@ -43,6 +62,11 @@ $(document).ready(function(){
             "url": $(".update")[i].dataset.image
           }
           localStorage.setItem($(".update")[i].dataset.name, JSON.stringify(json))
+          $("#cart").attr("active","true"); //set animation
+          setTimeout(()=>{
+            $("#cart").attr("active","false");
+
+          },500)
         }
         else{
           alert("Item has already been added to the cart")
@@ -53,6 +77,7 @@ $(document).ready(function(){
     }})
     $("#product-list").on("click", ".update", function(e) {
         e.preventDefault();
+        $("#add-update-msg").hide();
         //update our update form values
         let name = $(this).data("name");
         let price = $(this).data("price");
@@ -155,9 +180,25 @@ function GetStoreItems(){
         $("#product-list").html(content);
 
        })
-       
+    
+
+
+
+
+
+
+
+
 
 }
+
+
+
+
+
+
+
+
 
 function updateForm(id, name, price, image) {
     //@TODO create validation methods for id etc. 
@@ -214,3 +255,57 @@ function deleteContact(id) {
 
     
   }
+function postForm(){
+
+  let jsondata = {
+    "name":$("#post-product-name").val(),
+    "price": parseFloat($("#post-product-price").val()),
+    "image":$("#post-product-image").val()
+  }
+  console.log(jsondata)
+
+  var post = {
+    "async": true,
+    "crossDomain": true,
+  //   "url": `https://databaseid-63ae.restdb.io/rest/store/${id}`,//update based on the ID
+    "url": `https://idasg-332a.restdb.io/rest/store`,
+    "method": "POST",
+    "headers": {
+      "content-type": "application/json",
+      "x-apikey": APIKEY,
+      "cache-control": "no-cache"
+    },
+    "error":function(){
+      alert("error in inputs")
+    },
+    "processData": false,
+    "data": JSON.stringify(jsondata)
+  }
+  $.ajax(post).done(()=>{
+    $("#add-post-msg").show();
+    GetStoreItems();
+
+  })
+
+}
+
+function adminCheck(){
+  var person = localStorage.getItem("person")
+  if (person!=null){
+    if(person.admin == true){
+      $(".admin-controls").show()
+      $("#add").show()
+    }
+    else{
+      $(".admin-controls").hide()
+      $("#add").hide()
+    }
+
+
+  }
+  else{
+    $(".admin-controls").hide()
+    $("#add").hide()
+  }
+
+}
