@@ -2,7 +2,7 @@ $(document).ready(()=>{
     $("#checkOut").hide();
     getCart();
     $("#startCheck").on("click",()=>{
-        $("#checkOut").show()
+        $("#checkOut").fadeIn()
         let price = checkTotal()
         $(".totalProduct").html(price)
         $(".checkTotal") .html("$" + String(price+4));
@@ -11,6 +11,7 @@ $(document).ready(()=>{
     $(".cancel").on("click",()=>{
         $("#checkOut").hide()
     })
+
     $(".remove").on("click",(e)=>{
         $(".remove").attr("disabled",false)
         e.preventDefault();
@@ -20,6 +21,8 @@ $(document).ready(()=>{
         getTotal();
         setQuantity();
     })
+
+
     $(".productQuantity").on("input",(e)=>{
         let id = e.target.dataset.id
         let product = JSON.parse(localStorage.getItem(id))
