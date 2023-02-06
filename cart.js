@@ -1,15 +1,29 @@
 $(document).ready(()=>{
-    $("#checkOut").hide();
-    getCart();
-    $("#startCheck").on("click",()=>{
-        $("#checkOut").fadeIn()
+    $("#checkOut").hide()
+     getCart();
+    
+    
+     $("#startCheck").on("click",()=>{ //cart
         let price = checkTotal()
-        $(".totalProduct").html(price)
-        $(".checkTotal") .html("$" + String(price+4));
+        if (price != 0){
+            $("#checkOut").fadeIn()
+            $(".totalProduct").html(price)
+            $(".checkTotal") .html("$" + String(price+4));
+        }
+        else{
+            alert("No items to checkout!")
+        }
+    })
+
+    $("#pay").on("click",()=>{
+        ClearCart();
+        $("#checkOut").hide();
+        getCart();
     })
 
     $(".cancel").on("click",()=>{
         $("#checkOut").hide()
+      
     })
 
     $(".remove").on("click",(e)=>{
@@ -122,7 +136,7 @@ for (var i = 0; i < localStorage.length; i++){
          <a href="#" data-id = "${key}" class="remove">x</a>
        </div>
      </div>
-    <div> `
+    </div> `
     }
     $("#cartWrap").html(content)
     setQuantity();
@@ -166,4 +180,13 @@ function checkTotal(){
         }
     }
     return total
+}
+
+function ClearCart(){
+    let index = localStorage.length
+    for (let i =0; i<index;i++){
+       if(localStorage.key(i) !="person"){
+        localStorage.removeItem(localStorage.key(i))
+       }
+    }
 }
