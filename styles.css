@@ -525,6 +525,7 @@ section .cards {
   flex-direction: column;
   justify-content: space-around;
   width: 30vw;
+  text-align: center;
 }
 .aboutUs > div{
   display: flex;
@@ -534,12 +535,12 @@ section .cards {
   justify-content: center;
 }
 .aboutUs h2{
-  font-size: 5vw;
+  font-size: 70px;
 }
 .lottie{
   padding: 0;
-  width: 15vw; 
-  height: 15vw;
+  width: 200px; 
+  height: 200px;
 }
 
 
@@ -556,13 +557,13 @@ section .cards {
 
 
 @media (max-width: 1024px){
-  .aboutUs h2{
-    font-size: 7vw;
+  /* .aboutUs h2{
+    font-size: 50px;
   }
   .lottie{
     width: 25vw; 
     height: 25vw;
-  }
+  } */
   .container{
     flex-direction: column;
   }
@@ -583,6 +584,10 @@ section .cards {
   /* section h3{
     font-size: 10px;
   } */
+
+  .aboutUs{
+    width: 36vw;
+  }
 
 }
 
@@ -639,8 +644,13 @@ section .cards {
 
   .navbar-links{
       padding: 0;
-      margin-left: -8%; 
+      margin: 0;
+      left: 0;
+      right: 0; 
+      padding: 0;
   }
+
+  
 
   #navbar-logo{
       padding-left: 25px;
@@ -669,11 +679,11 @@ section .cards {
 
   /* MAIN CONTENT 768 */
   .aboutUs h2{
-    font-size: 7vw;
+    font-size: 50px;
   }
   .lottie{
-    width: 25vw; 
-    height: 25vw;
+    width: 170px; 
+    height: 170px;
 
   }
   section .cards{
@@ -690,6 +700,10 @@ section .cards {
   }
   .scroll > a{
     font-size: 10vw;    
+  }
+
+  .aboutUs{
+    width: 40vw;
   }
 
 }
@@ -712,8 +726,8 @@ section .cards {
     font-size: 7vw;
   } */
   .lottie{
-    width: 30vw; 
-    height: 30vw;
+    /* width: 30vw; 
+    height: 30vw; */
 
   }
   section .cards{
@@ -740,5 +754,6 @@ section .cards {
     line-height: 50px;
     margin-bottom: 10px;
   }
+
 }
 
