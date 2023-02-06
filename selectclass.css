@@ -13,7 +13,6 @@
 }
 
 body{
-  background-color: black;
   background: url("./Images/starsky.gif");
   background-repeat: no-repeat;
   background-position: center;
@@ -138,6 +137,7 @@ image-rendering: pixelated;
 /* SELECTCLASS PAGE */
   
 .selectclass-container{
+  position: relative;
   overflow: hidden;
   height: 91vh;
   width: 100%;
@@ -491,6 +491,7 @@ image-rendering: pixelated;
   align-items: center;
   color: black;
   font-family: 'Press Start 2P', cursive;
+  font-size: 1vw;
   border-radius: 20px;
   margin: 2%;
 }
@@ -512,6 +513,20 @@ image-rendering: pixelated;
 
 
 @media (max-width: 1024px){
+  .select-btn{
+    text-decoration: none;
+    background-color: white;
+    width: 20%;
+    height: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5vw;
+    border-radius: 20px;
+    margin: 2%;
+  }
 }
 
 
@@ -592,11 +607,40 @@ image-rendering: pixelated;
       transform: translateY(-8px) rotate(-45deg);
   }
 
+  .character-button-k a:hover, .character-button-n a:hover, .character-button-t a:hover{
+    color: #fff;
+    box-shadow: none;
+    transition: all 0.2s;
+    width: 9vh;
+    height: 9vh;
+  }
+
+  .character-button-k, .character-button-n, .character-button-t{
+    padding: 10%;
+    
+  }
+
+  .select-btn{
+    width: 30%;
+    height: 7%;
+    font-size: 2vw;
+    border-radius: 20px;
+    margin: 2%;
+  }
+
+
+
 }
 
 
-
-
 @media (max-width: 640px){
+  .selectclass-container h1{
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 27px;
+    z-index: 997;
+    margin: 20px;
+    line-height: 40px;
+  }
 
 }
