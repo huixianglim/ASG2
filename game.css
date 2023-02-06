@@ -434,6 +434,9 @@ a{
    bottom: calc(var(--pixel-size) * 5);
    width: calc(var(--pixel-size) * 37);
    height: calc(var(--pixel-size) * 38);
+   -webkit-user-select: none; 
+   -ms-user-select: none; 
+   user-select: none;
 }
 .dpad-button {
    -webkit-appearance:none;
@@ -510,12 +513,12 @@ a{
    right: calc(var(--pixel-size) * -1);
 }
 
-.headline {
+/* .headline {
    position:absolute;
    top:calc(var(--pixel-size) * 2);
    right:calc(var(--pixel-size) * 2);
    width: calc(var(--pixel-size) * 75)
-}
+} */
 
 
 /*LeaderBoard*/
@@ -638,6 +641,40 @@ a{
  
  
  @media (max-width: 768px){
+
+   .dpad {
+      position:absolute;
+      left: calc(var(--pixel-size) * 15);
+      bottom: calc(var(--pixel-size) * 5);
+      width: calc(var(--pixel-size) * 50);
+      height: calc(var(--pixel-size) * 55);
+   }
+
+   .dpad-button svg {
+      display:block;
+      height: calc(var(--pixel-size) * 20);
+   }
+   
+   .dpad-up {
+      position: absolute;
+      left: calc(var(--pixel-size) * 12);
+      top:0;
+   }
+   .dpad-down {
+      position: absolute;
+      bottom:var(--pixel-size);
+      left: calc(var(--pixel-size) * 12);
+   }
+   .dpad-left {
+      position: absolute;
+      top: calc(var(--pixel-size) * 17);
+      left: calc(var(--pixel-size) * -6);
+   }
+   .dpad-right {
+      position: absolute;
+      top: calc(var(--pixel-size) * 17);
+      right:0;
+   }
    
    .entity-name{
       font-size: 2vw;
