@@ -1,17 +1,65 @@
  const APIKEY = "63dbf5963bc6b255ed0c459e";
+ var discount = false;
 
-$(document).ready(function(){
-  adminCheck();
-  const menu = document.querySelector('#mobile-menu');
+
+$(document).ready(async function(){
+
+  //hamburger nav bar
+    const menu = document.querySelector('#mobile-menu');
     const menuLinks = document.querySelector('.navbar-menu');
-    
     menu.addEventListener('click', function(){
         menu.classList.toggle('is-active');
         menuLinks.classList.toggle('active');
     });
-    $("#update-product-container").hide();
-    $("#post-product-container").hide();
-    //GetStoreItems();
+
+  //nav bar scrolling interactiveness
+    window.addEventListener("scroll", function(){
+      var nav = document.querySelector("nav");
+      nav.classList.toggle("sticky", window.scrollY > 0); })
+
+  // Ajax to check if the person logged in is within top 3
+    let secondAPIKEY =  "63ca7160969f06502871b054";
+    var person = localStorage.getItem("person")
+    if (person != null){
+      person = JSON.parse(person)
+      if  (person.admin !=true){
+          let check = {
+          "async": true,
+          "crossDomain": true,
+          "url": "https://idweek14-d843.restdb.io/rest/login",
+          "method": "GET", 
+          "headers": {
+            "content-type": "application/json",
+            "x-apikey": secondAPIKEY,
+            "cache-control": "no-cache"
+          },
+          "beforeSend":function(){
+             $("#topLeads tbody").hide()
+      
+             $("#topLeads thead").hide()
+             $(".animation").show();
+      
+          },
+          "processData": false,
+       }
+    await $.ajax(check).done((response)=>{ 
+                             //await to ensure that this function loads before others
+          response = response.sort((a,b)=>{
+             return a.kills - b.kills 
+          })
+          for(let i =0; i<5; i++){
+            console.log(response[i].kills)
+             let numberIndex = response.length - 1
+             if (response[numberIndex - i].name == person.name)
+                discount = true;
+                break;
+          }         
+        })
+      }
+    
+  }
+
+  // GetStoreItems(); //load the get store items after the get top 5 check. This is to allow the price to update accordingly
 
     $(".postCancel").on("click",()=>{
       $("#post-product-container").hide();
@@ -24,7 +72,13 @@ $(document).ready(function(){
 
     $("#post-product-submit").on("click",(e)=>{
       e.preventDefault();
-      postForm();
+      if ($("#post-product-name").val().length>0 && $("#post-product-price").val().length>0 && $("#post-product-image").val().length>0)
+      {
+        postForm();
+      }
+      else{
+        alert("cannot post empty form!");
+      }
     })
 
    $("#searchQueryInput").on("input",(e)=>{ //search function
@@ -39,13 +93,6 @@ $(document).ready(function(){
           }
       }
     })
-
-    window.addEventListener("scroll", function(){
-      var nav = document.querySelector("nav");
-      nav.classList.toggle("sticky", window.scrollY > 0);
-  })
-
-
 
    $(".cancel").on("click",()=>{
     $("#update-product-container").hide();
@@ -71,10 +118,9 @@ $(document).ready(function(){
         else{
           alert("Item has already been added to the cart")
         }
-
-        
       }
     }})
+
     $("#product-list").on("click", ".update", function(e) {
         e.preventDefault();
         $("#add-update-msg").hide();
@@ -122,8 +168,7 @@ $(document).ready(function(){
       });//end updatecontactform listener
 });
 
-function GetStoreItems(){
-        
+async function GetStoreItems(){
         
     let get = {
         "async": true,
@@ -136,25 +181,38 @@ function GetStoreItems(){
           "x-apikey": APIKEY,
           "cache-control": "no-cache"
         },
+        "beforeSend":()=>{
+          $("#product-list").html(` <div class="animationHolder">
+          <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_usmfx6bp.json" class="animation" background="transparent"  speed="1"  loop  autoplay></lottie-player>
+        </div>`)
+        },
         "processData": false,      
       }
-      $.ajax(get).done((response)=>{
+
+    await $.ajax(get).done(async (response)=>{
         let content = "";
-        console.log(response)
         for (var i = 0; i < response.length; i++){
-          
-        
+          originalPrice = parseFloat(response[i].price).toFixed(2)
+          if (discount){
+            response[i].price = parseFloat(response[i].price)*0.7 
+          }
+          response[i].price = parseFloat(response[i].price).toFixed(2);
         content = `${content}<div class="product">
         <div class="product-dropshadow"></div>
         <div class="product-backdrop product-backdrop_purple"></div>
         <div class="product-img" style = "width: 90%;
-        margin: 15px auto;
+        margin: 0 auto;
+        margin-bottom:1%;
+        height:200px;
         border-radius: 5px;
         background: #ccc;
         z-index: 10;
         overflow: hidden;
         background: url(${response[i].image}) center no-repeat;
         background-size: contain;">
+        </div>
+        <div class="discountShow">
+          <h5>30%</h5>
         </div>
         <div class="product-buy">
           <i class="fa fa-shopping-cart"></i>
@@ -164,6 +222,7 @@ function GetStoreItems(){
                 <h4>${response[i].name}</h4>
             </div>
             <div class="product-content-cost">
+            <h5 class="discount">$${originalPrice}</h5>
                 <h5>$${response[i].price}</h5>
             </div>
         </div>
@@ -176,20 +235,14 @@ function GetStoreItems(){
         
         }
         
-
         $("#product-list").html(content);
-
        })
+       adminCheck();
+      if (!discount){
+        $(".discount").hide();
+        $(".discountShow").hide();
+      }
     
-
-
-
-
-
-
-
-
-
 }
 
 
@@ -222,8 +275,8 @@ function updateForm(id, name, price, image) {
     //[STEP 13a]: send our AJAX request and hide the update contact form
     $.ajax(settings).done(function(response) {
       console.log(response);
-
-      $("#update-product-container").fadeOut(5000);
+      $("#add-update-msg").show();
+      $("#update-product-container").fadeOut(2000);
       //update our contacts table
       GetStoreItems();
     });
@@ -247,8 +300,6 @@ function deleteContact(id) {
 
     //[STEP 13a]: send our AJAX request and hide the update contact form
     $.ajax(settings).done(function(response) {
-
-
         GetStoreItems();
     });
 
@@ -283,6 +334,7 @@ function postForm(){
   }
   $.ajax(post).done(()=>{
     $("#add-post-msg").show();
+    $("#post-product-container").fadeOut(2000);
     GetStoreItems();
 
   })
@@ -290,9 +342,11 @@ function postForm(){
 }
 
 function adminCheck(){
-  var person = localStorage.getItem("person")
+  let person = localStorage.getItem("person")
   if (person!=null){
+    person = JSON.parse(person)
     if(person.admin == true){
+      console.log("hi")
       $(".admin-controls").show()
       $("#add").show()
     }
@@ -300,8 +354,6 @@ function adminCheck(){
       $(".admin-controls").hide()
       $("#add").hide()
     }
-
-
   }
   else{
     $(".admin-controls").hide()

@@ -95,123 +95,43 @@
           </button>
         </div>
     <div class="store-container">
-   
+
       <div class="product_wrap" id="product-list">
         <div class="product">
           <div class="product-dropshadow"></div>
           <div class="product-backdrop product-backdrop_purple"></div>
-          <div class="product-img">
+          <div class="product-img" style = "width: 90%;
+          margin: 0 auto;
+          margin-bottom: 1%;
+          height: 200px;
+          border-radius: 5px;
+          background: #ccc;
+          z-index: 10;
+          overflow: hidden;
+          background: url(https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRsCgqxkltVkM5IVtAndKoUVihr5gNH48ONTdDcqHPExKndNxg-44keUXPGjJe9pmTfeIS6c4g9OIEbfCL4QbLy24Cr8UUfdVxgc5aB7h-8TN11f1fa0bsW&usqp=CAc) center no-repeat;
+          background-size: contain;">
+          </div>
+          <div class="discountShow">
+            <h5>30%</h5>
           </div>
           <div class="product-buy">
             <i class="fa fa-shopping-cart"></i>
           </div>
           <div class="product-content">
               <div class="product-content-title">
-                  <h4>hi</h4>
+                  <h4>$wesley</h4>
               </div>
               <div class="product-content-cost">
-                  <h5>wesley</h5>
+                  <h5 class="discount">$5.00</h5>
+                  <h5>$4.00</h5>
               </div>
           </div>
   
           <div class="admin-controls">
-              <a href="#" class='update' data-id='${response[i]._id}' data-name='${response[i].name}' data-price='${response[i].price}' data-image='${response[i].image}'>UPDATE</a>
-              <a href="#" class="delete">DELETE</a>
+          <a href="#" class='update' data-id='${response[i]._id}' data-name='${response[i].name}' data-price='${response[i].price}' data-image='${response[i].image}'>UPDATE</a>
+          <a href="#" class="delete">DELETE</a>
           </div>
           </div>
-          <div class="product">
-            <div class="product-dropshadow"></div>
-            <div class="product-backdrop product-backdrop_purple"></div>
-            <div class="product-img" style="background: url(https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg);">
-            
-            </div>
-            <div class="product-buy">
-                <h5>ADD TO CART</h5>
-            </div>
-            <div class="product-content">
-                <div class="product-content-title">
-                    <h4>hi</h4>
-                </div>
-                <div class="product-content-cost">
-                    <h5>wesley</h5>
-                </div>
-            </div>
-    
-            <div class="admin-controls">
-                <a href="#" class='update' data-id='${response[i]._id}' data-name='${response[i].name}' data-price='${response[i].price}' data-image='${response[i].image}'>UPDATE</a>
-                <a href="#" class="delete">DELETE</a>
-            </div>
-            </div>
-            <div class="product">
-              <div class="product-dropshadow"></div>
-              <div class="product-backdrop product-backdrop_purple"></div>
-              <div class="product-img" style="background: url(https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg);">
-              
-              </div>
-              <div class="product-buy">
-                  <h5>ADD TO CART</h5>
-              </div>
-              <div class="product-content">
-                  <div class="product-content-title">
-                      <h4>hi</h4>
-                  </div>
-                  <div class="product-content-cost">
-                      <h5>wesley</h5>
-                  </div>
-              </div>
-      
-              <div class="admin-controls">
-                  <a href="#" class='update' data-id='${response[i]._id}' data-name='${response[i].name}' data-price='${response[i].price}' data-image='${response[i].image}'>UPDATE</a>
-                  <a href="#" class="delete">DELETE</a>
-              </div>
-              </div>
-              <div class="product">
-                <div class="product-dropshadow"></div>
-                <div class="product-backdrop product-backdrop_purple"></div>
-                <div class="product-img" style="background: url(https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg);">
-                
-                </div>
-                <div class="product-buy">
-                    <h5>ADD TO CART</h5>
-                </div>
-                <div class="product-content">
-                    <div class="product-content-title">
-                        <h4>hi</h4>
-                    </div>
-                    <div class="product-content-cost">
-                        <h5>wesley</h5>
-                    </div>
-                </div>
-        
-                <div class="admin-controls">
-                    <a href="#" class='update' data-id='${response[i]._id}' data-name='${response[i].name}' data-price='${response[i].price}' data-image='${response[i].image}'>UPDATE</a>
-                    <a href="#" class="delete">DELETE</a>
-                </div>
-                </div>
-                <div class="product">
-                  <div class="product-dropshadow"></div>
-                  <div class="product-backdrop product-backdrop_purple"></div>
-                  <div class="product-img" style="background: url(https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg);">
-                  
-                  </div>
-                  <div class="product-buy">
-                      <h5>ADD TO CART</h5>
-                  </div>
-                  <div class="product-content">
-                      <div class="product-content-title">
-                          <h4>hi</h4>
-                      </div>
-                      <div class="product-content-cost">
-                          <h5>wesley</h5>
-                      </div>
-                  </div>
-          
-                  <div class="admin-controls">
-                      <a href="#" class='update' data-id='${response[i]._id}' data-name='${response[i].name}' data-price='${response[i].price}' data-image='${response[i].image}'>UPDATE</a>
-                      <a href="#" class="delete">DELETE</a>
-                  </div>
-                  </div>
-              
       </div>
       
       
@@ -287,6 +207,7 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
         <script>
           const swiper = new Swiper('.swiper', {
             autoplay: {
