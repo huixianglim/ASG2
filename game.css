@@ -25,20 +25,18 @@ body {
 
 
 .navbar{
+   top: 0;
    background-color: #131313;
    font-size: 15px;
    height: 70px;
-   position: absolute;
+   position: fixed;
    z-index: 1000;
    display: flex;
    justify-content: center;
    position: fixed;
    width: 100%;
    transition: ease-in-out 0.3s;
-   top:0;
 }
-
-
 
 .navbar-container{
    display: flex;
@@ -85,6 +83,15 @@ a{
  
 }
 
+/* .navbar-links{
+   color: white;
+   font-family: 'Open Sans', sans-serif;
+   font-weight: 700;
+   text-align: center;
+   padding: 5px;
+   display: block;
+} */
+
 .navbar-links {
  color: #fff;
  text-transform: uppercase;
@@ -101,11 +108,16 @@ a{
 .navbar-links p{
  padding: 10px;
 }
+/* 
+.navbar-links:hover{
+   color:#7724ff;
+   transition: all 0.2s ease;
+}  */
 
 
 .navbar-links:after {    
  background: none repeat scroll 0 0 transparent;
- bottom: 3%;
+ bottom: 16%;
  content: "";
  display: block;
  height: 2px;
@@ -524,7 +536,7 @@ a{
    padding-left: 10%;
 }
 .leaderBoard h1{
-   font-size: 1vw;
+   font-size: 15px;
 }
 #topLeads{
    margin-left:auto;
@@ -539,6 +551,12 @@ a{
    font-size: 1vw;
    margin-top: 10%;
 }
+
+#loading-animation{
+   width: 70px;
+   height: 70px;
+}
+
 .killCount{
    position: absolute;
    left: 5%;
@@ -569,6 +587,10 @@ a{
 @media (max-width: 1150px){
    :root {
       --pixel-size: 3px;
+   }
+
+   .entity-name{
+      font-size: 1.5vw;
    }
 
    .killCount{
@@ -617,7 +639,9 @@ a{
  
  @media (max-width: 768px){
    
-
+   .entity-name{
+      font-size: 2vw;
+   }
    
    :root {
       --pixel-size: 2.5px;
@@ -746,9 +770,9 @@ a{
    }
 
    .leaderBoard{
-      width: 60vw;
-      height:22vw;
-      top: 77%;
+      width: calc(var(--pixel-size) * 160);
+      height: calc(var(--pixel-size) * 48);
+      top: 80%;
       right: 0;
       left: 0; 
       margin-left: auto; 
@@ -764,7 +788,7 @@ a{
    }
 
    .killCount{
-      top:10%;
+      top:12%;
       left: 0;
       right: 0;
 
@@ -775,13 +799,24 @@ a{
    }
 
    .leaderBoard{
-      width: 78%;
-      height:35vw;
+      height: calc(var(--pixel-size) * 60);
       top: 75%;
       right: 0;
       left: 0; 
       margin-left: auto; 
       margin-right: auto;
       
+   }
+
+ }
+
+ @media (max-width: 350px){
+   :root {
+      --pixel-size: 1.7px;
+   }
+
+   .leaderBoard{
+      height: calc(var(--pixel-size) * 60);
+      top: 77%;
    }
  }
