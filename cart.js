@@ -22,15 +22,14 @@ $(document).ready(()=>{
     })
 
     $(".cancel").on("click",()=>{
-        $("#checkOut").hide()
-      
+        $("#checkOut").hide();
     })
 
     $(".remove").on("click",(e)=>{
         $(".remove").attr("disabled",false)
         e.preventDefault();
-        let id = e.target.dataset.id
-        localStorage.removeItem(id)
+        let id = e.target.dataset.id;
+        localStorage.removeItem(id);
         e.target.parentNode.parentNode.parentNode.remove()
         getTotal();
         setQuantity();
@@ -58,6 +57,7 @@ $(document).ready(()=>{
         }
          getTotal();
     })
+    
     $(".plus").on("click",(e)=>{
         let id = e.target.dataset.id
         let product = JSON.parse(localStorage.getItem(id))

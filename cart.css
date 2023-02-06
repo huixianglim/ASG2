@@ -1,9 +1,12 @@
 body{
     overflow: auto;
+    min-height: 100%;
 }
 html, body {
     height: fit-content;
+    height: 100%;
     overflow:auto;
+    min-height: 100%;
 }
 a,p{
     text-decoration: none;
@@ -13,7 +16,7 @@ p{
     pointer-events: none;
     margin: 0;
 }
-.cart{
+.cart,main{
     height: 100% !important;
 }
 button{
