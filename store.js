@@ -9,6 +9,41 @@ $(document).ready(function(){
         menu.classList.toggle('is-active');
         menuLinks.classList.toggle('active');
     });
+
+    //LOGIN LOGOUT NAV
+    let content = "";
+
+    if (localStorage.getItem("person") == null || localStorage.getItem("person") == undefined){
+        content = `<a href="./login.html" class="navbar-links">
+        <div class="signin-img"></div>  
+        <p>LOG IN</p>
+        </a>`
+        $("#login-btn").html(content);
+    }
+    else{
+       let  person = JSON.parse(localStorage.getItem("person"))
+        content = `<a>
+        <div class="signin-img"></div>
+        <p>${person.name}</p>
+     </a>
+    <ul>               
+        <li><a class="navbar-links" id="logout-btn" style="padding-top:0">LOG OUT</a>
+
+        </li>
+    </ul>`
+        $("#acc-dropdown").html(content);  
+    }
+
+    $("#logout-btn").on("click",()=>{
+        localStorage.removeItem("person");
+        content = `<a href="./login.html" class="navbar-links">
+        <div class="signin-img"></div>  
+        <p>LOG IN</p>
+        </a>`
+        $("#acc-dropdown").html(""); 
+        $("#login-btn").html(content);
+    })
+
     $("#update-product-container").hide();
     $("#post-product-container").hide();
     //GetStoreItems();
