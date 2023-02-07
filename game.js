@@ -10,16 +10,12 @@ $(document).ready(()=>{
 
     //LOGIN LOGOUT NAV
     let content = "";
-
+    var person = ''
     if (localStorage.getItem("person") == null || localStorage.getItem("person") == undefined){
-        content = `<a href="./login.html" class="navbar-links">
-        <div class="signin-img"></div>  
-        <p>LOG IN</p>
-        </a>`
-        $("#login-btn").html(content);
+         window.location.href = "./login.html"
     }
     else{
-       let  person = JSON.parse(localStorage.getItem("person"))
+         person = JSON.parse(localStorage.getItem("person"))
         content = `<a>
         <div class="signin-img"></div>
         <p>${person.name}</p>
@@ -48,18 +44,11 @@ $(document).ready(()=>{
    var id =""
    var Currentkills = 0
    var kills = 0
-   var person = ''
-  getLeaderBoard()
-   if (localStorage.getItem("person") == null || localStorage.getItem("person") == undefined){
-      window.location.href = "login.html"
-   }
-   else{
-      person = JSON.parse(localStorage.getItem("person"))
-   }
+   getLeaderBoard()
+  
    var email = person.email
    chosen = sessionStorage.getItem("character");
    if(chosen==null ||chosen== undefined){
-      chosen = "knight"
       window.location.href = "selectclass.html" //directing users to the selectclass page if they have not signed up
    }
    if (chosen!="knight"){
@@ -146,7 +135,7 @@ $(document).ready(()=>{
    var speed = 1; //How fast the character moves in pixels per frame
    const placeCharacter = () => {
       
-      var pixelSize = parseInt(
+      var pixelSize = parseFloat(
          getComputedStyle(document.documentElement).getPropertyValue('--pixel-size') //get the css property of --pixel-size
       );
       
@@ -236,7 +225,7 @@ $(document).ready(()=>{
                if (you.health<=0){
                   $(".attack-text").css({"pointer-events":"all"}) 
                   Currentkills-=1;
-                  $(".killCount").html(`Kill Count:${Currentkills+kills}`);
+                  $(".killCount").html(`Kill Count: <br>${Currentkills+kills}`);
                    end = true;
                    $(".attack-text").html("Game over! You Lose!"); //if health is lower than 0, display game over text
                    $(".attack-text").on("click",()=>{
@@ -461,7 +450,7 @@ $(document).ready(()=>{
             if(email == response[i].email){
                id = response[i]._id;
                kills = response[i].kills
-               $(".killCount p").html(`Kill Count: ${kills}`)
+               $(".killCount p").html(`Kill Count: <br>${kills}`)
 
             }
          }
