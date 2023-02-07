@@ -171,7 +171,7 @@ $(document).ready(()=>{
                         <span></span>
                         <span></span>
                         <span></span>
-                        <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_usmfx6bp.json"  background="transparent"  speed="1"  style="width: 7vw; height: 3vw;"  loop  autoplay></lottie-player>
+                        <lottie-player class = "animation" src="https://assets5.lottiefiles.com/packages/lf20_usmfx6bp.json"  background="transparent"  speed="1"    loop  autoplay></lottie-player>
                         </a>`)       
             
             },
@@ -295,8 +295,9 @@ $(document).ready(()=>{
                 <span></span>
                 <span></span>
                 <span></span>
-                <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_usmfx6bp.json"  background="transparent"  speed="1"  style="width: 7vw; height: 3vw;"  loop  autoplay></lottie-player>
+                <lottie-player class = "animation" src="https://assets5.lottiefiles.com/packages/lf20_usmfx6bp.json"  background="transparent"  speed="1"    loop  autoplay></lottie-player>
                 </a>`)      
+                      
             }
             }
     $.ajax(get).done((response)=>{
