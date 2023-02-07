@@ -3,6 +3,7 @@
 
 
 /* NAVBAR global */
+
 .navbar{
   background-color: rgba(26,0,50,1);
   font-size: 15px;
@@ -15,6 +16,7 @@
   width: 100%;
   transition: ease-in-out 0.3s;
 }
+
 
 .navbar-container{
   display: flex;
@@ -130,6 +132,59 @@ background-repeat: no-repeat;
 background-size: cover;
 image-rendering: pixelated;
 
+}
+
+
+
+#acc-dropdown {
+display: inline-block;
+position: relative;
+}
+#acc-dropdown:hover {
+background-color: #131313;
+}
+#acc-dropdown:hover > ul {
+transform: scaleY(1);
+}
+#acc-dropdown ul {
+width: 100%;
+background-color: #131313;
+box-shadow: 0 1px 6px 0 rgba(22, 22, 23, 0.2);
+transform: scaleY(0);
+transform-origin: top;
+transition-duration: 0.25s;
+position: absolute;
+left: 0;
+top: 100%;
+list-style-type: none;
+margin-left: 0;
+padding-left: 0;
+
+}
+
+#acc-dropdown ul li:hover > ul {
+transform: scaleY(1);
+}
+
+#acc-dropdown a{
+color: #fff;
+text-transform: uppercase;
+text-decoration: none;
+letter-spacing: 0.15em;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 15px 20px;
+position: relative;
+}
+
+#acc-dropdown a p{
+padding: 10px;
+}
+
+#logout-btn{
+margin: 0;
+padding: 0;
 }
 
 
@@ -418,7 +473,14 @@ input[type="radio"]{
 
 
 
-
+      input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+  transition: background-color 5000s;
+  -webkit-text-fill-color: #fff !important;
+  
+}
 
 
       
@@ -518,5 +580,12 @@ input[type="radio"]{
         .wrapper{
           border-radius: 0;
           
+        }
+
+        html.login, body.login{
+          height: 100%;
+          width: 100%;
+          
+          background: black;
         }
       }

@@ -8,13 +8,48 @@ $(document).ready(()=>{
         menuLinks.classList.toggle('active');
     });
 
+    //LOGIN LOGOUT NAV
+    let content = "";
+
+    if (localStorage.getItem("person") == null || localStorage.getItem("person") == undefined){
+        content = `<a href="./login.html" class="navbar-links">
+        <div class="signin-img"></div>  
+        <p>LOG IN</p>
+        </a>`
+        $("#login-btn").html(content);
+    }
+    else{
+       let  person = JSON.parse(localStorage.getItem("person"))
+        content = `<a>
+        <div class="signin-img"></div>
+        <p>${person.name}</p>
+     </a>
+    <ul>               
+        <li><a class="navbar-links" id="logout-btn" style="padding-top:0">LOG OUT</a>
+
+        </li>
+    </ul>`
+        $("#acc-dropdown").html(content);  
+    }
+
+    $("#logout-btn").on("click",()=>{
+        localStorage.removeItem("person");
+        content = `<a href="./login.html" class="navbar-links">
+        <div class="signin-img"></div>  
+        <p>LOG IN</p>
+        </a>`
+        $("#acc-dropdown").html(""); 
+        $("#login-btn").html(content);
+    })
+    //END
+
    $("#topLeads thead").hide()
    const APIKEY = "63ca7160969f06502871b054";
    var id =""
    var Currentkills = 0
    var kills = 0
    var person = ''
-  // getLeaderBoard()
+  getLeaderBoard()
    if (localStorage.getItem("person") == null || localStorage.getItem("person") == undefined){
       window.location.href = "login.html"
    }
