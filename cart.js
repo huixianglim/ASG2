@@ -22,10 +22,14 @@ $(document).ready(()=>{
         let form = document.forms["payment"]
         if (form.checkValidity()){
             ClearCart();
-            $("#checkOut").hide()
-            $(".payForm").hide();
-            alert("Items has been paid")
+            $(".payForm").fadeOut();
+            $("#checkOut").fadeOut()
             getCart();
+            $(".lottie").show()
+            setTimeout(()=>{
+                $(".lottie").hide()
+                alert("payment successful")
+            },3000)
         }
         else{
             alert("Invalid input! Please try again.")
@@ -34,8 +38,8 @@ $(document).ready(()=>{
     })
 
     $(".cancel").on("click",()=>{
-        $("#checkOut").hide()
-        $(".payForm").hide()
+        $(".payForm").fadeOut()
+        $("#checkOut").fadeOut()
     })
 
     $(".remove").on("click",(e)=>{
@@ -204,7 +208,10 @@ function ClearCart(){
         nameArray.push(localStorage.key(i))
        }
     }
-    for (let i = 0; i< nameArray.length;i++){
-        localStorage.removeItem(nameArray[i])
+    if (nameArray.length >0){
+        for (let i = 0; i< nameArray.length;i++){
+            localStorage.removeItem(nameArray[i])
+        }
     }
+
 }
