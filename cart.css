@@ -1,10 +1,11 @@
 body{
     overflow: auto;
-    min-height: 100%;
-}
-html, body {
-    height: fit-content;
     height: 100%;
+    min-height: 100vh;
+ 
+}
+html{
+    height: fit-content;
     overflow:auto;
     min-height: 100%;
 }
@@ -17,7 +18,12 @@ p{
     margin: 0;
 }
 .cart,main{
+    min-height: 100vh;
     height: 100% !important;
+}
+.cart{
+    display: flex;
+    align-items: center;
 }
 button{
     text-decoration: none !important;
@@ -34,13 +40,15 @@ button{
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
+
+
 .cards{
     height: 100%;
 }
 
 .payForm{
+    display: none;
     border-radius: 20px;
     position: relative;
 }
@@ -50,8 +58,16 @@ button{
     right: 8%;
     cursor: pointer;
 }   
-
-
+.animation{
+    display: inline-block;
+    transition: all 0.2s ease-in-out;
+}
+.animation:hover{
+    transform: scale(1.10);
+}
+#pay{
+    width: 20%;
+}
 @media (min-width: 1025px) {
     .h-custom {
     height: 100% !important;
@@ -93,15 +109,36 @@ button{
             height: 90%;
     
         }
-        #checkOut{
-            top: 1%;
+        #total h5{
+            font-size: 20px;
         }
+    
         .payForm{
             padding: 5% !important;
         }
         
     }
+    @media screen and (width <= 640px) {
+        #total{
+            font-size: 30px !important;
+        }
+ 
+    }
     @media  (width<= 400px) {
-        
+        #checkOut{
+            font-size: 15px;
+        }
+        h6,h5{
+            font-size: 15px;
+        }
+        h6.my-0{
+            margin-bottom: 1%;
+        }
+        h1{
+            font-size: 20px;
+        }
+        span{
+            font-size: 15px
+        };
         
     }
