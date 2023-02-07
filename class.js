@@ -6,6 +6,16 @@ $(document).ready(()=>{
     const btns = ["k","n","t"];
     const smk = ["./Images/whitesmoke.png", "./Images/redsmoke.png", "./Images/yellowsmoke.png"]
 
+    if (localStorage.getItem("person") == null){
+        window.location.href = "./login.html"
+    }
+    const menu = document.querySelector('#mobile-menu');
+    const menuLinks = document.querySelector('.navbar-menu');
+    
+    menu.addEventListener('click', function(){
+        menu.classList.toggle('is-active');
+        menuLinks.classList.toggle('active');
+    });
 
     for(let i=0; i<chars.length; i++){
         $(".character-button-" + btns[i] + " a").on("click", function(){
