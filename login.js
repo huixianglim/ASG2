@@ -41,6 +41,9 @@ $(document).ready(()=>{
         <p>LOG IN</p>
         </a>`
         $("#login-btn").html(content);
+        $("#login-btn").show();
+        $("#acc-dropdown").hide(); 
+
     }
     else{
        let  person = JSON.parse(localStorage.getItem("person"))
@@ -54,6 +57,8 @@ $(document).ready(()=>{
         </li>
     </ul>`
         $("#acc-dropdown").html(content);  
+        $("#login-btn").hide()
+
     }
 
     $("#logout-btn").on("click",()=>{
@@ -62,8 +67,10 @@ $(document).ready(()=>{
         <div class="signin-img"></div>  
         <p>LOG IN</p>
         </a>`
-        $("#acc-dropdown").html(""); 
         $("#login-btn").html(content);
+        $("#login-btn").show()
+        $("#acc-dropdown").html(""); 
+        $("#acc-dropdown").hide(); 
     })
     //END 
 

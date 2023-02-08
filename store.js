@@ -21,9 +21,11 @@ $(document).ready(async function(){
          <p>LOG IN</p>
          </a>`
          $("#login-btn").html(content);
+         $("#acc-dropdown").hide();  
      }
      else{
         let  person = JSON.parse(localStorage.getItem("person"))
+        $("#login-btn").hide();  
          content = `<a>
          <div class="signin-img"></div>
          <p>${person.name}</p>
@@ -33,18 +35,25 @@ $(document).ready(async function(){
  
          </li>
      </ul>`
-         $("#acc-dropdown").html(content);  
+         $("#acc-dropdown").html(content);
+         $("#acc-dropdown").show();  
+
+
      }
  
      $("#logout-btn").on("click",()=>{
          localStorage.removeItem("person");
+         ClearCart();
          content = `<a href="./login.html" class="navbar-links">
          <div class="signin-img"></div>  
          <p>LOG IN</p>
          </a>`
          $("#acc-dropdown").html(""); 
+         $("#acc-dropdown").hide();
          $("#login-btn").html(content);
-     })
+         $("#login-btn").show()
+
+  })
 
   //nav bar scrolling interactiveness
     window.addEventListener("scroll", function(){
@@ -93,7 +102,7 @@ $(document).ready(async function(){
     
   }
 
-  GetStoreItems(); //load the get store items after the get top 5 check. This is to allow the price to update accordingly
+ GetStoreItems(); //load the get store items after the get top 5 check. This is to allow the price to update accordingly
 
     $(".postCancel").on("click",()=>{
       $("#post-product-container").hide();
@@ -395,4 +404,20 @@ function adminCheck(){
     $("#add").hide()
   }
 
+}
+function ClearCart(){
+  let index = localStorage.length
+  console.log(index)
+  let nameArray = []
+  for (let i =0; i<index;i++){
+      console.log(localStorage.key(i))
+     if(localStorage.key(i) !="person"){
+      nameArray.push(localStorage.key(i))
+     }
+  }
+  if (nameArray.length >0){
+      for (let i = 0; i< nameArray.length;i++){
+          localStorage.removeItem(nameArray[i])
+      }
+  }
 }
