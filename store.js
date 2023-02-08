@@ -180,7 +180,7 @@ $(document).ready(async function(){
       
       
       
-      $("#update-product-submit").on("click", function(e) {
+      $("#update-product-submit").on("click",function(e) {
         e.preventDefault();
         //retrieve all my update form values
         let name = $("#update-product-name").val();
@@ -190,16 +190,17 @@ $(document).ready(async function(){
     
         //[STEP 12a]: We call our update form function which makes an AJAX call to our RESTDB to update the selected information
         updateForm(id, name, price, image);
+    });//end updatecontactform listener
 
-        $("#product-list").on("click", ".delete", function(e) {
-            e.preventDefault();
-        
-            let contactId = $(this).data("id");
-            if (confirm("Are you sure you want to delete this contact?")) {
-              deleteContact(contactId);
-            }
-          })
-      });//end updatecontactform listener
+    $("#product-list").on("click", ".delete", function(e) {
+      e.preventDefault();
+      let contactId = $(this).data("id");
+      console.log(contactId);
+      if (confirm("Are you sure you want to delete this contact?")) {
+        deleteContact(contactId);
+        GetStoreItems();
+      }
+    })
 });
 
 async function GetStoreItems(){
@@ -263,7 +264,7 @@ async function GetStoreItems(){
 
         <div class="admin-controls">
         <a href="#" class='update' data-id='${response[i]._id}' data-name='${response[i].name}' data-price='${response[i].price}' data-image='${response[i].image}'>UPDATE</a>
-        <a href="#" class="delete">DELETE</a>
+        <a href="#" class="delete" data-id='${response[i]._id}' >DELETE</a>
         </div>
         </div>`
         
@@ -352,7 +353,7 @@ function postForm(){
   var post = {
     "async": true,
     "crossDomain": true,
-    "url": `https://databaseid-63ae.restdb.io/rest/store/${id}`,//update based on the ID
+    "url": `https://databaseid-63ae.restdb.io/rest/store`,//update based on the ID
     "url": `https://idasg-332a.restdb.io/rest/store`,
     "method": "POST",
     "headers": {
