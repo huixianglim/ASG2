@@ -10,6 +10,7 @@
   height: 70px;
   z-index: 1000;
   display: flex;
+  position: relative;
   justify-content: center;
   width: 100%;
   transition: ease-in-out 0.3s;

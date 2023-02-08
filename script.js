@@ -19,6 +19,7 @@ $(document).ready(()=>{
         <p>LOG IN</p>
         </a>`
         $("#login-btn").html(content);
+        $("#acc-dropdown").hide();
     }
     else{
        let  person = JSON.parse(localStorage.getItem("person"))
@@ -54,7 +55,6 @@ $(document).ready(()=>{
         $("#acc-dropdown").html(""); 
         $("#acc-dropdown").hide();
         $("#login-btn").html(content);
-        $("#acc-dropdown").html(content);  
          $(".createacc-btn").html(`<a href="./selectclass.html">
          <span></span>
          <span></span>
