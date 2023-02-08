@@ -68,7 +68,7 @@ $(document).ready(async function(){
             "cache-control": "no-cache"
           },
           "beforeSend":function(){
-             $("#topLeads tbody").hide()
+             $("e#topLeads tbody").hide()
       
              $("#topLeads thead").hide()
              $(".animation").show();
