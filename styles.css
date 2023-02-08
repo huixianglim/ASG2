@@ -281,6 +281,7 @@ section:nth-child(2)[background = "true"]{
     rgba(0, 0, 0, 0.7)),url("https://64.media.tumblr.com/066d13748eb3a791cd9774d9561d7e57/tumblr_p240ppQIW21rnbw6mo1_540.gif") center no-repeat;
   background-size: cover ;
   color: white;
+  
 }
 
 section:nth-child(3)[background = "true"]{
@@ -322,10 +323,21 @@ section:nth-child(6){
 .cards  img{
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, rgba(231,232,234,0.896796218487395) 0%, rgba(174,175,177,1) 100%);
+  
 
 }
 
+.classimg{
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: 12px 29px 81px 15px rgba(0,0,0,0.95);
+  -moz-box-shadow: 12px 29px 81px 15px rgba(0,0,0,0.95);
+  box-shadow: 12px 29px 81px 15px rgba(0,0,0,0.95);
+}
+
+.statimg{
+  margin-top: 5%;
+}
 
 .container{
   display: flex;
