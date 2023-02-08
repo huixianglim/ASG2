@@ -45,7 +45,8 @@ $(document).ready(()=>{
    var Currentkills = 0
    var kills = 0
    getLeaderBoard()
-  
+   
+   setInterval(updateLeaderBoard(),30000)
    var email = person.email
    chosen = sessionStorage.getItem("character");
    if(chosen==null ||chosen== undefined){
