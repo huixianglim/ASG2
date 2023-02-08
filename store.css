@@ -285,8 +285,23 @@ body {
   margin: 4%;
   border-radius: 10px;
 }
+#cartHolder{
+  background-color: black;
+  border-radius: 20%;
+  z-index: 100000;
+  position: fixed;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 10%;
+  right: 5%;
+  width: 70px;
+  height: 70px;
+  
+}
 #cart{
-  font-size: 20px;
+  font-size: 25px;
   cursor: pointer;
   transition: all 0.5s ease-out;
   color: #fff;
@@ -298,12 +313,13 @@ body {
   align-items: center;
   padding: 15px 20px;
   position: relative;
+
 }
 
 #cart[active = "true"]{
   transform: scale(1.25);
   animation:  tilt-shaking 0.5s 1;
-  color: greenyellow;  
+  color: #03e9f4;  
 
   
 }
@@ -315,7 +331,7 @@ body {
   100% { transform: rotate(0deg); }
 }
 #cart:hover{
-  transform: scale(1.5);
+  transform: scale(1.25);
 }
 
 .product-backdrop {
@@ -788,8 +804,7 @@ body {
     z-index: 1;
     margin-left: 0;
     margin-right: 0;
-    margin-bottom: 0;
-    margin-top: 80px;
+    margin-bottom: 80px;
     box-shadow: none;
   }
 
@@ -890,7 +905,8 @@ body {
   opacity: 1;
   transition: all 0.3s ease;
   z-index: 999;
-  height: 200px;
+  min-height: 200px;
+  height: fit-content;
   font-size: 12px;
 }
 
@@ -967,8 +983,6 @@ body {
     z-index: 1;
     margin-left: 0;
     margin-right: 0;
-    margin-bottom: 0;
-    margin-top: 80px;
     box-shadow: none;
   }
 
@@ -1000,7 +1014,15 @@ body {
     height: 35vh;
   }
 }
-
+@media screen and (width<=600px) {
+  #cartHolder{
+    bottom: 2%;
+    right: 2%;
+    border-radius: 10px;
+    height: 60px;
+    width: 60px;
+  }
+}
 @media (max-width: 520px){
   .swiper-slide img{
     margin-top: 7vh;
@@ -1024,6 +1046,12 @@ body {
     justify-content: center;
     align-items: center;
   }
+  .social-icon a {
+
+    margin: 5px;
+    
+  }
+  
 }
 
 @media (max-width: 410px){
@@ -1052,5 +1080,33 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .social-icon a {
+    height: 60px;
+    width: 60px;
+    
+  }
+  .social-icon a i {
+    line-height: 60px;
+    font-size: 25px;
+  }
+  #cartHolder{
+    bottom: 2%;
+    right: 2%;
+    border-radius: 10px;
+    height: 60px;
+    width: 60px;
+  }
+}
+@media screen and (width<=350px) {
+
+  .social-icon a {
+    height: 40px;
+    width: 40px;
+    
+  }
+  .social-icon a i {
+    line-height: 40px;
+    font-size: 20px;
   }
 }
