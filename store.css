@@ -461,12 +461,11 @@ body {
   background-color: none;
   border: none;
   color: none ;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: center;
   transition: all 200ms;
   border-radius: 5px;
+  display: none;
+
 }
 #add h1{
   font-weight: 400;

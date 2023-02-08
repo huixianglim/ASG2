@@ -125,10 +125,8 @@ $(document).ready(()=>{
 
 function ClearCart(){
     let index = localStorage.length
-    console.log(index)
     let nameArray = []
     for (let i =0; i<index;i++){
-        console.log(localStorage.key(i))
        if(localStorage.key(i) !="person"){
         nameArray.push(localStorage.key(i))
        }

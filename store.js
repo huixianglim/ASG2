@@ -91,7 +91,6 @@ $(document).ready(async function(){
              return a.kills - b.kills 
           })
           for(let i =0; i<5; i++){
-            console.log(response[i].kills)
              let numberIndex = response.length - 1
              if (response[numberIndex - i].name == person.name)
                 discount = true;
@@ -102,7 +101,7 @@ $(document).ready(async function(){
     
   }
 
- GetStoreItems(); //load the get store items after the get top 5 check. This is to allow the price to update accordingly
+  GetStoreItems(); //load the get store items after the get top 5 check. This is to allow the price to update accordingly
 
     $(".postCancel").on("click",()=>{
       $("#post-product-container").hide();
@@ -175,7 +174,6 @@ $(document).ready(async function(){
         let image = $(this).data("image");
         let productId = $(this).data("id");
 
-        console.log("id:" + productId + ", name: " + name + ", price="+price + ", image=" + image);
     
         //[STEP 11]: Load in our data from the selected row and add it to our update contact form 
         
@@ -206,7 +204,6 @@ $(document).ready(async function(){
     $("#product-list").on("click", ".delete", function(e) {
       e.preventDefault();
       let contactId = $(this).data("id");
-      console.log(contactId);
       if (confirm("Are you sure you want to delete this contact?")) {
         deleteContact(contactId);
         GetStoreItems();
@@ -320,7 +317,6 @@ function updateForm(id, name, price, image) {
 
     //[STEP 13a]: send our AJAX request and hide the update contact form
     $.ajax(settings).done(function(response) {
-      console.log(response);
       $("#add-update-msg").show();
       $("#update-product-container").fadeOut(2000);
       //update our contacts table
@@ -359,7 +355,6 @@ function postForm(){
     "price": parseFloat($("#post-product-price").val()),
     "image":$("#post-product-image").val()
   }
-  console.log(jsondata)
 
   var post = {
     "async": true,
@@ -392,7 +387,6 @@ function adminCheck(){
   if (person!=null){
     person = JSON.parse(person)
     if(person.admin == true){
-      console.log("hi")
       $(".admin-controls").show()
       $("#add").show()
     }
@@ -409,10 +403,8 @@ function adminCheck(){
 }
 function ClearCart(){
   let index = localStorage.length
-  console.log(index)
   let nameArray = []
   for (let i =0; i<index;i++){
-      console.log(localStorage.key(i))
      if(localStorage.key(i) !="person"){
       nameArray.push(localStorage.key(i))
      }

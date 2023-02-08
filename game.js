@@ -152,7 +152,6 @@ $(document).ready(()=>{
             var monsterUrl =""
             var monster = randomMonster()
             setMonsterImage()
-             console.log(monster)
              var you = characters[chosen]
              let yourattacks = []
              for (let i =0; i<you.attacks.length;i++){
@@ -208,7 +207,6 @@ $(document).ready(()=>{
                          $(".attack-text").on("click",()=>{
                             if (end){ //onclick to end game
                                endGame();
-                               console.log(Currentkills)
                             }
                          });
                          return
@@ -231,7 +229,6 @@ $(document).ready(()=>{
                    $(".attack-text").html("Game over! You Lose!"); //if health is lower than 0, display game over text
                    $(".attack-text").on("click",()=>{
                       if (end){ //onclick to end game
-                        console.log(Currentkills)
                          endGame();
                       }
                    });
@@ -278,7 +275,6 @@ $(document).ready(()=>{
          monsterLinks = ["./Images/Beast.png","./Images/skeleton.png"]
          monstersname = ["beast","skeleton"]
          let randomNumber = Math.floor(Math.random() * 2);
-         console.log(randomNumber)
          monsterUrl = monsterLinks[randomNumber]
          let randomMonster = monsters[(monstersname[randomNumber])]
          return randomMonster
@@ -437,7 +433,6 @@ $(document).ready(()=>{
          $("#topLeads tbody").show()
          $("#topLeads thead").show()
          $(".animation").hide();
-         console.log(response);
          response = response.sort((a,b)=>{
             return a.kills - b.kills 
          })

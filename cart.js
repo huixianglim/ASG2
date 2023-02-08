@@ -57,7 +57,6 @@ $(document).ready(()=>{
         let id = e.target.dataset.id
         let product = JSON.parse(localStorage.getItem(id))
         let amount =  e.target.value
-        console.log(amount)
         if (amount =='' || amount <0){
             product.quantity = 0;
             e.target.value = 0;
@@ -121,7 +120,6 @@ for (var i = 0; i < localStorage.length; i++){
     key = localStorage.key(i)
     if (key!="person"){
        let product = JSON.parse(localStorage.getItem(key))
-       console.log(product.url)
        content = `${content}
        <div class = "product">
        <hr class="my-4">
@@ -200,10 +198,8 @@ function checkTotal(){
 
 function ClearCart(){
     let index = localStorage.length
-    console.log(index)
     let nameArray = []
     for (let i =0; i<index;i++){
-        console.log(localStorage.key(i))
        if(localStorage.key(i) !="person"){
         nameArray.push(localStorage.key(i))
        }

@@ -148,7 +148,6 @@ $(document).ready(()=>{
         else{
             $("#signSubmit").css({"pointer-events": "none"})
         }
-     console.log($("#signPass").val())
 
     })
   
@@ -275,7 +274,6 @@ $(document).ready(()=>{
         else{
             $("#logSubmit").css({"pointer-events": "none"})
         }
-     console.log($("#logPass").val())
 
     })
   
@@ -319,7 +317,6 @@ $(document).ready(()=>{
         </a>`)    
         let check = false;
         for (let i =0; response[i];i++){
-            console.log(response[i].email)
             if(response[i].password == $("#logPass").val() && response[i].email == $("#logEmail").val()){
                     check = true;
                     json = {
