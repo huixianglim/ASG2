@@ -31,7 +31,6 @@ body {
    font-size: 15px;
    height: 70px;
    top:0;
-   position: fixed;
    z-index: 1000;
    display: flex;
    justify-content: center;
