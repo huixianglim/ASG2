@@ -186,6 +186,8 @@ a{
   justify-content: center;
   align-items: center;
   position: relative;
+  padding: 15px 20px;
+
 }
 
 #acc-dropdown a p{
@@ -322,8 +324,8 @@ section:nth-child(6){
 .cards  img{
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, rgba(231,232,234,0.896796218487395) 0%, rgba(174,175,177,1) 100%);
-
+  border: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 11px 10px rgba(0, 0, 0, 0.8);
 }
 
 
@@ -677,7 +679,6 @@ section .cards {
       margin: 0;
       left: 0;
       right: 0; 
-      padding: 0;
   }
 
   
