@@ -153,8 +153,10 @@ $(document).ready(async function(){
           }
           localStorage.setItem($(".update")[i].dataset.name, JSON.stringify(json))
           $("#cart").attr("active","true"); //set animation
+          $("#cartHolder").attr("active","true")
           setTimeout(()=>{
             $("#cart").attr("active","false");
+            $("#cartHolder").attr("active","false")
 
           },500)
         }

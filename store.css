@@ -300,6 +300,7 @@ body {
   right: 5%;
   width: 70px;
   height: 70px;
+  transition: all 0.2s ease-out;
   
 }
 #cart{
@@ -319,17 +320,18 @@ body {
 }
 
 #cart[active = "true"]{
-  transform: scale(1.25);
   animation:  tilt-shaking 0.5s 1;
   color: #03e9f4;  
 
-  
+}
+#cartHolder[active = "true"]{
+  transform: scale(1.25);
 }
 @keyframes tilt-shaking {
-  0% { transform: rotate(0deg)  scale(2);}
-  25% { transform: rotate(5deg) scale(2); }
+  0% { transform: rotate(0deg)  scale(1.25);}
+  25% { transform: rotate(5deg) scale(1.25); }
   50% { transform: rotate(0deg); }
-  75% { transform: rotate(-5deg) scale(2); }
+  75% { transform: rotate(-5deg) scale(1.25); }
   100% { transform: rotate(0deg); }
 }
 #cart:hover{
