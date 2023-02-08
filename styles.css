@@ -206,6 +206,7 @@ a{
 /* Main page */
 
 
+
 section{
   min-height: 100vh;
   display: flex;
@@ -316,11 +317,16 @@ section:nth-child(5)[background = "true"]{
 section:nth-child(6){
   color: #fff;
 }
+
+
 .cards  img{
   width: 100%;
   height: 100%;
+  background: radial-gradient(circle, rgba(231,232,234,0.896796218487395) 0%, rgba(174,175,177,1) 100%);
 
 }
+
+
 .container{
   display: flex;
   margin: 5vw;
