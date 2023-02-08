@@ -84,14 +84,7 @@ a{
  
 }
 
-/* .navbar-links{
-   color: white;
-   font-family: 'Open Sans', sans-serif;
-   font-weight: 700;
-   text-align: center;
-   padding: 5px;
-   display: block;
-} */
+
 
 .navbar-links {
  color: #fff;
@@ -109,11 +102,7 @@ a{
 .navbar-links p{
  padding: 10px;
 }
-/* 
-.navbar-links:hover{
-   color:#7724ff;
-   transition: all 0.2s ease;
-}  */
+
 
 
 .navbar-links:after {    
@@ -623,8 +612,10 @@ a{
 }
 
 #loading-animation{
-   width: 70px;
+   width: 100%;      
    height: 70px;
+   display: flex;
+   justify-content: center;
 }
 
 .killCount{
@@ -795,9 +786,7 @@ a{
        z-index: 999;
        height: 200px;
        font-size: 12px;
-       /* display: flex;
-       justify-content: center;
-       flex-direction: column; */
+
    }
  
    .navbar-toggle .bar{
@@ -856,7 +845,7 @@ a{
  
  
  
- @media (max-width: 640px){
+ @media (max-width: 700px){
    
    :root {
       --pixel-size: 2.5px;
@@ -916,7 +905,7 @@ a{
 
  @media (max-width: 350px){
    :root {
-      --pixel-size: 1.7px;
+      --pixel-size: 1.85px;
    }
 
    .leaderBoard{

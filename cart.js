@@ -7,6 +7,8 @@ $(document).ready(()=>{
         let price = checkTotal()
         if (price != 0){
             $("#checkOut").fadeIn()
+            $(".payForm").fadeIn()
+            // $("#checkOut").removeClass("hidden")
             $(".totalProduct").html(price)
             $(".checkTotal") .html("$" + String(price+4));
         }
@@ -15,14 +17,29 @@ $(document).ready(()=>{
         }
     })
 
-    $("#pay").on("click",()=>{
-        ClearCart();
-        $("#checkOut").hide();
-        getCart();
+    $("#pay").on("click",(e)=>{
+        e.preventDefault();
+        let form = document.forms["payment"]
+        if (form.checkValidity()){
+            ClearCart();
+            $(".payForm").fadeOut();
+            $("#checkOut").fadeOut()
+            getCart();
+            $(".lottie").show()
+            setTimeout(()=>{
+                $(".lottie").hide()
+                alert("payment successful")
+            },3000)
+        }
+        else{
+            alert("Invalid input! Please try again.")
+        }
+
     })
 
     $(".cancel").on("click",()=>{
-        $("#checkOut").hide();
+        $(".payForm").fadeOut()
+        $("#checkOut").fadeOut()
     })
 
     $(".remove").on("click",(e)=>{
@@ -138,11 +155,10 @@ for (var i = 0; i < localStorage.length; i++){
      </div>
     </div> `
     }
+}
     $("#cartWrap").html(content)
     setQuantity();
     getTotal();
-
-}
 
 }
 function getTotal(){
@@ -184,9 +200,18 @@ function checkTotal(){
 
 function ClearCart(){
     let index = localStorage.length
+    console.log(index)
+    let nameArray = []
     for (let i =0; i<index;i++){
+        console.log(localStorage.key(i))
        if(localStorage.key(i) !="person"){
-        localStorage.removeItem(localStorage.key(i))
+        nameArray.push(localStorage.key(i))
        }
     }
+    if (nameArray.length >0){
+        for (let i = 0; i< nameArray.length;i++){
+            localStorage.removeItem(nameArray[i])
+        }
+    }
+
 }

@@ -59,8 +59,7 @@
                         </div>
       
                         <div class="pt-5">
-                          <h6 class="mb-0"><a href="store.html" class="text-body"><i
-                                class="fas fa-long-arrow-alt-left me-2"></i>Back to shop</a></h6>
+                          <h6 class="mb-0"><a href="store.html" class="text-body animation"> Back to shop</a></h6>
                         </div>
                       </div>
                     </div>
@@ -70,12 +69,12 @@
                         <hr class="my-4">
                 
       
-                        <div class="d-flex justify-content-between mb-5">
+                        <div id = total class="d-flex justify-content-between mb-5">
                           <h5 class="text-uppercase">Total price</h5>
                           <h5 id="totalPrice"></h5>
                         </div>
       
-                        <button type="button" id="startCheck" class="btn btn-dark btn-block btn-lg"
+                        <button type="button" id="startCheck" class="btn btn-dark btn-block btn-lg animation"
                           data-mdb-ripple-color="dark">CheckOut</button>
       
                       </div>
@@ -86,10 +85,11 @@
             </div>
           </div>
         </div>
-      </section>
+        <lottie-player class="lottie" src="https://assets5.lottiefiles.com/packages/lf20_CBIe0e1jwK.json"  background="transparent"  speed="1"  loop  autoplay></lottie-player>      
 
+      </section>
+   
       <section id="checkOut">
- 
               <div class="container bg-white rounded-lg shadow-sm p-5 payForm">
                 <div class="cancel"><h1>x</h1></div>
                 <h1>Payment</h1>
@@ -116,7 +116,7 @@
         
                   <!-- credit card info-->
                   <div id="nav-tab-card" class="tab-pane fade show active">
-                    <form role="form">
+                    <form role="form" name="payment">
                       <div class="form-group">
                         <label for="username">Full Name</label>
                         <input type="text" name="username" placeholder="Enter full name of cardholder" required class="form-control">
@@ -145,32 +145,37 @@
                           </div>
                         </div>
                         <div class="col-sm-4">
-                          <div class="form-group mb-4">
+                          <div class="form-group sm-4">
                             <label data-toggle="tooltip" title="Three-digits code on the back of your card">CVV
                                                         <i class="fa fa-question-circle"></i>
                                                     </label>
                             <input type="text" required class="form-control">
                           </div>
                         </div>
-                        
-                        <div class="row">
-                          <div class="col">
+                      </div>
 
+                        <div class="row">
+                          <div class="form-group col-md-6">
+                            <label for="inputCity">Address</label>
+                            <input type="text" class="form-control" id="inputCity">
+                          </div>
+                          <div class="form-group col-md-2">
+                            <label for="inputZip">Zip</label>
+                            <input type="text" class="form-control" id="inputZip">
                           </div>
                         </div>
-        
                         <div class="row price">
-                          <div class="col-md-4 order-md-2 mb-4">
-                            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                          <div class="col-md-4 order-md-2 sm-4">
+                            <h4 class="d-flex justify-content-between align-items-center sm-3">
                               <span class="text-muted">Price Details</span>
                               <span class="badge badge-secondary badge-pill">3</span>
                             </h4>
-                            <ul class="list-group mb-3">
+                            <ul class="list-group sm-3">
                               <li class=" d-flex justify-content-between lh-condensed">
                                 <div>
                                   <h6 class="my-0">Total Product price</h6>
                                 </div>
-                                <span class="text-muted totalProduct">$12</span>
+                                <span class="text-muted totalProduct"></span>
                               </li>
                               <li class=" d-flex justify-content-between lh-condensed">
                                   <div>
@@ -181,20 +186,19 @@
                             </ul>
                           </div>
                           <div class="col">
-                              <h5 class="text-uppercase">Total price:<span class="checkTotal"></span></h5>
+                              <h5 class="text-uppercase">Total price: <span class="checkTotal"></span></h5>
                           </div>
                        </div>  
         
-                      </div>
-                      <button type="submit" id="pay" class="btn btn-primary btn-block rounded-pill shadow-sm">Pay</button>
+                      <button type="submit" id="pay" class="btn btn-primary btn-block rounded-pill shadow-sm animation">Pay</button>
                     </form>
                   </div>
                   
         
                   <div id="nav-tab-paypal" class="tab-pane fade">
                     <p>Paypal is easiest way to pay online</p>
-                      <a href="https://www.paypal.com/sg/home">
-                        <button type="button" class="btn btn-dark btn-primary rounded-pill"><i class="fa fa-paypal mr-2"></i> Log into my Paypal</button>
+                      <a href="https://www.paypal.com/sg/home" target="_blank">
+                        <button type="button" class="btn btn-dark btn-primary rounded-pill animation"><i class="fa fa-paypal mr-2"></i> Log into my Paypal</button>
                       </a>
                   </div>
         
@@ -218,7 +222,7 @@
 
 
 
-
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>

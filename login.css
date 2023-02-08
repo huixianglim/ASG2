@@ -11,7 +11,6 @@
   z-index: 1000;
   display: flex;
   justify-content: center;
-  position: fixed;
   width: 100%;
   transition: ease-in-out 0.3s;
 }
@@ -62,14 +61,6 @@ font-family: 'Press Start 2P', cursive;
 
 }
 
-/* .navbar-links{
-  color: white;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
-  text-align: center;
-  padding: 5px;
-  display: block;
-} */
 
 .navbar-links {
 color: #fff;
@@ -87,11 +78,6 @@ position: relative;
 .navbar-links p{
 padding: 10px;
 }
-/* 
-.navbar-links:hover{
-  color:#7724ff;
-  transition: all 0.2s ease;
-}  */
 
 
 .navbar-links:after {    
@@ -182,6 +168,7 @@ padding: 10px;
 }
 
 #logout-btn{
+  cursor: pointer;
 margin: 0;
 padding: 0;
 }
@@ -228,6 +215,7 @@ html.login, body.login{
   color: white;
 }
 .wrapper .title{
+  padding: 0px 15px;
   width: 50%;
   font-size: 35px;
   font-weight: 600;
@@ -515,9 +503,7 @@ input:-webkit-autofill:active  {
           z-index: 999;
           height: 200px;
           font-size: 12px;
-          /* display: flex;
-          justify-content: center;
-          flex-direction: column; */
+  
       }
 
       .navbar-toggle .bar{
@@ -572,7 +558,10 @@ input:-webkit-autofill:active  {
       
       }
       
-      
+      .animation{
+        width: 95px ; 
+        height: 40px;
+      }
       
       
       @media (max-width: 400px){

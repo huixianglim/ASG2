@@ -31,17 +31,39 @@ $(document).ready(()=>{
 
         </li>
     </ul>`
+        $("#login-btn").hide()
         $("#acc-dropdown").html(content);  
+         $(".createacc-btn").html(`<a href="./selectclass.html">
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         Start Playing
+        </a>`)
+        $("#acc-dropdown").show();
+
     }
 
     $("#logout-btn").on("click",()=>{
         localStorage.removeItem("person");
+        ClearCart();
         content = `<a href="./login.html" class="navbar-links">
         <div class="signin-img"></div>  
         <p>LOG IN</p>
         </a>`
         $("#acc-dropdown").html(""); 
+        $("#acc-dropdown").hide();
         $("#login-btn").html(content);
+        $("#acc-dropdown").html(content);  
+         $(".createacc-btn").html(`<a href="./selectclass.html">
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         Sign Up
+        </a>`)
+        $("#login-btn").show()
+
     })
     //END        LOGIN LOGOUT NAV 
 
@@ -100,3 +122,20 @@ $(document).ready(()=>{
     
 
 })
+
+function ClearCart(){
+    let index = localStorage.length
+    console.log(index)
+    let nameArray = []
+    for (let i =0; i<index;i++){
+        console.log(localStorage.key(i))
+       if(localStorage.key(i) !="person"){
+        nameArray.push(localStorage.key(i))
+       }
+    }
+    if (nameArray.length >0){
+        for (let i = 0; i< nameArray.length;i++){
+            localStorage.removeItem(nameArray[i])
+        }
+    }
+}
