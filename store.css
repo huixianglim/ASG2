@@ -461,7 +461,6 @@ body {
 }
 
 .animationHolder{
-  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -746,8 +745,7 @@ body {
     z-index: 1;
     margin-left: 0;
     margin-right: 0;
-    margin-bottom: 0;
-    margin-top: 80px;
+    margin-bottom: 80px;
   }
 
   
