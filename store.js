@@ -93,7 +93,7 @@ $(document).ready(async function(){
     
   }
 
-  // GetStoreItems(); //load the get store items after the get top 5 check. This is to allow the price to update accordingly
+  GetStoreItems(); //load the get store items after the get top 5 check. This is to allow the price to update accordingly
 
     $(".postCancel").on("click",()=>{
       $("#post-product-container").hide();
@@ -207,7 +207,7 @@ async function GetStoreItems(){
     let get = {
         "async": true,
         "crossDomain": true,
-        // "url": "https://databaseid-63ae.restdb.io/rest/store",
+        "url": "https://databaseid-63ae.restdb.io/rest/store",
         "url": "https://idasg-332a.restdb.io/rest/store", 
         "method": "GET", 
         "headers": {
@@ -294,7 +294,7 @@ function updateForm(id, name, price, image) {
     var settings = {
       "async": true,
       "crossDomain": true,
-    //   "url": `https://databaseid-63ae.restdb.io/rest/store/${id}`,//update based on the ID
+      "url": `https://databaseid-63ae.restdb.io/rest/store/${id}`,//update based on the ID
       "url": `https://idasg-332a.restdb.io/rest/store/${id}`,
       "method": "PUT",
       "headers": {
@@ -321,7 +321,7 @@ function deleteContact(id) {
     var settings = {
       "async": true,
       "crossDomain": true,
-    //   "url": `https://databaseid-63ae.restdb.io/rest/store/${id}`,
+      "url": `https://databaseid-63ae.restdb.io/rest/store/${id}`,
       "url": `https://idasg-332a.restdb.io/rest/store/${id}`,
       "method": "DELETE",
       "headers": {
@@ -352,7 +352,7 @@ function postForm(){
   var post = {
     "async": true,
     "crossDomain": true,
-  //   "url": `https://databaseid-63ae.restdb.io/rest/store/${id}`,//update based on the ID
+    "url": `https://databaseid-63ae.restdb.io/rest/store/${id}`,//update based on the ID
     "url": `https://idasg-332a.restdb.io/rest/store`,
     "method": "POST",
     "headers": {

@@ -13,42 +13,58 @@
     <link rel="stylesheet" href="store.css">
 </head>
 <body>
-    <nav class="navbar">
-      <div class="navbar-container">
+  <nav class="navbar">
+    <div class="navbar-container">
 
-          <a href="./index.html" id="navbar-logo">
-              <p>Slayers</p>
-          </a>
+        <a href="./index.html" id="navbar-logo">
+            <p>Slayers</p>
+        </a>
 
-          <div class="navbar-toggle" id="mobile-menu">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
-          </div>
+        <div class="navbar-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
 
-          <ul class="navbar-menu">
-              <li class="navbar-button">
-                  
-                  <a href="./store.html" class="navbar-links">
-                  <div class="store-img"></div>  
-                  <p>STORE</p>
-                  </a>
-              </li>
-              
-              <li class="navbar-button">
-                  
-                  <a href="./login.html" class="navbar-links">
-                  <div class="signin-img"></div>  
-                  <p>LOG IN</p>
-                  </a>
-              </li>
-              <li class="navbar-button" >            
-                <a href="cart.html" class="navbar-links"><i id="cart" class="fa fa-shopping-cart"></i></a>  
-              </li>
-          </ul>
+        <ul class="navbar-menu">
+            <li class="navbar-button">
+                
+                <a href="./selectclass.html" class="navbar-links">
+                <div class="alien-img"></div>  
+                <p>PLAY NOW</p>
+                </a>
+            </li>
+            
+            <li class="navbar-button">
+                
+                <a href="./store.html" class="navbar-links">
+                <div class="store-img"></div>  
+                <p>STORE</p>
+                </a>
+            </li>
 
-      </div>
-  </nav>
+            
+            
+            <li class="navbar-button" id="login-btn">
+                
+                
+            </li>
+
+            <li class="navbar-button" id="acc-dropdown">
+                 
+            </li>
+
+            <li class="navbar-button" >            
+              <a href="cart.html"><i id="cart" class="fa fa-shopping-cart"></i></a>  
+            </li>
+            
+
+        </ul>
+
+    </div>
+</nav>
+
+  
   <main>
         <div class="banner">
           <div class="swiper">
@@ -57,20 +73,10 @@
               
               <!-- Slides -->
               <div class="swiper-slide">
-                <div class="swiper-title">
-                  <h1>Top 5 people in the leaderboard gets 30% off for all items!</h1>
-                </div>
-                <img src="https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg" alt=""></div>
+                <img src="./Images/top5.png" alt=""></div>
+              
               <div class="swiper-slide">
-                <div class="swiper-title">
-                  <h1>Top 5 people in the leaderboard gets 30% off for all items!</h1>
-                </div>
-                <img src="https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg" alt=""></div>
-              <div class="swiper-slide">
-                <div class="swiper-title">
-                  <h1>Top 5 people in the leaderboard gets 30% off for all items!</h1>
-                </div>
-                <img src="https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg" alt=""></div>
+                <img src="./Images/onesize.png" alt=""></div>
               ...
             </div>
          
@@ -79,9 +85,7 @@
 
         </div>
 
-        <div class="welcome">
-          <h2>WELCOME TO OUR SHOP</h2>
-        </div>
+        
     
         <div class="searchBar">
    
@@ -94,6 +98,11 @@
             <h1>+</h1>
           </button>
         </div>
+
+        <div class="welcome">
+          <h2>OUR MERCHANDISE</h2>
+        </div>
+
     <div class="store-container">
 
       <div class="product_wrap" id="product-list">
@@ -108,7 +117,7 @@
           background: #ccc;
           z-index: 10;
           overflow: hidden;
-          background: url(https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRsCgqxkltVkM5IVtAndKoUVihr5gNH48ONTdDcqHPExKndNxg-44keUXPGjJe9pmTfeIS6c4g9OIEbfCL4QbLy24Cr8UUfdVxgc5aB7h-8TN11f1fa0bsW&usqp=CAc) center no-repeat;
+          background: url(https://pbs.twimg.com/media/FoX_1DBaIAE434a?format=jpg&name=medium) center no-repeat;
           background-size: contain;">
           </div>
           <div class="discountShow">
@@ -127,10 +136,10 @@
               </div>
           </div>
   
-          <div class="admin-controls">
+          <!-- <div class="admin-controls">
           <a href="#" class='update' data-id='${response[i]._id}' data-name='${response[i].name}' data-price='${response[i].price}' data-image='${response[i].image}'>UPDATE</a>
           <a href="#" class="delete">DELETE</a>
-          </div>
+          </div> -->
           </div>
       </div>
       
@@ -201,8 +210,35 @@
           </div>    
       </div>
       </main>  
+
+
       <footer>
-        
+          <div class="footer-container">
+            <div class="social-menu">
+
+              <div class="social-icon">
+                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <span>Twitter</span>
+              </div>
+              <div class="social-icon">
+                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <span>Facebook</span>
+              </div>
+              <div class="social-icon">
+                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <span>Instagram</span>
+              </div>
+              <div class="social-icon">
+                <a href="#"><i class="fa fa-github" aria-hidden="true"></i></a>
+                <span>Github</span>
+              </div>
+              <div class="social-icon">
+                <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                <span>Youtube</span>
+              </div>
+
+            </div>
+          </div>
       </footer>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
