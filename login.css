@@ -380,7 +380,7 @@ input[type="radio"]{
   
   .validation{
     color: red;
-    font-size: 1vw;
+    font-size: 15px;
     display: none;
   }
 
