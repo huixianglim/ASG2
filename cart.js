@@ -8,7 +8,6 @@ $(document).ready(()=>{
         if (price != 0){
             $("#checkOut").fadeIn()
             $(".payForm").fadeIn()
-            // $("#checkOut").removeClass("hidden")
             $(".totalProduct").html(price)
             $(".checkTotal") .html("$" + String(price+4));
         }
@@ -25,10 +24,11 @@ $(document).ready(()=>{
             $(".payForm").fadeOut();
             $("#checkOut").fadeOut()
             getCart();
+            $(".alert.alert-success").fadeIn()
             $(".lottie").show()
             setTimeout(()=>{
-                $(".lottie").hide()
-                alert("payment successful")
+                $(".lottie").fadeOut()
+                $(".alert.alert-success").fadeOut()
             },3000)
         }
         else{
