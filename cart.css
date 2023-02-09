@@ -97,6 +97,11 @@ button{
 #paypal{
     font-size: 15px;
 }
+
+
+
+
+
 @media (min-width: 1025px) {
     .h-custom {
     height: 100% !important;
@@ -144,6 +149,24 @@ button{
     
         .payForm{
             padding: 5% !important;
+        }
+
+        h6.mb-0.price{
+            text-align: center;
+            /* margin-top: 20px; */
+        }
+
+        .row>*{
+            text-align: center;
+            margin-top:15px;
+        }
+
+        .col-md-1.col-lg-1.col-xl-1.text-end{
+            margin-top: -235%;
+        }
+
+        .pt-5 {
+            margin-left: -74.5%;
         }
         
     }

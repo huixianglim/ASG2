@@ -231,7 +231,7 @@ section{
   height: 100px;
   font-size: 5vw;
   transition: all 0.3s ease-out;
-  background: url("https://www.stmedia.co.uk/stmedia/wp-content/themes/stmedia-2017/img/arrow_down_black.gif");
+  background: url("./Images/downarrow.gif");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -280,7 +280,7 @@ section:nth-child(2)[background = "true"]{
 
   background: linear-gradient(
     rgba(0, 0, 0, 0.7), 
-    rgba(0, 0, 0, 0.7)),url("https://64.media.tumblr.com/066d13748eb3a791cd9774d9561d7e57/tumblr_p240ppQIW21rnbw6mo1_540.gif") center no-repeat;
+    rgba(0, 0, 0, 0.7)),url("./Images/background2.gif") center no-repeat;
   background-size: cover ;
   color: white;
   
@@ -291,7 +291,7 @@ section:nth-child(3)[background = "true"]{
   background:linear-gradient(
     rgba(0, 0, 0, 0.8), 
     rgba(0, 0, 0, 0.8)
-  ),url("https://64.media.tumblr.com/39a0a9fc1e888b1ead027dab82d6d9e7/2763211f3a7351dc-67/s640x960/9ffa2c25fe67a3aecaf6bdf02142ba52846c4e31.gif") ;
+  ),url("./Images/background3.gif") ;
   background-repeat: no-repeat;
   background-size:cover ;
   
@@ -303,7 +303,7 @@ section:nth-child(4)[background = "true"]{
   background: linear-gradient(
     rgba(0, 0, 0, 0.7), 
     rgba(0, 0, 0, 0.7)
-  ),center url("https://64.media.tumblr.com/d6f52afff65dce9fc7cdeffa930c2c2f/tumblr_p4u4vqgE7H1rnbw6mo1_r1_1280.gif");
+  ),center url("./Images/background4.gif");
   color: #fff;
   background-repeat: no-repeat;
   background-size: cover;
@@ -312,14 +312,12 @@ section:nth-child(5)[background = "true"]{
   background: linear-gradient(
     rgba(0, 0, 0, 0.7), 
     rgba(0, 0, 0, 0.7)
-  ),center url("https://media.tenor.com/1TIG65lnwT0AAAAd/waneella-pixel-art.gif");
+  ),center url("./Images/background5.gif");
   color: white;
   background-repeat: no-repeat;
   background-size:cover ;
 }
-/* section:nth-child(6){
-  color: #fff;
-} */
+
 
 
 .cards  img{
@@ -810,15 +808,7 @@ section .cards {
 }
 
 
-@media screen and (width<=600px) {
-  #cartHolder{
-    bottom: 2%;
-    right: 2%;
-    border-radius: 10px;
-    height: 60px;
-    width: 60px;
-  }
-}
+
 
 @media (max-width: 640px){
   section h1{
@@ -837,7 +827,18 @@ section .cards {
   }
 
 }
-@media screen and (width<=520px) {
+
+@media (max-width:600px) {
+  #cartHolder{
+    bottom: 2%;
+    right: 2%;
+    border-radius: 10px;
+    height: 60px;
+    width: 60px;
+  }
+}
+
+@media (max-width:520px) {
   .social-icon a {
 
     margin: 5px;
@@ -865,20 +866,20 @@ section .cards {
     min-height: 30vh;
   }
 }
-@media screen and (width<=410px){
+@media (max-width:410px){
   
   .social-icon a {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     
   }
   .social-icon a i {
-    line-height: 50px;
-    font-size: 25px;
+    line-height: 40px;
+    font-size: 20px;
   }
 
 }
-@media screen and (width<=350px) {
+@media (max-width:350px) {
   .social-icon a {
     height: 40px;
     width: 40px;
