@@ -808,15 +808,7 @@ section .cards {
 }
 
 
-@media screen and (width<=600px) {
-  #cartHolder{
-    bottom: 2%;
-    right: 2%;
-    border-radius: 10px;
-    height: 60px;
-    width: 60px;
-  }
-}
+
 
 @media (max-width: 640px){
   section h1{
@@ -835,7 +827,18 @@ section .cards {
   }
 
 }
-@media screen and (width<=520px) {
+
+@media (max-width:600px) {
+  #cartHolder{
+    bottom: 2%;
+    right: 2%;
+    border-radius: 10px;
+    height: 60px;
+    width: 60px;
+  }
+}
+
+@media (max-width:520px) {
   .social-icon a {
 
     margin: 5px;
@@ -863,7 +866,7 @@ section .cards {
     min-height: 30vh;
   }
 }
-@media screen and (width<=410px){
+@media (max-width:410px){
   
   .social-icon a {
     height: 40px;
@@ -876,7 +879,7 @@ section .cards {
   }
 
 }
-@media screen and (width<=350px) {
+@media (max-width:350px) {
   .social-icon a {
     height: 40px;
     width: 40px;
