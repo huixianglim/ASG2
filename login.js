@@ -202,7 +202,7 @@ $(document).ready(()=>{
                             $(".signE").html("Email already taken!")
                     
                         }
-                        if (response[i].email ==  $("#signName").val()){
+                        if (response[i].name ==  $("#signName").val()){
                             $(".signN").html("Name already taken!")
 
                         }
