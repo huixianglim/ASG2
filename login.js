@@ -1,5 +1,6 @@
-// HAMBURGER MENU
+
 $(document).ready(()=>{
+    //sliding animation for the forms
     var json = {}
     const loginText = document.querySelector(".title-text .login");
             const loginForm = document.querySelector("form.login");
@@ -57,7 +58,8 @@ $(document).ready(()=>{
         </li>
     </ul>`
         $("#acc-dropdown").html(content);  
-        $("#login-btn").hide()
+        $("#login-btn").hide();
+        $("#acc-dropdown").show();
 
     }
 
@@ -67,6 +69,7 @@ $(document).ready(()=>{
         <div class="signin-img"></div>  
         <p>LOG IN</p>
         </a>`
+        clearCart();
         $("#login-btn").html(content);
         $("#login-btn").show()
         $("#acc-dropdown").html(""); 
@@ -74,6 +77,7 @@ $(document).ready(()=>{
     })
     //END 
 
+    //validation for the sign up and login input forms
     var email = false;
     var name = false
     var password = false
@@ -84,7 +88,7 @@ $(document).ready(()=>{
     $("#signName").on("input",()=>{
       
         let value = $("#signName").val()
-        
+          //display messages based on input
         if (value.length>0 && value.length<=10){
             name = true;
             $(".signN").html(`Name is valid`)
@@ -110,7 +114,8 @@ $(document).ready(()=>{
     })
     $("#signEmail").on("input",(e)=>{
         let value = $("#signEmail").val()
-        if (value.match(
+        //display messages based on input
+        if (value.match( //if the email input format is correct
             /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
           )){
             $(".signE").html(`Email is valid`)
@@ -120,7 +125,7 @@ $(document).ready(()=>{
             $(".signE").html(`Email is not valid`)
             email= false
         }
-        if (email&&password&&name){
+        if (email&&password&&name){ //allow the sign up button to be clickable after validation
             $("#signE").css({"pointer-events": "all"})
         }
         else{
@@ -131,7 +136,7 @@ $(document).ready(()=>{
     $("#signPass").on("input",()=>{
 
         let value = $("#signPass").val()
-        
+        //display messages based on input
         if (value.length>5){
             password = true;
             $(".signP").html(`Password is valid`)
@@ -142,7 +147,7 @@ $(document).ready(()=>{
             password = false;
 
         }
-        if (email&&password&&name){
+        if (email&&password&&name){ //allow the sign up button to be clickable after validation
             $("#signSubmit").css({"pointer-events": "all"})
         }
         else{
@@ -150,9 +155,8 @@ $(document).ready(()=>{
         }
 
     })
-  
+    //sign up submission, adding of the account details to our database
     $("#signSubmit").on("click",()=>{
-   
        var jsondata ={
         "name":$("#signName").val(),
         "email":$("#signEmail").val(),
@@ -165,13 +169,13 @@ $(document).ready(()=>{
             "async": true,
             "crossDomain": true,
             "url": "https://idweek14-d843.restdb.io/rest/login",
-            "method": "POST", //[cher] we will use post to send info
+            "method": "POST", 
             "headers": {
               "content-type": "application/json",
               "x-apikey": APIKEY,
               "cache-control": "no-cache"
             },
-            "beforeSend":function(){
+            "beforeSend":function(){ //display loadig animation
                 $("#signSubmit").css({"pointer-events":"none"})     
                 $("#signSubmit").html(`<a href = "#"><span></span>
                         <span></span>
@@ -183,20 +187,21 @@ $(document).ready(()=>{
             },
             "processData": false,
             "data": JSON.stringify(jsondata),
-            "error" : function(){
+            "error" : function(){ //if got error, display an error message
                 let settings = {
                     "async": true,
                     "crossDomain": true,
                     "url": "https://idweek14-d843.restdb.io/rest/login",
-                    "method": "GET", //[cher] we will use GET to retrieve info
+                    "method": "GET", 
                     "headers": {
                       "content-type": "application/json",
                       "x-apikey": APIKEY,
                       "cache-control": "no-cache"
                     }
                   }
+
                   $.ajax(settings).done(function (response) {
-                    
+                    //display the appropriate error messages
                     for (var i = 0; i < response.length; i++) {
                         if (response[i].email == $("#signEmail").val()){
                             $(".signE").html("Email already taken!")
@@ -222,6 +227,7 @@ $(document).ready(()=>{
               
             }
             }
+    
     $.ajax(post).done((response)=>{
         $("#signSubmit").css({
             "pointer-events":"all"
@@ -236,7 +242,8 @@ $(document).ready(()=>{
     
     $("#logEmail").on("input",(e)=>{
         let value = $("#logEmail").val()
-        if (value.match(
+        //display messages based on input
+        if (value.match(//email format checking
             /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
           )){
             $(".logE").html(`Email is valid`)
@@ -254,10 +261,11 @@ $(document).ready(()=>{
         }
 
     })
+
     $("#logPass").on("input",()=>{
 
         let value = $("#logPass").val()
-        
+        //display messages based on input
         if (value.length>5){
             logpassword = true;
             $(".logP").html(`Password is valid`)
@@ -276,7 +284,8 @@ $(document).ready(()=>{
         }
 
     })
-  
+
+    //submitting of the login form
     $("#logSubmit").on("click",()=>{
    
     
@@ -285,7 +294,7 @@ $(document).ready(()=>{
             "async": true,
             "crossDomain": true,
             "url": "https://idweek14-d843.restdb.io/rest/login",
-            "method": "GET", //[cher] we will use post to send info
+            "method": "GET", 
             "headers": {
               "content-type": "application/json",
               "x-apikey": APIKEY,
@@ -317,8 +326,9 @@ $(document).ready(()=>{
         </a>`)    
         let check = false;
         for (let i =0; response[i];i++){
-            if(response[i].password == $("#logPass").val() && response[i].email == $("#logEmail").val()){
+            if(response[i].password == $("#logPass").val() && response[i].email == $("#logEmail").val()){ //checking if email and name mathces
                     check = true;
+                    //store information on the account on local storage
                     json = {
                         "name":response[i].name,
                         "email":response[i].email,
@@ -344,7 +354,23 @@ $(document).ready(()=>{
     })
 
     })
-  
+  //clear all cart items
+function clearCart(){
+    let index = localStorage.length
+    let nameArray = []
+    for (let i =0; i<index;i++){
+       if(localStorage.key(i) !="person"){
+        nameArray.push(localStorage.key(i))
+       }
+    }
+    if (nameArray.length >0){
+        for (let i = 0; i< nameArray.length;i++){
+            localStorage.removeItem(nameArray[i])
+        }
+    }
+
+}
 })
+
 
 

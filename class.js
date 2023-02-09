@@ -1,14 +1,18 @@
 
 $(document).ready(()=>{
+
     const chars = ["./Images/knight.png", "./Images/darkninja.png", "./Images/tank.png"];
     var character = "knight";
     var classes = ["knight","ninja","tank"]
     const btns = ["k","n","t"];
     const smk = ["./Images/whitesmoke.png", "./Images/redsmoke.png", "./Images/yellowsmoke.png"]
-
+    
+    //redirect users back to the login page if not logged in 
     if (localStorage.getItem("person") == null){
         window.location.href = "./login.html"
     }
+
+    //nav bar 
     const menu = document.querySelector('#mobile-menu');
     const menuLinks = document.querySelector('.navbar-menu');
     
@@ -44,19 +48,21 @@ $(document).ready(()=>{
     $("#acc-dropdown").show();
     $("#login-btn").hide()
     }
+    //logging out 
     $("#logout-btn").on("click",()=>{
         localStorage.removeItem("person");
-        ClearCart();
+        clearCart();
         content = `<a href="./login.html" class="navbar-links">
         <div class="signin-img"></div>  
         <p>LOG IN</p>
         </a>`
         $("#acc-dropdown").html(""); 
         $("#acc-dropdown").hide();
-        $("#login-btn").html(content);
+        $("#login-btn").html(content); 
         $("#login-btn").show()
     })
 
+    //animation for the class characters
     for(let i=0; i<chars.length; i++){
         $(".character-button-" + btns[i] + " a").on("click", function(){
         let char = chars[i];
@@ -70,7 +76,7 @@ $(document).ready(()=>{
         $(".character").attr("animation","true");
         if ($(".character").attr("animation") ==  "true"){
             setTimeout(()=>{
-            $(".character").attr("animation","false");
+            $(".character").attr("animation","false"); 
             $(".smoke-wrap").attr("smokeshow","true");
             },200)
         }
@@ -78,13 +84,15 @@ $(document).ready(()=>{
 
 
     }
-    
+
+    //set local storage of the selected classes
     $(".select-btn").on("click",()=>{
         sessionStorage.setItem("character",character)
     })
 })
 
-function ClearCart(){
+//clear all the cart items in the local storage
+function clearCart(){
     let index = localStorage.length
     console.log(index)
     let nameArray = []
