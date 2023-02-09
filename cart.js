@@ -8,8 +8,8 @@ $(document).ready(()=>{
         if (price != 0){
             $("#checkOut").fadeIn()
             $(".payForm").fadeIn()
-            $(".totalProduct").html(price)
-            $(".checkTotal") .html("$" + String(price+4));
+            $(".totalProduct").html("$"+price)
+            $(".checkTotal") .html("$" + String(parseFloat(price+4).toFixed(2)));
         }
         else{
             alert("No items to checkout!")
@@ -68,7 +68,7 @@ $(document).ready(()=>{
         let price = document.getElementsByClassName("price")
         for(let i = 0;i<price.length;i++){
             if(e.target == $(".productQuantity")[i]){
-                price[i].innerHTML = `$ ${parseFloat(product.price)* product.quantity}`
+                price[i].innerHTML = `$ ${(parseFloat(product.price) * (product.quantity)).toFixed(2)}`
             }
         }
          getTotal();
@@ -85,7 +85,7 @@ $(document).ready(()=>{
         let price = document.getElementsByClassName("price")
         for(let i = 0;i<price.length;i++){
             if(e.target == $(".plus")[i]){
-                price[i].innerHTML = `$ ${parseFloat(product.price)* product.quantity}`
+                price[i].innerHTML = `$ ${(parseFloat(product.price) * (product.quantity)).toFixed(2)}`
             }
         }
          getTotal();
@@ -103,7 +103,7 @@ $(document).ready(()=>{
             let price = document.getElementsByClassName("price")
             for(let i = 0;i<price.length;i++){
                 if(e.target == $(".minus")[i]){
-                    price[i].innerHTML = `$ ${parseFloat(product.price)* product.quantity}`
+                    price[i].innerHTML = `$ ${(parseFloat(product.price) * (product.quantity)).toFixed(2)}`
                 }
             }
             getTotal()
@@ -145,7 +145,7 @@ for (var i = 0; i < localStorage.length; i++){
          </button>
        </div>
        <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-         <h6 class="mb-0 price">$ ${parseFloat(product.price)* product.quantity}</h6>
+         <h6 class="mb-0 price">$ ${(parseFloat(product.price) * (product.quantity)).toFixed(2)}</h6>
        </div>
        <div class="col-md-1 col-lg-1 col-xl-1 text-end">
          <a href="#" data-id = "${key}" class="remove">x</a>
@@ -166,10 +166,10 @@ function getTotal(){
         if (key!="person" && key !="top"){
            let product = JSON.parse(localStorage.getItem(key))
            quantity = product
-            total += product.quantity *product.price
+            total += product.quantity * parseFloat(product.price)
         }
     }
-    $("#totalPrice").html(`$${total}`)
+    $("#totalPrice").html(`$${total.toFixed(2)}`)
 }
 
 function setQuantity(){
@@ -193,7 +193,7 @@ function checkTotal(){
             total += product.quantity *product.price
         }
     }
-    return total
+    return parseFloat(total).toFixed(2)
 }
 
 function ClearCart(){
