@@ -2,8 +2,8 @@ $(document).ready(()=>{
     $("#checkOut").hide()
      getCart();
     
-    
-     $("#startCheck").on("click",()=>{ //cart
+    //checkout form appear upon clicking checkout button
+     $("#startCheck").on("click",()=>{ 
         let price = checkTotal()
         if (price != 0){
             $("#checkOut").fadeIn()
@@ -15,12 +15,12 @@ $(document).ready(()=>{
             alert("No items to checkout!")
         }
     })
-
+    //after checking out, either an alert for validation or an animation to indicate success payment will play
     $("#pay").on("click",(e)=>{
         e.preventDefault();
         let form = document.forms["payment"]
         if (form.checkValidity()){
-            ClearCart();
+            clearCart();
             $(".payForm").fadeOut();
             $("#checkOut").fadeOut()
             getCart();
@@ -37,11 +37,13 @@ $(document).ready(()=>{
 
     })
 
+    //clicking on the x button to hide the form
     $(".cancel").on("click",()=>{
         $(".payForm").fadeOut()
         $("#checkOut").fadeOut()
     })
 
+    //remove the items from cart
     $(".remove").on("click",(e)=>{
         $(".remove").attr("disabled",false)
         e.preventDefault();
@@ -52,6 +54,7 @@ $(document).ready(()=>{
         setQuantity();
     })
 
+    //validation for input of the quantity items
 
     $(".productQuantity").on("input",(e)=>{
         let id = e.target.dataset.id
@@ -73,7 +76,8 @@ $(document).ready(()=>{
         }
          getTotal();
     })
-    
+
+    //setting the quantity and price of products upon clicking the plus minus buttons beside it
     $(".plus").on("click",(e)=>{
         let id = e.target.dataset.id
         let product = JSON.parse(localStorage.getItem(id))
@@ -113,7 +117,7 @@ $(document).ready(()=>{
 })
 
 
-
+//get cart items from local storage and display it on screen
 function getCart(){
     var content = ""
 for (var i = 0; i < localStorage.length; i++){
@@ -159,6 +163,7 @@ for (var i = 0; i < localStorage.length; i++){
     getTotal();
 
 }
+//get total pricec of cart items and set the html of the total price section  
 function getTotal(){
     var total = 0
     for (var i = 0; i < localStorage.length; i++){
@@ -172,6 +177,7 @@ function getTotal(){
     $("#totalPrice").html(`$${total.toFixed(2)}`)
 }
 
+//find out the number of cart items in cart and change the html element accordingly
 function setQuantity(){
     let index = localStorage.length;
     let number = 0;
@@ -183,6 +189,7 @@ function setQuantity(){
     $("#numItems").html(number +" Cart Items")
 
 }
+//find out total price of cart(for validation)
 function checkTotal(){
     var total = 0
     for (var i = 0; i < localStorage.length; i++){
@@ -196,7 +203,8 @@ function checkTotal(){
     return parseFloat(total).toFixed(2)
 }
 
-function ClearCart(){
+//clear all cart items
+function clearCart(){
     let index = localStorage.length
     let nameArray = []
     for (let i =0; i<index;i++){

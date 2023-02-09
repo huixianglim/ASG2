@@ -47,7 +47,7 @@ $(document).ready(()=>{
 
     $("#logout-btn").on("click",()=>{
         localStorage.removeItem("person");
-        ClearCart();
+        clearCart();
         content = `<a href="./login.html" class="navbar-links">
         <div class="signin-img"></div>  
         <p>LOG IN</p>
@@ -68,7 +68,7 @@ $(document).ready(()=>{
     //END        LOGIN LOGOUT NAV 
 
 
-    
+    //scrolling animation for each section of the page
     window.addEventListener("scroll",reveal);
     function reveal(){
         var reveals = document.querySelectorAll('.reveal')
@@ -123,7 +123,7 @@ $(document).ready(()=>{
 
 })
 
-function ClearCart(){
+function clearCart(){
     let index = localStorage.length
     let nameArray = []
     for (let i =0; i<index;i++){

@@ -1,6 +1,6 @@
 $(document).ready(()=>{
-
-   const menu = document.querySelector('#mobile-menu');
+   //Nav bar
+    const menu = document.querySelector('#mobile-menu');
     const menuLinks = document.querySelector('.navbar-menu');
     
     menu.addEventListener('click', function(){
@@ -32,20 +32,20 @@ $(document).ready(()=>{
 
     $("#logout-btn").on("click",()=>{
         localStorage.removeItem("person");
-        content = `<a href="./login.html" class="navbar-links">
-        <div class="signin-img"></div>  
-        <p>LOG IN</p>
-        </a>`
+        clearCart();
          window.location.href = "login.html"
     })
     //END
 
+   //game leader board
    $("#topLeads thead").hide()
    const APIKEY = "63ca7160969f06502871b054";
    var id =""
    var Currentkills = 0
    var kills = 0
    getLeaderBoard()
+
+   //change the characters in game accordingly
    var email = person.email
    chosen = sessionStorage.getItem("character");
    if(chosen==null ||chosen== undefined){
@@ -55,6 +55,8 @@ $(document).ready(()=>{
       $(".you_spritesheet").attr("character",chosen)
       $(".character_spritesheet").attr("character",chosen) //use the session storage to set the class page
    }
+   //GAME   
+   //information on each class of the characters
    var characters = {
       "knight":{Maxhealth:20,
          health:20,
@@ -121,6 +123,8 @@ $(document).ready(()=>{
        ]
        }
    }
+
+   //change the attacks in the game accordingly
    var attacks =document.getElementsByClassName("attacks");
    for (let i = 0;i<attacks.length;i++){
       attacks[i].innerHTML = (characters[chosen].attacks[i].name);
@@ -131,17 +135,19 @@ $(document).ready(()=>{
    //start in the middle of the map
    var x = 90;
    var y = 34;
+   
    var held_directions = []; //State of which arrow keys we are holding down
    var speed = 1; //How fast the character moves in pixels per frame
-   const placeCharacter = () => {
-      
+
+   const placeCharacter = () => {      
       var pixelSize = parseFloat(
          getComputedStyle(document.documentElement).getPropertyValue('--pixel-size') //get the css property of --pixel-size
       );
       
       const held_direction = held_directions[0];
-      if (held_direction != null) { //if the held_directions array is not null
-         if (held_direction === directions.right) {x += speed;} //change movemennt accordingly
+      //movement for the characters
+      if (held_direction != null) { 
+         if (held_direction === directions.right) {x += speed;} 
          if (held_direction === directions.left) {x -= speed;}
          if (held_direction === directions.down) {y += speed;} 
          if (held_direction === directions.up) {y -= speed;}
@@ -153,26 +159,32 @@ $(document).ready(()=>{
             setMonsterImage()
              var you = characters[chosen]
              let yourattacks = []
+             //array of ur attacks to help get the damage later on
              for (let i =0; i<you.attacks.length;i++){
                yourattacks.push(you.attacks[i].name)
-             } //array of ur attacks to help get the damage later on
-             $("#enemyHealthBar").css({"width":`${monster.health/monster.Maxhealth*100}%`}) //setting of the enemy healthbar 
+             } 
+
+             //the default settings for health bar at the start of the game
+             $("#enemyHealthBar").css({"width":`${monster.health/monster.Maxhealth*100}%`}) 
              $("#yourHealthBar").css({"width":`${you.health/you.Maxhealth*100}%`})
              $(".health-bar").html(`Healthbar: ${you.health}/${you.Maxhealth}`)
-             $(".attacks").unbind().on("click", async (e)=>{ //unbind to only take note of one click
-                $("attack-text").hide() //hide the attack-text or dialogue
-                let random  = Math.floor(Math.random() * 2) //enemy random attacks
+             $(".attacks").unbind().on("click", async (e)=>{ 
+                $("attack-text").hide() 
+                //enemy random attacks
+                let random  = Math.floor(Math.random() * 2) 
                 let monster_attack = monster.attacks[random].name
                 let monster_damage = monster.attacks[random].damage            
                 let attack = e.target.value
                 let index = yourattacks.indexOf(attack) 
                 let damage = you.attacks[index].damage
+                //random crit chance
                 if (Math.random()<0.1){
-                   damage+=1; //random crit chance for monsters
+                   damage+=1; 
                 }
                 if (Math.random()<0.09){
-                   monster_damage+=1; //random crit chance for monsters
+                   monster_damage+=1; 
                 }
+                //changing of the health and setting the dialogue accordingly
                 you.health -= monster_damage
                 $(".monster_spritesheet").css({"transition": "all 0.3s", "filter": "brightness(1.75)", "background": `url(${monsterUrl})`, "background-size": "100%", "width": "calc( var(--grid-cell)* 4)", "height": "calc( var(--grid-cell)* 4 )"})
                 $(".monster_spritesheet[idle = 'true']").css({"animation": "hitAnimation 0.6s steps(4) infinite"})
@@ -188,7 +200,7 @@ $(document).ready(()=>{
                 $(".attack-bar").hide()
                 $(".attack-text").css({"pointer-events":"none"}) 
                if (you.health> 0){
-                  setTimeout(() => { //timeout to show ur damage done
+                  setTimeout(() => { 
                   
                      $(".you_spritesheet[idle = 'true']").css({"transition": "all 0.3s", "filter": "brightness(1.75)", "animation": "hitAnimation 0.6s steps(4) infinite"})
                       setTimeout(() =>{
@@ -197,12 +209,14 @@ $(document).ready(()=>{
                       monster.health -= damage
                       $(".attack-text").html(`<p>You used ${attack} and has done ${damage} damage</p>`)
                       $("#enemyHealthBar").css({"width":`${monster.health /monster.Maxhealth*100}%`})
+                      
+                  //ending of the game
                       if (monster.health<=0){
                         $(".attack-text").css({"pointer-events":"all"}) 
                         Currentkills+=1
                         $(".killCount").html(`Kill Count:<br>${Currentkills+kills}`)
                          end = true;
-                         $(".attack-text").html("Game over! You win!"); //if health is lower than 0, display game over text
+                         $(".attack-text").html("Game over! You win!");
                          $(".attack-text").on("click",()=>{
                             if (end){ //onclick to end game
                                endGame();
@@ -226,9 +240,9 @@ $(document).ready(()=>{
                   Currentkills-=1;
                   $(".killCount").html(`Kill Count: <br>${Currentkills+kills}`);
                    end = true;
-                   $(".attack-text").html("Game over! You Lose!"); //if health is lower than 0, display game over text
+                   $(".attack-text").html("Game over! You Lose!"); 
                    $(".attack-text").on("click",()=>{
-                      if (end){ //onclick to end game
+                      if (end){ 
                          endGame();
                          updateLeaderBoard();
                       }
@@ -244,8 +258,11 @@ $(document).ready(()=>{
          character.setAttribute("facing", held_direction);
       }
       character.setAttribute("walking", held_direction ? "true" : "false"); //if held direction is not null, walking set to true
+      
       //game functions
-      function initialiseGame(){ //reset the game settings
+
+      //reset the game settings
+      function initialiseGame(){ 
          $(".battle").attr("battle-activation","true")
             speed = 0;
             character.setAttribute("walking","false")
@@ -253,25 +270,27 @@ $(document).ready(()=>{
             $(".dpad").css({"pointer-events":"none"})
             $(".battle").css(({"pointer-events":"all"}))
       }
+      //ending of the game
       function endGame(){
-         end = false //set the default of end back to false
-         $(".attack-bar").show() //show attack bar 
+         end = false 
+         $(".attack-bar").show() 
          you.health = you.Maxhealth;
          $(".attack-text").html("");
-         $(".attack-text").hide(); //hide the dialogue at the start
-         monster.health = monster.Maxhealth; //set monster health back to max
+         $(".attack-text").hide(); 
+         monster.health = monster.Maxhealth; 
          $(".battle").attr("battle-activation","false")
          speed = 1; //set back the speed to allow movement
          $(".battle").css({"opacity":0})
          $(".dpad").css({"pointer-events":"all"}) //allow movement in normal game
-         $(".battle").css(({"pointer-events":"none"})) //set the pointer events in the fighting mode to none
+         $(".battle").css(({"pointer-events":"none"})) //set the pointer events in the fighting game to none
       }
-   
-      function resume(){ //resume the game 
+      //resume the game 
+      function resume(){ 
          $(".attack-text").hide();
          $(".attack-bar").show()
       }
 
+      //randomMonster
       function randomMonster(){
          monsterLinks = ["./Images/Beast.png","./Images/skeleton.png"]
          monstersname = ["beast","skeleton"]
@@ -311,7 +330,7 @@ $(document).ready(()=>{
          step();
       })
    }
-   step(); //kick off the first step!
+   step(); //start the loop
    
    
    
@@ -328,26 +347,31 @@ $(document).ready(()=>{
       39: directions.right,
       40: directions.down,
    }
-   document.addEventListener("keydown", (e) => { //if keydown is in the directions json and its new, add it to the front of the array, 
+
+   //adding of the directions to the movement array
+   document.addEventListener("keydown", (e) => { 
       var dir = keys[e.which];
       if (dir && held_directions.indexOf(dir) === -1) {
          held_directions.unshift(dir)
       }
    })
-   document.addEventListener("keydown",(e)=>{ //added running
+   //added running
+   document.addEventListener("keydown",(e)=>{ 
       
       if (e.key == "Shift" && $(".battle").attr("battle-activation") == "false"){
          speed = 1.5
       }
    
    })
-   document.addEventListener("keyup",(e)=>{ //change the speed back to default
+   //change the speed back to default
+   document.addEventListener("keyup",(e)=>{ 
       if (e.key == "Shift" && $(".battle").attr("battle-activation") == "false"){
          speed = 1
       }
    })
-   
-   document.addEventListener("keyup", (e) => { // on key up, remove the item from array
+
+   // on key up 
+   document.addEventListener("keyup", (e) => { 
       var dir = keys[e.which];
       var index = held_directions.indexOf(dir);
       if (index > -1) {
@@ -357,7 +381,7 @@ $(document).ready(()=>{
    
    
    
-   /* BONUS! Dpad functionality for mouse and touch */
+   //Mobile moving buttons
    var isPressed = false; //set default to false
    const removePressedAll = () => {
       document.querySelectorAll(".dpad-button").forEach(d => {
@@ -400,7 +424,7 @@ $(document).ready(()=>{
    document.querySelector(".dpad-up").addEventListener("mouseover", (e) => handleDpadPress(directions.up));
    document.querySelector(".dpad-right").addEventListener("mouseover", (e) => handleDpadPress(directions.right));
    document.querySelector(".dpad-down").addEventListener("mouseover", (e) => handleDpadPress(directions.down));
-   
+   //sound for the game
    let clicked = false
    addEventListener('click', () => {
       if (!clicked){
@@ -409,7 +433,7 @@ $(document).ready(()=>{
       }
       
    })
-
+   //get the leaderboard for the game
   async function getLeaderBoard(){
       let get = {
          "async": true,
@@ -440,20 +464,22 @@ $(document).ready(()=>{
          var content =""
          for(let i =0; i<5; i++){
             let numberIndex = response.length -1
-            content = `${content}<tr><td>${response[numberIndex - i].name}</td><td>${response[numberIndex- i].kills}</td></tr>`
+            content = `${content}<tr><td>${response[numberIndex - i].name}</td><td>${response[numberIndex- i].kills}</td></tr>` //get the top 5
             $("#topLeads tbody").html(content)
          }         
          for(let i = 0; i<response.length; i++){
             if(email == response[i].email){
                id = response[i]._id;
                kills = response[i].kills
-               $(".killCount p").html(`Kill Count: <br>${kills}`)
+               $(".killCount p").html(`Kill Count: <br>${kills}`) //update kill count accordingly
 
             }
          }
       })
 
    }
+
+   //updating of the leaderboard
    function updateLeaderBoard(){
       let jsondata = {
          "name":person.name,
@@ -483,7 +509,23 @@ $(document).ready(()=>{
    }  
      
 
-
+   //clearing of the cart items from the local storage
+   function clearCart(){
+      let index = localStorage.length
+      console.log(index)
+      let nameArray = []
+      for (let i =0; i<index;i++){
+          console.log(localStorage.key(i))
+         if(localStorage.key(i) !="person"){
+          nameArray.push(localStorage.key(i))
+         }
+      }
+      if (nameArray.length >0){
+          for (let i = 0; i< nameArray.length;i++){
+              localStorage.removeItem(nameArray[i])
+          }
+      }
+  }
 })
 
 

@@ -4,7 +4,7 @@
 
 $(document).ready(async function(){
 
-  //hamburger nav bar
+    //nav bar
     const menu = document.querySelector('#mobile-menu');
     const menuLinks = document.querySelector('.navbar-menu');
     menu.addEventListener('click', function(){
@@ -43,7 +43,7 @@ $(document).ready(async function(){
  
      $("#logout-btn").on("click",()=>{
          localStorage.removeItem("person");
-         ClearCart();
+         clearCart();
          content = `<a href="./login.html" class="navbar-links">
          <div class="signin-img"></div>  
          <p>LOG IN</p>
@@ -83,8 +83,7 @@ $(document).ready(async function(){
           },
           "processData": false,
        }
-    await $.ajax(check).done((response)=>{ 
-                             //await to ensure that this function loads before others
+    await $.ajax(check).done((response)=>{  //await to ensure that this function loads before others
           response = response.sort((a,b)=>{
              return a.kills - b.kills 
           })
@@ -120,8 +119,8 @@ $(document).ready(async function(){
         alert("cannot post empty form!");
       }
     })
-
-   $("#searchQueryInput").on("input",(e)=>{ //search function
+    //search function
+   $("#searchQueryInput").on("input",(e)=>{ 
       var productList = document.getElementsByClassName("product")
       for(let i = 0; i<productList.length;i++){
         let name = ($(".update")[i].dataset.name).toLowerCase()
@@ -133,11 +132,12 @@ $(document).ready(async function(){
           }
       }
     })
-
+    //hiding of the container upon clicking on the x button
    $(".cancel").on("click",()=>{
     $("#update-product-container").hide();
   })
 
+  //adding of the items to cart
   $("#product-list").on("click",".product-buy",(e)=>{
     let buttons =  $(".product-buy")
     for (let i = 0;i<buttons.length;i++){
@@ -163,6 +163,7 @@ $(document).ready(async function(){
       }
     }})
 
+    //update functiom
     $("#product-list").on("click", ".update", function(e) {
         e.preventDefault();
         $("#add-update-msg").hide();
@@ -171,9 +172,6 @@ $(document).ready(async function(){
         let price = $(this).data("price");
         let image = $(this).data("image");
         let productId = $(this).data("id");
-
-    
-        //[STEP 11]: Load in our data from the selected row and add it to our update contact form 
         
         $("#update-product-name").val(name);
         $("#update-product-price").val(price);
@@ -195,10 +193,10 @@ $(document).ready(async function(){
         let image = $("#update-product-image").val();
         let id = $("#update-product-id").val();
     
-        //[STEP 12a]: We call our update form function which makes an AJAX call to our RESTDB to update the selected information
         updateForm(id, name, price, image);
     });//end updatecontactform listener
 
+    //delete function
     $("#product-list").on("click", ".delete", function(e) {
       e.preventDefault();
       let contactId = $(this).data("id");
@@ -208,7 +206,7 @@ $(document).ready(async function(){
       }
     })
 });
-
+//getting the product items from the database
 async function GetStoreItems(){
         
     let get = {
@@ -276,10 +274,10 @@ async function GetStoreItems(){
         
         }
         
-        $("#product-list").html(content);
+        $("#product-list").html(content); //update product list
        })
-       adminCheck();
-      if (!discount){
+       adminCheck(); //check if users are admins
+      if (!discount){ //check if users are eligible for discounts
         $(".discount").hide();
         $(".discountShow").hide();
       }
@@ -399,7 +397,7 @@ function adminCheck(){
   }
 
 }
-function ClearCart(){
+function clearCart(){
   let index = localStorage.length
   let nameArray = []
   for (let i =0; i<index;i++){
