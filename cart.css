@@ -141,7 +141,7 @@ button{
     }
     }
 
-    @media  (width<= 768px) {
+    @media  (max-width: 768px) {
         #checkOut .card , h6,h5{
             font-size: 15px;
             height: 90%;
@@ -184,7 +184,7 @@ button{
    
         
     }
-    @media  (width <= 640px) {
+    @media  (max-width: 640px) {
         #total{
             font-size: 30px !important;
         }
@@ -214,7 +214,7 @@ button{
         
         
     }
-    @media screen and (width<=320px) {
+    @media (max-width:320px) {
         .payForm, span.hidden-xs{
             font-size: 10px;
         }
