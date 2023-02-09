@@ -106,6 +106,8 @@ button{
     .h-custom {
     height: 100% !important;
     }
+    
+
     .card-registration .select-input.form-control[readonly]:not([disabled]) {
         font-size: 1rem;
         line-height: 2.15;
@@ -120,9 +122,10 @@ button{
         .bg-grey {
         background-color: #eae8e8;
         }
-    }
+
+}
     
-   
+  
     
     @media (min-width: 992px) {
     .card-registration-2 .bg-grey {
@@ -188,16 +191,8 @@ button{
  
     }
 
-    @media  (width <= 475px){
-        /* .col-md-1.col-lg-1.col-xl-1.text-end{
-            margin-top: -245%;
-        } */
-    }
-
     @media  (width <= 400px) {
-        /* .col-md-1.col-lg-1.col-xl-1.text-end{
-            margin-top: -255%;
-        } */
+
 
         #checkOut{
             font-size: 15px;
