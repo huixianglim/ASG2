@@ -717,7 +717,7 @@ section .cards {
       width: 100%;
       position: absolute;
   }
-
+  
   .navbar-menu.active{
       background: #131313;
       top: 100%;

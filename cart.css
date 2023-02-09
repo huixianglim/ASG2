@@ -106,22 +106,26 @@ button{
     .h-custom {
     height: 100% !important;
     }
-    }
     
+
     .card-registration .select-input.form-control[readonly]:not([disabled]) {
-    font-size: 1rem;
-    line-height: 2.15;
-    padding-left: .75em;
-    padding-right: .75em;
-    }
+        font-size: 1rem;
+        line-height: 2.15;
+        padding-left: .75em;
+        padding-right: .75em;
+        }
+        
+        .card-registration .select-arrow {
+        top: 13px;
+        }
+        
+        .bg-grey {
+        background-color: #eae8e8;
+        }
+
+}
     
-    .card-registration .select-arrow {
-    top: 13px;
-    }
-    
-    .bg-grey {
-    background-color: #eae8e8;
-    }
+  
     
     @media (min-width: 992px) {
     .card-registration-2 .bg-grey {
@@ -137,7 +141,7 @@ button{
     }
     }
 
-    @media  (width<= 770px) {
+    @media  (width<= 768px) {
         #checkOut .card , h6,h5{
             font-size: 15px;
             height: 90%;
@@ -190,7 +194,7 @@ button{
             font-size: 20px;
         }
         span{
-            font-size: 15px
+            font-size: 15px;
         };
         
     }
