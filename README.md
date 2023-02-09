@@ -18,18 +18,44 @@ Include the Adobe XD wireframe as a folder. You can include the XD share url.
 
 ## Features
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
+- nav bar
 
-### Existing Features
+  > Allow users to go respective pages and log out
 
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
+- Login/Sign up
 
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+  > Allow users to log in or sign up and access other features such as game and discount
+
+- Select Class
+
+  > Allow users to select the class they would want for the game.
+
+- Game
+
+  > A game where users can kill monster and gain kill points.
+
+- Leaderboard and discount
+
+  > Users can gain their spot on the leaderboards based on game kill points. Upon reaching top 5 in leaderboard, they will have a discounted store.
+
+- View products
+
+  > Allow users to view store product items
+
+- Search
+
+  > Allow users to filter items in store based on input
+
+- Add to cart
+  > Allow users to add items to a cart in which they can access later on to pay for them.
 
 ### Features Left to Implement
 
-- Another feature idea
+- Buying of character skins
+
+- Inventory for selecting character skins
+
+- Filter buttons for store page
 
 ## Technologies Used
 
