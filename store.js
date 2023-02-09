@@ -48,10 +48,12 @@ $(document).ready(async function(){
          <div class="signin-img"></div>  
          <p>LOG IN</p>
          </a>`
+         GetStoreItems();
          $("#acc-dropdown").html(""); 
          $("#acc-dropdown").hide();
          $("#login-btn").html(content);
-         $("#login-btn").show()
+         $("#login-btn").show();
+       
 
   })
 

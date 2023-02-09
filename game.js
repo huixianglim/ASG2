@@ -10,7 +10,7 @@ $(document).ready(()=>{
 
     //LOGIN LOGOUT NAV
     let content = "";
-    var person = ''
+    var person = '';
     if (localStorage.getItem("person") == null || localStorage.getItem("person") == undefined){
          window.location.href = "./login.html"
     }
@@ -45,8 +45,6 @@ $(document).ready(()=>{
    var Currentkills = 0
    var kills = 0
    getLeaderBoard()
-   
-   setInterval(updateLeaderBoard(),30000)
    var email = person.email
    chosen = sessionStorage.getItem("character");
    if(chosen==null ||chosen== undefined){
@@ -207,6 +205,7 @@ $(document).ready(()=>{
                          $(".attack-text").on("click",()=>{
                             if (end){ //onclick to end game
                                endGame();
+                               updateLeaderBoard();
                             }
                          });
                          return
@@ -230,6 +229,7 @@ $(document).ready(()=>{
                    $(".attack-text").on("click",()=>{
                       if (end){ //onclick to end game
                          endGame();
+                         updateLeaderBoard();
                       }
                    });
     
@@ -409,7 +409,7 @@ $(document).ready(()=>{
       
    })
 
-   function getLeaderBoard(){
+  async function getLeaderBoard(){
       let get = {
          "async": true,
          "crossDomain": true,
@@ -460,7 +460,6 @@ $(document).ready(()=>{
          "password":person.password,
          "admin":person.admin,
          "kills":(Currentkills+kills)
-         
       }
       let update = {
          "async": true,
