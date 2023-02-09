@@ -98,8 +98,10 @@ button{
     font-size: 15px;
 }
 
-
-
+.productQuantity{
+    border: none;
+    text-align: center;
+}
 
 
 @media (min-width: 1025px) {
@@ -165,19 +167,23 @@ button{
         }
 
         .col-md-1.col-lg-1.col-xl-1.text-end{
-            font-size: 15px;
-            background: black;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 20px;
-            padding: 7px;
-
         }
 
         .remove{
             color: white;
+            background:black ;
+            display: block;
+            text-align: center;
+            width: 90%;
+            padding: 7px;
+            border-radius: 20px;
+            font-size: 15px;
         }
+
+
 
         
 
