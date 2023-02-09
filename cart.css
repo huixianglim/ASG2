@@ -141,7 +141,7 @@ button{
     }
     }
 
-    @media  (width<= 768px) {
+    @media  (max-width: 768px) {
         #checkOut .card , h6,h5{
             font-size: 15px;
             height: 90%;
@@ -157,30 +157,43 @@ button{
 
         h6.mb-0.price{
             text-align: center;
-            /* margin-top: 20px; */
         }
 
-        .row>*{
+        .row .products > *{
             text-align: center;
             margin-top:15px;
         }
 
         .col-md-1.col-lg-1.col-xl-1.text-end{
-            margin-top: -235%;
+            font-size: 15px;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            padding: 7px;
+
         }
 
-        .pt-5 {
-            margin-left: -74.5%;
+        .remove{
+            color: white;
         }
+
+        
+
+   
         
     }
-    @media screen and (width <= 640px) {
+    @media  (max-width: 640px) {
         #total{
             font-size: 30px !important;
         }
  
     }
-    @media  (width<= 400px) {
+
+    @media  (width <= 400px) {
+
+
         #checkOut{
             font-size: 15px;
         }
@@ -192,13 +205,16 @@ button{
         }
         h1{
             font-size: 20px;
+            
         }
         span{
             font-size: 15px;
-        };
+        }
+
+        
         
     }
-    @media screen and (width<=320px) {
+    @media (max-width:320px) {
         .payForm, span.hidden-xs{
             font-size: 10px;
         }

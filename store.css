@@ -1094,7 +1094,7 @@ body {
     height: 35vh;
   }
 }
-@media screen and (width<=600px) {
+@media (max-width: 600px) {
   #cartHolder{
     bottom: 2%;
     right: 2%;
@@ -1178,7 +1178,7 @@ body {
     width: 60px;
   }
 }
-@media screen and (width<=350px) {
+@media (max-width: 350px) {
 
   .social-icon a {
     height: 40px;
