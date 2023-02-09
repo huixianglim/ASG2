@@ -5,10 +5,12 @@ Slayers is a website for our game, where you can choose a character to battle mo
 ## Design Process
 
 ### Main website and game
+Since our website is primarily a game, we designed it to showcase information about the game and made it responsive to allow players to play it on any device. We made it such that players have to log in or create an account before they can play so the game is able to track their progress. To make it more interesting, we added character classes to the game and a leaderboard where players can compete against each other, with the top 5 getting bonuses such as a 30% discount in our merchandise store. The player classes have different stats to add more dynamic to the game. We also added hover and scroll animations to the page to make the website more appealing to consumers.
 
 ### Shop
+Our store is meant to be a place where players or people who visit the site in general can support our company by purchasing our merchandise. To make it easier to maintain and update. We stored the products on RestDB, so that staff with “admin” accounts can update, delete and post products on the page. Users can add these items to a cart and purchase them even if they are not signed in as long as they don’t leave invalid fields in the payment form. Players who are top 5 in the leaderboard will also see a 30% off sign on each product with updated prices. To let everyone know the perks you get for being a top 5 player, we added a message to the store sliding banner that broadcasts this.
 
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
+### User Stories:
 
 - As a user type, I want to perform an action, so that I can achieve a goal.
 
