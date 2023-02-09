@@ -25,7 +25,9 @@ $(document).ready(()=>{
 
         </li>
     </ul>`
+         $("#login-btn").hide();
         $("#acc-dropdown").html(content);  
+        $("#acc-dropdown").show();
     }
 
     $("#logout-btn").on("click",()=>{
@@ -34,8 +36,7 @@ $(document).ready(()=>{
         <div class="signin-img"></div>  
         <p>LOG IN</p>
         </a>`
-        $("#acc-dropdown").html(""); 
-        $("#login-btn").html(content);
+         window.location.href = "login.html"
     })
     //END
 

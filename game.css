@@ -27,17 +27,19 @@ body {
 /* NAVBAR global */
 
 .navbar{
-   background-color: rgba(0,0,0,1);
+   background: #131313;
    font-size: 15px;
    height: 70px;
-   top:0;
    z-index: 1000;
    display: flex;
    justify-content: center;
    position: fixed;
+   top: 0;
    width: 100%;
    transition: ease-in-out 0.3s;
 }
+
+
 
 .navbar-container{
    display: flex;
@@ -85,7 +87,6 @@ a{
 }
 
 
-
 .navbar-links {
  color: #fff;
  text-transform: uppercase;
@@ -102,7 +103,6 @@ a{
 .navbar-links p{
  padding: 10px;
 }
-
 
 
 .navbar-links:after {    
@@ -134,12 +134,23 @@ a{
 }
 
 .store-img{
- background: url("./Images/shoppingbag.png");
+ background: url("./Images/shoppingbag2.png");
  width: 25px;
  height: 25px;
  background-position: center;
  background-repeat: no-repeat;
  background-size: cover;
+ image-rendering: pixelated;
+
+}
+
+.alien-img{
+ background: url("./Images/alien.png");
+ background-size: cover;
+ width: 25px;
+ height: 25px;
+ background-position: center;
+ background-repeat: no-repeat;
  image-rendering: pixelated;
 
 }
@@ -151,14 +162,14 @@ a{
  position: relative;
 }
 #acc-dropdown:hover {
- background-color: #000;
+ background-color: #131313;
 }
 #acc-dropdown:hover > ul {
  transform: scaleY(1);
 }
 #acc-dropdown ul {
  width: 100%;
- background-color: #000;
+ background-color: #131313;
  box-shadow: 0 1px 6px 0 rgba(22, 22, 23, 0.2);
  transform: scaleY(0);
  transform-origin: top;
@@ -184,8 +195,9 @@ a{
  display: flex;
  justify-content: center;
  align-items: center;
- padding: 15px 20px;
  position: relative;
+ padding: 15px 20px;
+
 }
 
 #acc-dropdown a p{
@@ -193,11 +205,10 @@ a{
 }
 
 #logout-btn{
+ cursor: pointer;
+ padding: 15px 10px !important;
  margin: 0;
- padding: 0;
 }
-
-
 
 
 
@@ -762,79 +773,83 @@ a{
 
    /* NAVBAR */
    .navbar-container{
-       padding: 0;
-       
-   }
-   
-   .navbar-menu{
-       display:grid;
-       grid-template-columns: auto;
-       top: -1000px;
-       opacity: 0;
-       transition: all 0.3s ease;
-       height: 200px;
-       z-index: -1;
-       width: 100%;
-       position: absolute;
-   }
- 
-   .navbar-menu.active{
-       background: #131313;
-       top: 100%;
-       opacity: 1;
-       transition: all 0.3s ease;
-       z-index: 999;
-       height: 200px;
-       font-size: 12px;
+      padding: 0;
+  }
+  
+  .navbar-menu{
+      display:grid;
+      grid-template-columns: auto;
+      top: -1000px;
+      opacity: 0;
+      transition: all 0.3s ease;
+      height: 200px;
+      z-index: -1;
+      width: 100%;
+      position: absolute;
+  }
+  
+  .navbar-menu.active{
+      background: #131313;
+      top: 100%;
+      padding: 0;
+      opacity: 1;
+      transition: all 0.3s ease;
+      z-index: 999;
+      height: 200px;
+      font-size: 12px;
 
-   }
- 
-   .navbar-toggle .bar{
-       width: 25px;
-       height: 3px;
-       margin: 5px auto;
-       transition: all 0.3s ease-in-out;
-       background: white;
-       display: block;
-       cursor: pointer;
-   }
- 
-   .navbar-menu li{
-       padding:0;
-   }
- 
-   .navbar-button{
-       width: 100%;
-   }
- 
-   .navbar-links{
-       padding: 0;
-       margin-left: -8%; 
-   }
- 
-   #navbar-logo{
-       padding-left: 25px;
-   }
- 
- 
-   #mobile-menu{
-       position: absolute;
-       top: 20%;
-       right: 5%;
-       transform: translate(5%, 20%);
-   }
- 
-   #mobile-menu.is-active .bar:nth-child(2){
-       opacity: 0;
-   }
-   
-   #mobile-menu.is-active .bar:nth-child(1){
-       transform: translateY(8px) rotate(45deg);
-   }
- 
-   #mobile-menu.is-active .bar:nth-child(3){
-       transform: translateY(-8px) rotate(-45deg);
-   }
+  }
+
+  .navbar-toggle .bar{
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      transition: all 0.3s ease-in-out;
+      background: white;
+      display: block;
+      cursor: pointer;
+  }
+
+  .navbar-menu li{
+      padding:0;
+  }
+
+  .navbar-button{
+      width: 100%;
+  }
+
+  .navbar-links{
+      padding: 0;
+      margin: 0;
+      left: 0;
+      right: 0; 
+  }
+
+  
+
+  #navbar-logo{
+      padding-left: 25px;
+  }
+
+
+  #mobile-menu{
+      position: absolute;
+      top: 20%;
+      right: 5%;
+      transform: translate(5%, 20%);
+  }
+
+  #mobile-menu.is-active .bar:nth-child(2){
+      opacity: 0;
+  }
+  
+  #mobile-menu.is-active .bar:nth-child(1){
+      transform: translateY(8px) rotate(45deg);
+  }
+
+  #mobile-menu.is-active .bar:nth-child(3){
+      transform: translateY(-8px) rotate(-45deg);
+  }
  
  
    /* MAIN CONTENT 768 */
