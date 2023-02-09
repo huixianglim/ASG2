@@ -106,22 +106,23 @@ button{
     .h-custom {
     height: 100% !important;
     }
-    }
-    
     .card-registration .select-input.form-control[readonly]:not([disabled]) {
-    font-size: 1rem;
-    line-height: 2.15;
-    padding-left: .75em;
-    padding-right: .75em;
+        font-size: 1rem;
+        line-height: 2.15;
+        padding-left: .75em;
+        padding-right: .75em;
+        }
+        
+        .card-registration .select-arrow {
+        top: 13px;
+        }
+        
+        .bg-grey {
+        background-color: #eae8e8;
+        }
     }
     
-    .card-registration .select-arrow {
-    top: 13px;
-    }
-    
-    .bg-grey {
-    background-color: #eae8e8;
-    }
+   
     
     @media (min-width: 992px) {
     .card-registration-2 .bg-grey {
@@ -137,7 +138,7 @@ button{
     }
     }
 
-    @media  (width<= 770px) {
+    @media  (width<= 768px) {
         #checkOut .card , h6,h5{
             font-size: 15px;
             height: 90%;
@@ -153,30 +154,51 @@ button{
 
         h6.mb-0.price{
             text-align: center;
-            /* margin-top: 20px; */
         }
 
-        .row>*{
+        .row .products > *{
             text-align: center;
             margin-top:15px;
         }
 
         .col-md-1.col-lg-1.col-xl-1.text-end{
-            margin-top: -235%;
+            font-size: 15px;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            padding: 7px;
+
         }
 
-        .pt-5 {
-            margin-left: -74.5%;
+        .remove{
+            color: white;
         }
+
+        
+
+   
         
     }
-    @media screen and (width <= 640px) {
+    @media  (width <= 640px) {
         #total{
             font-size: 30px !important;
         }
  
     }
-    @media  (width<= 400px) {
+
+    @media  (width <= 475px){
+        /* .col-md-1.col-lg-1.col-xl-1.text-end{
+            margin-top: -245%;
+        } */
+    }
+
+    @media  (width <= 400px) {
+        /* .col-md-1.col-lg-1.col-xl-1.text-end{
+            margin-top: -255%;
+        } */
+
         #checkOut{
             font-size: 15px;
         }
@@ -188,10 +210,13 @@ button{
         }
         h1{
             font-size: 20px;
+            
         }
         span{
-            font-size: 15px
-        };
+            font-size: 15px;
+        }
+
+        
         
     }
     @media screen and (width<=320px) {

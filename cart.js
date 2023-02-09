@@ -123,7 +123,7 @@ for (var i = 0; i < localStorage.length; i++){
        content = `${content}
        <div class = "product">
        <hr class="my-4">
-       <div class="row mb-4 d-flex justify-content-between align-items-center" data-id = '${key}' data-quantity = "${product.quantity}">
+       <div class="row mb-4 d-flex justify-content-between align-items-center products" data-id = '${key}' data-quantity = "${product.quantity}">
        <div class="col-md-2 col-lg-2 col-xl-2">
          <img
            src="${product.url}"
