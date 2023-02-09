@@ -31,7 +31,7 @@ button{
     align-items: center;
 }
 .productQuantity{
-    min-width: 3vw;
+    min-width: 5vw;
 }
 #checkOut{
     position: fixed;
@@ -81,7 +81,7 @@ button{
 }
 #add-pay-msg{
     pointer-events: none;
-    position: absolute;
+    position: fixed;
     top: 1%;
     width: 100%;
     display: flex;
