@@ -13,7 +13,7 @@
 }
 
 body{
-  background: url("./Images/starsky.gif");
+  background: url("../Images/starsky.gif");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -114,7 +114,7 @@ left: 0;
 }
 
 .signin-img{
-background: url("./Images/accounticon.png");
+background: url("../Images/accounticon.png");
 width: 25px;
 height: 25px;
 background-position: center;
@@ -125,7 +125,7 @@ image-rendering: pixelated;
 }
 
 .store-img{
-background: url("./Images/shoppingbag2.png");
+background: url("../Images/shoppingbag2.png");
 width: 25px;
 height: 25px;
 background-position: center;
@@ -136,7 +136,7 @@ image-rendering: pixelated;
 }
 
 .alien-img{
-background: url("./Images/alien.png");
+background: url("../Images/alien.png");
 background-size: cover;
 width: 25px;
 height: 25px;
@@ -259,7 +259,7 @@ margin: 0;
 .character-button-k a {
   width: 9vh;
   height: 9vh;
-  background: url("./Images/knightface.png");
+  background: url("../Images/knightface.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -270,7 +270,7 @@ margin: 0;
 .character-button-n a{
   width: 9vh;
   height: 9vh;
-  background: url("./Images/darkninjaface.png");
+  background: url("../Images/darkninjaface.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -281,7 +281,7 @@ margin: 0;
 .character-button-t a{
   width: 9vh;
   height: 9vh;
-  background: url("./Images/goldknightface.png");
+  background: url("../Images/goldknightface.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -337,7 +337,7 @@ margin: 0;
   position: absolute;
   left:-50%;
   top:-2%;
-  background: url("./Images/shadow.png") no-repeat no-repeat center;
+  background: url("../Images/shadow.png") no-repeat no-repeat center;
   background-size: 65%;
 }
 
@@ -345,7 +345,7 @@ margin: 0;
 
 .character_spritesheet {
   position: absolute;
-  background: url("./Images/knight.png") no-repeat no-repeat;
+  background: url("../Images/knight.png") no-repeat no-repeat;
   background-size: 100%;
   width: calc( var(--grid-cell)* 4 );
   height: calc( var(--grid-cell)* 4 );

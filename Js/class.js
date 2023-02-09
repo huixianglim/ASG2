@@ -1,15 +1,15 @@
 
 $(document).ready(()=>{
 
-    const chars = ["./Images/knight.png", "./Images/darkninja.png", "./Images/tank.png"];
+    const chars = ["Images/knight.png", "Images/darkninja.png", "Images/tank.png"];
     var character = "knight";
     var classes = ["knight","ninja","tank"]
     const btns = ["k","n","t"];
-    const smk = ["./Images/whitesmoke.png", "./Images/redsmoke.png", "./Images/yellowsmoke.png"]
+    const smk = ["Images/whitesmoke.png", "Images/redsmoke.png", "Images/yellowsmoke.png"]
     
     //redirect users back to the login page if not logged in 
     if (localStorage.getItem("person") == null){
-        window.location.href = "./login.html"
+        window.location.href = "login.html"
     }
 
     //nav bar 
@@ -52,7 +52,7 @@ $(document).ready(()=>{
     $("#logout-btn").on("click",()=>{
         localStorage.removeItem("person");
         clearCart();
-        content = `<a href="./login.html" class="navbar-links">
+        content = `<a href="login.html" class="navbar-links">
         <div class="signin-img"></div>  
         <p>LOG IN</p>
         </a>`

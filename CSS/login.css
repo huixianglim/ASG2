@@ -99,7 +99,7 @@ left: 0;
 }
 
 .signin-img{
-background: url("./Images/accounticon.png");
+background: url("../Images/accounticon.png");
 width: 25px;
 height: 25px;
 background-position: center;
@@ -110,7 +110,7 @@ image-rendering: pixelated;
 }
 
 .store-img{
-background: url("./Images/shoppingbag.png");
+background: url("../Images/shoppingbag.png");
 width: 25px;
 height: 25px;
 background-position: center;

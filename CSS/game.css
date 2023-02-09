@@ -15,7 +15,7 @@ html, body {
 }
 
 body {
-   background: url("./Images/starsky.gif");
+   background: url("../Images/starsky.gif");
    display: flex;
    align-items: center;
    justify-content: center;
@@ -123,7 +123,7 @@ a{
 }
 
 .signin-img{
- background: url("./Images/accounticon.png");
+ background: url("../Images/accounticon.png");
  width: 25px;
  height: 25px;
  background-position: center;
@@ -134,7 +134,7 @@ a{
 }
 
 .store-img{
- background: url("./Images/shoppingbag2.png");
+ background: url("../Images/shoppingbag2.png");
  width: 25px;
  height: 25px;
  background-position: center;
@@ -145,7 +145,7 @@ a{
 }
 
 .alien-img{
- background: url("./Images/alien.png");
+ background: url("../Images/alien.png");
  background-size: cover;
  width: 25px;
  height: 25px;
@@ -234,7 +234,7 @@ a{
    width: calc(var(--pixel-size) * 160);
    height: calc(var(--pixel-size) * 144);
    overflow: hidden;
-   background: url("./Images/skydragon.gif");
+   background: url("../Images/skydragon.gif");
    background-repeat: no-repeat;
    background-size: cover;
    image-rendering: pixelated;
@@ -245,7 +245,7 @@ a{
    -ms-interpolation-mode: nearest-neighbor;
    image-rendering: -moz-crisp-edges;
    image-rendering: pixelated;
-   background-image: url("./Images/mappp.png");
+   background-image: url("../Images/mappp.png");
    background-size: 100%;
    width: calc(13 * var(--grid-cell));
    height: calc(11.7 * var(--grid-cell));
@@ -260,7 +260,7 @@ a{
 }
 .battle{
    position:absolute;
-   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("./Images/galaxy.jpg") center no-repeat;
+   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("../Images/galaxy.jpg") center no-repeat;
    background-size: cover;
    right: 0;
    top: 0;
@@ -305,21 +305,21 @@ a{
 }
 .you_spritesheet {
    position: absolute;
-   background: url("./Images/knight.png") no-repeat no-repeat;
+   background: url("../Images/knight.png") no-repeat no-repeat;
    background-size: 100%;
    width: calc( var(--grid-cell)* 4 );
    height: calc( var(--grid-cell)* 4 );
 }
 .you_spritesheet[character = "ninja"] {
    position: absolute;
-   background: url("./Images/darkninja.png") no-repeat no-repeat;
+   background: url("../Images/darkninja.png") no-repeat no-repeat;
    background-size: 100%;
    width: calc( var(--grid-cell)* 4 );
    height: calc( var(--grid-cell)* 4 );
 }
 .you_spritesheet[character = "tank"] {
    position: absolute;
-   background: url("./Images/tank.png") no-repeat no-repeat;
+   background: url("../Images/tank.png") no-repeat no-repeat;
    background-size: 100%;
    width: calc( var(--grid-cell)* 4 );
    height: calc( var(--grid-cell)* 4 );
@@ -414,27 +414,27 @@ a{
    position: absolute;
    left:-50%;
    top:-2%;
-   background: url("./Images/shadow.png") no-repeat no-repeat center;
+   background: url("../Images/shadow.png") no-repeat no-repeat center;
    background-size: 65%;
 }
 
 .character_spritesheet {
    position: absolute;
-   background: url("./Images/knight.png") no-repeat no-repeat;
+   background: url("../Images/knight.png") no-repeat no-repeat;
    background-size: 100%;
    width: calc( var(--grid-cell)* 4 );
    height: calc( var(--grid-cell)* 4 );
 }
 .character_spritesheet[character = "ninja"] {
    position: absolute;
-   background: url("./Images/darkninja.png") no-repeat no-repeat;
+   background: url("../Images/darkninja.png") no-repeat no-repeat;
    background-size: 100%;
    width: calc( var(--grid-cell)* 4 );
    height: calc( var(--grid-cell)* 4 );
 }
 .character_spritesheet[character = "tank"] {
    position: absolute;
-   background: url("./Images/tank.png") no-repeat no-repeat;
+   background: url("../Images/tank.png") no-repeat no-repeat;
    background-size: 100%;
    width: calc( var(--grid-cell)* 4 );
    height: calc( var(--grid-cell)* 4 );

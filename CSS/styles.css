@@ -113,7 +113,7 @@ a{
 }
 
 .signin-img{
-  background: url("./Images/accounticon.png");
+  background: url("../Images/accounticon.png");
   width: 25px;
   height: 25px;
   background-position: center;
@@ -124,7 +124,7 @@ a{
 }
 
 .store-img{
-  background: url("./Images/shoppingbag2.png");
+  background: url("../Images/shoppingbag2.png");
   width: 25px;
   height: 25px;
   background-position: center;
@@ -135,7 +135,7 @@ a{
 }
 
 .alien-img{
-  background: url("./Images/alien.png");
+  background: url("../Images/alien.png");
   background-size: cover;
   width: 25px;
   height: 25px;
@@ -231,7 +231,7 @@ section{
   height: 100px;
   font-size: 5vw;
   transition: all 0.3s ease-out;
-  background: url("./Images/downarrow.gif");
+  background: url("../Images/downarrow.gif");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -262,7 +262,7 @@ section.title{
   background-image: linear-gradient(
     rgba(0, 0, 0, 0.85), 
     rgba(30, 0, 30, 0.65)
-  ),url("./Images/ninjavid.gif");
+  ),url("../Images/ninjavid.gif");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -280,7 +280,7 @@ section:nth-child(2)[background = "true"]{
 
   background: linear-gradient(
     rgba(0, 0, 0, 0.7), 
-    rgba(0, 0, 0, 0.7)),url("./Images/background2.gif") center no-repeat;
+    rgba(0, 0, 0, 0.7)),url("../Images/background2.gif") center no-repeat;
   background-size: cover ;
   color: white;
   
@@ -291,7 +291,7 @@ section:nth-child(3)[background = "true"]{
   background:linear-gradient(
     rgba(0, 0, 0, 0.8), 
     rgba(0, 0, 0, 0.8)
-  ),url("./Images/background3.gif") ;
+  ),url("../Images/background3.gif") ;
   background-repeat: no-repeat;
   background-size:cover ;
   
@@ -303,7 +303,7 @@ section:nth-child(4)[background = "true"]{
   background: linear-gradient(
     rgba(0, 0, 0, 0.7), 
     rgba(0, 0, 0, 0.7)
-  ),center url("./Images/background4.gif");
+  ),center url("../Images/background4.gif");
   color: #fff;
   background-repeat: no-repeat;
   background-size: cover;
@@ -312,7 +312,7 @@ section:nth-child(5)[background = "true"]{
   background: linear-gradient(
     rgba(0, 0, 0, 0.7), 
     rgba(0, 0, 0, 0.7)
-  ),center url("./Images/background5.gif");
+  ),center url("../Images/background5.gif");
   color: white;
   background-repeat: no-repeat;
   background-size:cover ;
