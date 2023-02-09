@@ -866,13 +866,13 @@ section .cards {
 @media screen and (width<=410px){
   
   .social-icon a {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     
   }
   .social-icon a i {
-    line-height: 50px;
-    font-size: 25px;
+    line-height: 40px;
+    font-size: 20px;
   }
 
 }
