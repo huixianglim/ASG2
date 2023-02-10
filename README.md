@@ -9,7 +9,7 @@ Slayers is a website for our game, where you can choose a character to battle mo
 - Most of the frontend
 - GET, UPDATE AND DELETE for the store
 - Backend for the navbar account log in log out
-- Some backend for the game design and animations
+- Select class JS
 
 #### Hui Xiang
 
