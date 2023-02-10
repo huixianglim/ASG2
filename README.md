@@ -26,7 +26,7 @@ Include the Adobe XD wireframe as a folder. You can include the XD share url.
 
 ## **Features**
 
-- nav bar
+- Nav bar
 
   > Allow users to go respective pages and log out
 
@@ -56,6 +56,9 @@ Include the Adobe XD wireframe as a folder. You can include the XD share url.
 
 - Add to cart
   > Allow users to add items to a cart in which they can access later on to pay for them.
+  
+- Checkout
+  > Allow users to make payment for items in cart.
 
 ### **Features Left to Implement**
 
