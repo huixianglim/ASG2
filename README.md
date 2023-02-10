@@ -2,6 +2,8 @@
 
 Slayers is a website for our game, where you can choose a character to battle monsters and fight against other users to get to the top of the leaderboard and get perks. We also have a store page that sells merchandise where users can support the developers.
 
+**Live site**: [Click here](https://huixianglim.github.io/ASG2/)
+
 ## Design Process
 
 ### Main website and game
