@@ -578,8 +578,7 @@ margin: 0;
 
 
 
-
-
+/* MEDIA QUERIES */
 @media (max-width: 1024px){
   .select-btn{
     text-decoration: none;

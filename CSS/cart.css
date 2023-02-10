@@ -104,6 +104,7 @@ button{
 }
 
 
+/* MEDIA QUERIES */
 @media (min-width: 1025px) {
     .h-custom {
     height: 100% !important;

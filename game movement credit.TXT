@@ -1,4 +1,4 @@
-The MIT License (MIT)
+Credits where we learnt how to do game movement mechanics
 
 Copyright (c) 2023 Drew Conley (https://codepen.io/punkydrewster713/pen/WNrXPrb)
 

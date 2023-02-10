@@ -4,12 +4,6 @@
    --bg: #9fa7e4;
 }
 
-
-
-
-
-
-
 html, body {
    height: 100%;
 }
@@ -641,15 +635,7 @@ a{
 
 
 
-
-
-
-
-
-
-
-
-
+/* MEDIA QUERIES */
 @media (max-width: 1200px){
 
  

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&family=Press+Start+2P&display=swap');
+
 /* NAVBAR global */
 
 .navbar{
@@ -67,15 +68,6 @@ font-family: 'Press Start 2P', cursive;
 
 }
 
-/* .navbar-links{
-  color: white;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
-  text-align: center;
-  padding: 5px;
-  display: block;
-} */
-
 .navbar-links {
 color: #fff;
 text-transform: uppercase;
@@ -92,11 +84,6 @@ position: relative;
 .navbar-links p{
 padding: 10px;
 }
-/* 
-.navbar-links:hover{
-  color:#7724ff;
-  transition: all 0.2s ease;
-}  */
 
 
 .navbar-links:after {    
@@ -203,8 +190,9 @@ margin: 0;
 padding: 0;
 }
 
-/* MAIN PAGE */
 
+
+/* MAIN PAGE */
 
 * {
     margin: 0;

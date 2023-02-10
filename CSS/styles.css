@@ -574,8 +574,9 @@ section .cards {
   height: 200px;
 }
 
-/* FOOTER */
 
+
+/* FOOTER */
 .footer-container{
   width: 100%;
   height: 40vh;
@@ -667,7 +668,7 @@ section .cards {
 
 
 
-
+/* MEDIA QUERIES */
 @media (max-width: 1024px){
 
   .container{
