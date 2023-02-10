@@ -65,80 +65,76 @@ Include the Adobe XD wireframe as a folder. You can include the XD share url.
 
 - Filter buttons for store page
 
-## Technologies Used
+## **Technologies Used**
 
 In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
 
 - [JQuery](https://jquery.com)
   - The project uses **JQuery** to simplify DOM manipulation.
 
-## Testing
+## **Testing**
 
-### Test scenarios:
+### **Link to our extensive testing (For each page)**: [Click here](https://docs.google.com/document/d/1k34hHV_DAsbCO8meKdnNA-1rVOao_kjtdDvSzIyxUfs/edit)
+
+### **Brief test scenarios**:
 
 1. Nav bar:
 
-   - Go to the "Contact Us" page
-   - Try to submit the empty form and verify that an error message about the required fields appears
-   - Try to submit the form with an invalid email address and verify that a relevant error message appears
-   - Try to submit the form with all inputs valid and verify that a success message appears.
+   - Try to click all the nav bar links and verify the links all lead to their respective pages
+   - Try logging in and verify that the log in button changes to username
+   - Try loggin out and verify that the account name changes to login
+   - Mobile view: The nav bar should become a hamburger dropdown menu
 
 2. Login/Sign up:
 
-   - Go to the "Contact Us" page
-   - Try to submit the empty form and verify that an error message about the required fields appears
-   - Try to submit the form with an invalid email address and verify that a relevant error message appears
-   - Try to submit the form with all inputs valid and verify that a success message appears.
+   - Try inputting an inavlid input and verify form does not allow user to click submit
+   - Try inputting a taken email and verify website does not allow user to proceed and show an error message
+   - Mobile view: The login/sign up pages should scale to fit
 
 3. Select Class:
 
-   1. Go to the "Contact Us" page
-   2. Try to submit the empty form and verify that an error message about the required fields appears
-   3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-   4. Try to submit the form with all inputs valid and verify that a success message appears.
+   - Try to spam click the character buttons and verify the animation does not stop and break
+   - Try to log out and verify that it brings the user back to the login page
+   - Mobile view: The animations should not be in the mobile view
 
 4. Game:
 
-   1. Go to the "Contact Us" page
-   2. Try to submit the empty form and verify that an error message about the required fields appears
-   3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-   4. Try to submit the form with all inputs valid and verify that a success message appears.
+   - Loading into the page verify that it loads in with the selected character
+   - Try to kill a monster and verify that the killcount gets updated and the leaderboard updates
+   - Try to log out and verify that it brings the user back to the login page
+   - Mobile view: The page should change to bring the kill count to the top of the frame the the leaderboard to the bottom of the frame, incerasing the size of the dpad as well
 
 5. Leaderboard and discount:
 
-   1. Go to the "Contact Us" page
-   2. Try to submit the empty form and verify that an error message about the required fields appears
-   3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-   4. Try to submit the form with all inputs valid and verify that a success message appears.
+   - Try to get into top 5 of the leaderboard and verify that the store updates to show products with 30% off
+   - Try to get off the top 5 and verify that the store updates to show the default products
 
 6. View product:
 
-   1. Go to the "Contact Us" page
-   2. Try to submit the empty form and verify that an error message about the required fields appears
-   3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-   4. Try to submit the form with all inputs valid and verify that a success message appears.
+   - Load into the store page, verify that an animation plays and the products load in
+   - Update a product, verify that the product gets updated and validation for the update form doesn't allow users to submit with empty fields
+   - Post a product, verify that the products get updated with the added product appearing and validation for the update form doesn't allow users to submit with empty fields
+   - Mobile view: Products should flex to fit width
 
 7. Search:
 
-   1. Go to the "Contact Us" page
-   2. Try to submit the empty form and verify that an error message about the required fields appears
-   3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-   4. Try to submit the form with all inputs valid and verify that a success message appears.
+   - Try to search for a product and verify that the products can e searched
 
 8. Add to cart:
-   1. Go to the "Contact Us" page
-   2. Try to submit the empty form and verify that an error message about the required fields appears
-   3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-   4. Try to submit the form with all inputs valid and verify that a success message appears.
+
+   - Try to add to cart and verify that the items are added
+   - Try to add an item already in the cart and ensure an error appears as they can change the quantity from the cart itself
+   - Mobile view: Remove item button turns into a solid button at the bottom of the page and the text is aligned to the center
+
+9. Checkout:
+   - Try to checkout with an empty field and verify error message appears
+   - Try to checkout with all the fields and verify animation plays with success message
+   - Mobile view: Form should fit device width
 
 ### **W3 validator checks for HTML & CSS**:
 
 - [CSS checker](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fhuixianglim.github.io%2FASG2&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) produced no errors
 - [HTML checker](https://validator.w3.org/nu/?doc=https%3A%2F%2Fhuixianglim.github.io%2FASG2) produced 6 minor errors & 1 warning
-
-### **Link to our extensive testing (For each page)**: [Click here](https://docs.google.com/document/d/1k34hHV_DAsbCO8meKdnNA-1rVOao_kjtdDvSzIyxUfs/edit)
-
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
 
 ### **Bugs**:
 
@@ -148,7 +144,8 @@ In addition, you should mention in this section how your project looks and works
 2. Signing up with an existing email did not produce an error
 3. When logging out of store as a admin or top 5 player on the leaderboard, the store does not update to show the default products without the admin controls or discount tag.
 4. Media queries for the cart page did not update in github pages.
-5. The button for the remove product in the cart was not display:block
+5. The button for the remove product in the cart was not display:block.
+6. When logging out of select class page it does not bring user to the login page.
 
 #### Bugs we did not manage to fix in time:
 
