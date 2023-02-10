@@ -16,7 +16,7 @@ $(document).ready(async function(){
      let content = "";
 
      if (localStorage.getItem("person") == null || localStorage.getItem("person") == undefined){
-         content = `<a href="./login.html" class="navbar-links">
+         content = `<a href="login.html" class="navbar-links">
          <div class="signin-img"></div>  
          <p>LOG IN</p>
          </a>`
@@ -44,7 +44,7 @@ $(document).ready(async function(){
      $("#logout-btn").on("click",()=>{
          localStorage.removeItem("person");
          clearCart();
-         content = `<a href="./login.html" class="navbar-links">
+         content = `<a href="login.html" class="navbar-links">
          <div class="signin-img"></div>  
          <p>LOG IN</p>
          </a>`

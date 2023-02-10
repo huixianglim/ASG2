@@ -12,7 +12,7 @@ $(document).ready(()=>{
     let content = "";
     var person = '';
     if (localStorage.getItem("person") == null || localStorage.getItem("person") == undefined){
-         window.location.href = "./login.html"
+         window.location.href = "login.html"
     }
     else{
          person = JSON.parse(localStorage.getItem("person"))
