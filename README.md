@@ -2,6 +2,22 @@
 
 Slayers is a website for our game, where you can choose a character to battle monsters and fight against other users to get to the top of the leaderboard and get perks. We also have a store page that sells merchandise where users can support the developers.
 
+### **Our roles**
+
+#### Wesley
+
+- Most of the frontend
+- GET, UPDATE AND DELETE for the store
+- Backend for the navbar account log in log out
+- Some backend for the game design and animations
+
+#### Hui Xiang
+
+- Most of the backend
+- Scroll slide in animation for home page
+- Styling for cart and checkout
+- Initial layout of store styling
+
 ### **Live site**: [Click here](https://huixianglim.github.io/ASG2/)
 
 ## **Design Process**
@@ -56,7 +72,6 @@ Include the Adobe XD wireframe as a folder. You can include the XD share url.
 
 - Add to cart
   > Allow users to add items to a cart in which they can access later on to pay for them.
-  
 - Checkout
   > Allow users to make payment for items in cart.
 
@@ -70,10 +85,64 @@ Include the Adobe XD wireframe as a folder. You can include the XD share url.
 
 ## **Technologies Used**
 
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
+- [HTML](https://html.com/)
+
+  > The project uses _HTML_ for structuring of our webpages
+
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+
+  > The project uses _CSS_ to style our webpages
+
+- [Javascript](https://www.javascript.com/)
+
+  > The project uses _Javascript_ to create the features and functions for our webpages
 
 - [JQuery](https://jquery.com)
-  - The project uses **JQuery** to simplify DOM manipulation.
+
+  > The project uses _Jquery_ for our api calls and also to simplify DOM manipulation
+
+- [Visual Studio Code](https://code.visualstudio.com/)
+
+  > We used VS Code for coding of our webpages
+
+- [restdb.io](https://restdb.io/)
+
+  > The project uses
+
+- [JQuery](https://jquery.com)
+
+  > The project uses _JQuery_ to simplify DOM manipulation.
+
+- [Twitter](https://twitter.com/SlayersWebsite)
+
+  > The project uses _Twitter_ to host our images online
+
+- [Tiled](https://www.mapeditor.org/)
+
+  > The project uses _Tiled_ for designing of the map
+
+- [Adobe PhotoShop](https://www.adobe.com/sg/products/photoshop/landpa.html?gclid=CjwKCAiA0JKfBhBIEiwAPhZXDxDAB1wAT13ZQ8hzBOxBMb0id_InL2EHtUuXpDQmcod6zh4hilJFSBoCEQUQAvD_BwE&sdid=YP7XGDLR&mv=search&ef_id=CjwKCAiA0JKfBhBIEiwAPhZXDxDAB1wAT13ZQ8hzBOxBMb0id_InL2EHtUuXpDQmcod6zh4hilJFSBoCEQUQAvD_BwE:G:s&s_kwcid=AL!3085!3!444551129026!e!!g!!adobe%20photoshop!184169684!12788303444)
+
+  > The project uses _Adobe Photoshop_ for creating of our store product items
+
+- [Google Fonts](https://fonts.google.com/)
+
+  > The project uses _google fonts_ to style our pages with beautiful fonts
+
+- [Swiper.js](https://swiperjs.com/)
+
+  > The project uses _Swiper.js_ for our banner in the store page
+
+- [Font Awasome](https://fontawesome.com/)
+
+  > The project uses _Font Awesome_ for the icons found within our pages
+
+- [LottieFiles](https://lottiefiles.com/web-player?lottie_url=https%3A%2F%2Fassets8.lottiefiles.com%2Fpackages%2Flf20_b88nh30c.json)
+
+  > The project uses _LottieFiles_ for the animations found within our pages
+
+- [BootStrap](https://getbootstrap.com/)
+  > The project uses _BootStrap_ for the creation of forms and pages
 
 ## **Testing**
 
@@ -154,16 +223,53 @@ In this section, you should mention all of the languages, frameworks, libraries,
 
 1. Some minor errors that were brought to light by [w3 html checker](https://validator.w3.org/nu/?doc=https%3A%2F%2Fhuixianglim.github.io%2FASG2)
 
-## Credits
+## **Credits**
 
-### Content
+### **Content**
 
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+#### Our Main sources includes: Youtube, CodePen and Bootstrap
 
-### Media
+- The animation of the Nav Bar was inspired from [Cand Dev](https://www.youtube.com/watch?v=R033rKs6sgA&ab_channel=CandDev)
 
-- The photos used in this site were obtained from ...
+- The hover image animation for our home page was inspired from [The Coding Week](https://www.youtube.com/watch?v=rEq9QyOaXsI&ab_channel=TheCodingWeek)
 
-### Acknowledgements
+- The sliding animation the home page was inspired from [Coding Snow](https://www.youtube.com/watch?v=VplDlwLTR50)
 
-- I received inspiration for this project from X
+- The smoke effect in our select class page was inspired from [Tuat Tran Anh](https://www.youtube.com/watch?v=CFb3LKrE-OQ)
+
+- The Javascript code for moving of the character was inspired from [Drew Conley](https://www.youtube.com/watch?v=H3Fn33lYuE0&t=435s)
+
+- The Javascript code and design for the pokemon style battle of the game was inspired from[Chris Courses](https://www.youtube.com/watchv=yP5DKzriqXA&t=24910s)
+
+- The animation and design for the login, store and home page were inspired from [codepen.io](https://codepen.io/trending)
+
+- The cart page was inspired from a [Bootstrap Template](https://mdbootstrap.com/docs/standard/extended/shopping-carts/)
+
+### **Media**
+
+#### Our Main Sources includes: YouTube and Google
+
+- The background gifs for our home page were obtained from [WANELLA](https://waneella.tumblr.com/) and [Pixel Art Gallery](https://pixel-art-gallery.tumblr.com/post/640653552738533377/the2dstagesfg-dojo-outside-from-paws-of-fury)
+
+- The images for our Nav Bar were obtained from [piklok](https://pixlok.com/icons/user-icon-svg-free-download-4/), [freeicons.io](https://freeicons.io/test/shopping-bag-icon-icon) and [PNGEGG](https://www.pngegg.com/en/png-biids)
+
+- The base banner image for our store page were obtained from [freepik](https://www.freepik.com/free-vector/flat-geometric-sales-banner-template_25232316.htm#page=2&query=store%20banner&position=31&from_view=keyword)
+- The background gifs for our game were obtained from [Pinterest](https://www.pinterest.com/pin/401453754282678742/) and [gfycat](https://gfycat.com/gifs/search/pixel+stars)
+
+- The background image for our pokemon battle mode in the game is from [Adobe](https://www.adobe.com/uk/creativecloud/design/discover/pixel-art.html)
+
+- The background gif for home page, character spritesheet and assets of the map for our game were obtained from [itch.io](https://pixel-boy.itch.io/ninja-adventure-asset-pack)
+
+- The base images(_without our logo_) for the products used in the store were obtained from
+  - [Sunspel](https://www.sunspel.com/products/mens-short-sleeve-crew-neck-t-shirt-black?country=SG)
+  - [Hours](https://www.hourscollection.com/products/drop-shoulder-hoodie-black-2)
+  - [TOYNK](https://www.toynk.com/products/neon-fidget-spinner-pink)
+  - [Self Edge](https://www.selfedge.com/warehouse?product_id=2731)
+  - [vistaprint](https://www.vistaprint.sg/photo-gifts/personalised-mugs)
+  - [ACCESSORIZE](https://www.accessorize.com/sg/plain-double-walled-metal-water-bottle/7801510300.html)
+
+### **Acknowledgements**
+
+- The game for our project received inspiration from [Pokemon](https://www.pokemon.com/us)
+
+- The select class page for our project received inspiration from [Valorant](https://playvalorant.com/en-us/)
