@@ -20,6 +20,8 @@ Slayers is a website for our game, where you can choose a character to battle mo
 
 ### **Live site**: [Click here](https://huixianglim.github.io/ASG2/)
 
+### **Our pitch**: [Click here](https://drive.google.com/file/d/1aWpBVIX_C6FolE74bTTGsvw3DEx2tSkS/view?usp=share_link)
+
 ## **Design Process**
 
 ### **Main website and game**
