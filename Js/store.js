@@ -89,9 +89,13 @@ $(document).ready(async function(){
           })
           for(let i =0; i<5; i++){
              let numberIndex = response.length - 1
-             if (response[numberIndex - i].name == person.name)
-                discount = true;
-                break;
+             console.log(i)
+             console.log(response[numberIndex - i].name)
+             if (response[numberIndex - i].name == person.name){
+              discount = true;
+              // break;
+             }
+                
           }         
         })
       }

@@ -7,10 +7,8 @@ $(document).ready(()=>{
     const btns = ["k","n","t"];
     const smk = ["Images/whitesmoke.png", "Images/redsmoke.png", "Images/yellowsmoke.png"]
     
-    //redirect users back to the login page if not logged in 
-    if (localStorage.getItem("person") == null){
-        window.location.href = "login.html"
-    }
+  
+
 
     //nav bar 
     const menu = document.querySelector('#mobile-menu');
@@ -22,7 +20,7 @@ $(document).ready(()=>{
     });
 
     let content = "";
-
+  //redirect users back to the login page if not logged in 
     if (localStorage.getItem("person") == null || localStorage.getItem("person") == undefined){
         content = `<a href="login.html" class="navbar-links">
         <div class="signin-img"></div>  
@@ -30,6 +28,7 @@ $(document).ready(()=>{
         </a>`
         $("#login-btn").html(content);
         $("#acc-dropdown").hide();
+        window.location.href = "login.html"
 
     }
     else{
@@ -60,6 +59,7 @@ $(document).ready(()=>{
         $("#acc-dropdown").hide();
         $("#login-btn").html(content); 
         $("#login-btn").show()
+        window.location.href = "login.html"; //redirect users back to home page after logging out
     })
 
     //animation for the class characters
